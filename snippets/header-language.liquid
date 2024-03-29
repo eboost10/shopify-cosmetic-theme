@@ -1,0 +1,24 @@
+<div class="language-dropdown language-dropdown-lag dropdown" data-language-switcher>
+    <div class="dropdown-menu lang-menu lang-switcher">
+        <div class="dropdown-item dropdown-item--full">{{ 'general.language.title' | t }}</div>
+        <div class="dropdown-divider"></div>
+        {%- for language in localization.available_languages -%}
+        <a class="dropdown-item {% if language.iso_code == shop.locale %} active{% endif %}" href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}" data-value="{{ language.iso_code }}">
+            <span class="icon">
+                {%- for i in (1..5) -%}
+                {%- capture lang_unit -%}lange_{{- i -}}{%- endcapture -%}
+                {%- capture lang_icon -%}lange_{{- i -}}_icon{%- endcapture -%}
+                {%- assign lang_unit_downcase = settings[lang_unit] | downcase -%}
+                {%- assign iso_code_lang_unit_downcase = language.iso_code | downcase -%}
+                {%- if lang_unit_downcase == iso_code_lang_unit_downcase -%}
+                {{ settings[lang_icon] }}
+                {%- endif -%}
+                {%- endfor -%}
+            </span>
+            <span class="text">
+                {{ language.iso_code }}
+            </span>
+        </a>
+        {%- endfor -%}
+    </div>
+</div>

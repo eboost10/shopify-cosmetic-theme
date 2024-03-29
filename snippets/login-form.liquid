@@ -1,0 +1,31 @@
+<div id="login-form" class="login-form color-{{ section.settings.color_scheme_1 }} gradient">
+    <div class="login-form__content">
+        <form accept-charset="UTF-8" action="/account/login" method="post">
+            <input name="form_type" type="hidden" value="customer_login" />
+            <input name="utf8" type="hidden" value="✓" />
+            <div class="login-form__form">
+                <div class="form-field">
+                    <label class="form-label">
+                        {{ 'customer.login.email' | t }}
+                        <em class="text-danger">*</em>
+                    </label>
+                    <input id="customer_email" class="form-control" type="email" value="" name="customer[email]" placeholder="{{ 'customer.login.placeholder' | t }}" >
+                </div>
+                <div class="form-field">
+                    <label class="form-label">
+                        {{ 'customer.login.password' | t }}
+                        <em class="text-danger">*</em>
+                    </label>
+                    <input id="customer_password" autocomplete="off" class="form-control" type="password" value="" placeholder="" name="customer[password]" >
+                </div>
+                <div class="form-actions text-center">
+                    <input type="submit" class="button" value="{{ 'customer.login.login' | t }}">
+                    <a class="forgot-password" href="{{ routes.account_login_url }}#recover" aria-label="forgot password">
+                        {{ 'customer.login.forgot_password' | t }}
+                    </a>
+                    <a class="button button--secondary" href="{{ routes.account_login_url }}" aria-label="register">{{  'customer.register.create_account' | t }}</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

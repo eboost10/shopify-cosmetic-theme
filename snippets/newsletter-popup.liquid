@@ -1,0 +1,121 @@
+{% assign newsletter_time = newsletter_time | default: settings.popup_newsletter_delay | times: 1000 %}
+<div id="popup_newsletter" class="modal{% unless settings.enable_popup_newsletter_mb %} popup-newsletter-disableMobile{% endunless %}">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-newsletter text-center" data-delay="{{ newsletter_time }}" data-expire="{{ settings.popup_newsletter_expire }}">
+            <a href="javascript:void(0)" aria-label="close" title="close" class="close">
+                <svg class="icon icon-close"><use xlink:href="#icon-close" /></svg>
+            </a>
+            <div class="newsletter--image"{% if settings.newsletter_image != blank %} style="background-image: url({{ settings.newsletter_image | img_url: 'master' }});"{% endif %}>
+                {% if settings.newsletter_image == blank %}
+                   <div class="no-image">
+                        {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                    </div>
+                {% endif %}
+                
+            </div>
+            <div class="newsletter--content">
+                {% if settings.popup_newsletter_title != blank %}
+                    <h2 class="newsletter--heading">
+                        {{ settings.popup_newsletter_title }}
+                    </h2>
+                {% endif %}
+                {% if settings.popup_newsletter_des != blank %}
+                    <div class="newsletter--message">
+                        {{ settings.popup_newsletter_des }}
+                    </div>
+                {% endif %}
+                <div id="mailchimp-email-subscibe" class="newsletter--form">
+                    {% assign formId = 'newsletterSubscibe' %}
+                    {% form 'customer', id: formId %}
+                        {% if form.posted_successfully? %}
+                            <p class="form-message form-message--success" tabindex="-1" data-form-status>
+                                {{ 'general.newsletter_form.confirmation' | t }}
+                            </p>
+                            <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+                            <script>
+                                $(document).ready(function(){
+
+                                    var $expire = parseInt($('#popup_newsletter .modal-newsletter').data('expire'));
+                                    
+                                    $('#popup_newsletter .close').on('click', function(event) {
+                                        event.preventDefault();
+                                        $.cookie('newsLetterPopup', 'closed', {expires: $expire, path: '/'});
+                                        var newURL = location.href.split("?")[0];
+                                        window.history.pushState('object', document.title, newURL);
+                                    })
+
+                                    $('#popup_newsletter').on('click', function (event) {
+                                        if (($('#popup_newsletter').hasClass('modal--is-active')) && ($(event.target).closest($('#popup_newsletter .modal-newsletter')).length === 0)) {
+                                            $.cookie('newsLetterPopup', 'closed', {expires: $expire, path: '/'});
+                                            var newURL = location.href.split("?")[0];
+                                            window.history.pushState('object', document.title, newURL);
+                                        }
+                                    });
+                                });
+                            </script>
+                        {% else %}
+                            <p class="form-message form-message--error" tabindex="-1" data-form-status>
+                                {{ 'general.newsletter_form.error' | t }}
+                            </p>
+                            <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+                            <script>
+                                $(document).ready(function(){
+                                    if (window.location.href.indexOf('newsletter&form_type=customer') > -1) {
+                                        $('#popup_newsletter').show("fast");
+                                        $('#popup_newsletter').addClass('modal--is-active');
+                                        $('#popup_newsletter .input-group').hide();
+                                        $('body').addClass('open_popup_newsletter');
+
+                                        var $expire = parseInt($('#popup_newsletter .modal-newsletter').data('expire'));
+                                        
+                                        $('#popup_newsletter .close').on('click', function(event) {
+                                            event.preventDefault();
+                                            $.cookie('newsLetterPopup', 'closed', {expires: $expire, path: '/'});
+                                            var newURL = location.href.split("?")[0];
+                                            window.history.pushState('object', document.title, newURL);
+                                        })
+
+                                        $('#popup_newsletter').on('click', function (event) {
+                                            if (($('#popup_newsletter').hasClass('modal--is-active')) && ($(event.target).closest($('#popup_newsletter .modal-newsletter')).length === 0)) {
+                                                $.cookie('newsLetterPopup', 'closed', {expires: $expire, path: '/'});
+                                                var newURL = location.href.split("?")[0];
+                                                window.history.pushState('object', document.title, newURL);
+                                            }
+                                        });
+                                    }
+                                });
+                            </script>
+                        {% endif %}
+                        <input type="hidden" name="contact[tags]" value="newsletter">
+                        <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+                            <input type="email"
+                                name="contact[email]"
+                                id="{{ formId }}-email"
+                                class="input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
+                                value="{{ form.email }}"
+                                placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                                aria-required="true"
+                                required
+                                autocapitalize="off"
+                                {% if form.errors %}
+                                    aria-invalid="true"
+                                    aria-describedby="{{ formId }}-email-error"
+                                    data-form-status
+                                {% endif %}>
+                            <input class="button" type="submit" value="{{ 'general.newsletter_form.submit' | t }}">
+                        </div>
+                    {% endform %}
+                </div>
+                {% if settings.when_to_show == 'first_time' %}
+                    <div class="newsletter--showAgain">
+                        <input id="dismiss" class="do-not-show-again" type="checkbox" name="dismiss">
+                        <label for="dismiss"><span>{{ 'general.newsletter_form.dismiss' | t }}</span></label>
+                    </div>
+                {% endif %}
+
+               
+
+            </div>
+        </div>
+    </div>
+</div>

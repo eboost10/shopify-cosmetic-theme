@@ -1,0 +1,32 @@
+{% if block.settings.image %}
+{{ 'component-image-sidebar.css' | asset_url | stylesheet_tag }}
+{% assign img =  block.settings.image %}
+{% assign imgLink =  block.settings.link %}
+{% assign imgTitle =  block.settings.title %}
+<div class="block block-sidebar block-product-list-sidebar">
+	{% if imgTitle != blank %}
+	<div class="block-title">
+		<strong>{{imgTitle}}</strong>
+	</div>
+	{% endif %}
+	<div class="block__content">
+        {% if block.settings.link != blank %}
+            <a class=" text-center" href="{{ block.settings.link }}" aria-label="link">
+        {% else %}
+            <div class="text-center block-img-sidebar">
+        {% endif %}
+            {% if block.settings.image != blank %}
+                {{ block.settings.image | img_url: '290x' | img_tag: block.settings.image.alt, 'image-text-overlay' }}
+            {% else %}
+                <div class="no-image"style="padding-top: 145%">
+                    <span class="recommended_size">270x390</span>
+                </div>
+            {% endif %}
+        {% if block.settings.link != blank %}
+            </a>
+        {% else %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

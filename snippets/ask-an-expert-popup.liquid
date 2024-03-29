@@ -1,0 +1,193 @@
+{% if settings.enable_ask_an_expert %}
+
+    <div class="ask-an-expert">
+        <a class="text" data-bs-toggle="modal" data-bs-target="#ask_an_expert" href="javascript:void(0)" aria-label="link" aria-describedby="a11y-external-message">
+          <span class="icon-mb"><svg class="icon">
+                <use xlink:href="#icon-question"></use>
+            </svg></span>
+        </a>
+    </div>
+    <div class="modal fade" id="ask_an_expert" role="dialog" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-ask-an-expert"  role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    {% if settings.ask_an_expert_header != blank %}
+                        <h5 class="modal-title">
+                            {{ settings.ask_an_expert_header }}
+                        </h5>
+                    {% endif %}
+                    <a data-bs-dismiss="modal" class="close close-modal" href="javascript:void(0)">
+                        <svg class="icon icon-close"><use xlink:href="#icon-close" /></svg>
+                    </a>
+                </div>
+                <div class="modal-logo">
+                    {% if settings.image_logo_ask != blank %}
+                            <img class="lazyload" src="{{ settings.image_logo_ask | img_url: 'master' }}" alt="" data-image>
+                    {% else %}
+                        <span class="recommended_size">165x40</span>
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}
+                </div>
+                <div class="modal-body">
+                    <div class="form-wrapper">
+                    {% if settings.ask_an_expert_title != blank %}
+                        <h5 class="title">
+                            <span>{{ settings.ask_an_expert_title }}</span>
+                        </h5>
+                    {% endif %}
+                    {% if settings.ask_an_expert_des != blank %}
+                        <div class="des">
+                            {{ settings.ask_an_expert_des }}
+                        </div>
+                    {% endif %}
+                    <div class="form-inner">
+                        {% form 'contact' %}
+
+                        {% if form.errors %}
+                        {{ form.errors | default_errors }}
+                        {% endif %}
+                        
+                        {% if form.posted_successfully? %}
+                        <div class="note form-success text-center">
+                            {{ 'contact.form.post_success' | t }}
+                        </div>
+                        
+                        <script>
+                            $(document).ready(function(){ 
+                                // console.log("$.cookie('soldOut')",$.cookie('soldOut'));
+                                if ($.cookie('soldOut') != 'closed') {
+                                    $('#ask_an_expert').modal();
+                                    $('#ask_an_expert .title').hide();
+                                    $('#ask_an_expert .form-content').hide();
+                                    $('#ask_an_expert .form-success').show();
+                                    var newURL = location.href.split("?")[0];
+                                    window.history.pushState('object', document.title, newURL);
+                                    $('.close-modal').click(function(){
+                                        window.setTimeout(function(){
+                                            $('#ask_an_expert .title').show();
+                                            $('#ask_an_expert .form-content').show();
+                                            $('#ask_an_expert .form-success').hide();
+                                        },1000)
+                                    })
+                                }else{
+
+                                    var success = $('#nofify_sold-out').data('success');
+                                    $('#notify-soldout .modal-body').html(success);
+                                    $('#notify-soldout').modal();
+                                    var newURL = location.href.split("?")[0];
+                                    window.history.pushState('object', document.title, newURL);
+                                }
+                            });
+                        </script>
+
+                        {% endif %}
+ 
+                        <div class="form-content">
+                            {% if product.title != blank %}
+                            <input type="hidden" name="contact[Product Title]" value="{{ product.title }}"/>
+                            <input type="hidden" name="contact[Product Link]" value="{{ shop.url }}{{ product.url }}"/>
+                            {% endif %}
+                            <div class="form-group">
+                                <label for="contactFormName" class="form-label">{{ 'contact.form.name' | t }}</label>
+                                <input type="text" required id="contactFormName" name="contact[Name]" autocapitalize="words"" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactFormEmail" class="form-label">{{ 'contact.form.email' | t }}</label>
+                                <input type="email" name="contact[email]" required id="contactFormEmail" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                 <label for="contactFormPhone" class="form-label">{{ 'contact.form.phone' | t }}</label>
+                                <input type="tel" required name="contact[Phone Number]" id="contactFormPhone" pattern="[0-9]*" class="form-control">
+                            </div>
+
+                            {% if settings.enable_ask_do_you_need %}
+                            <div class="form-group custom-radio do_you_need">
+                                {% if settings.ask_do_you_need != blank %}
+                                <label class="form-label">
+                                    {{ settings.ask_do_you_need }}
+                                </label>
+                                {% endif %}
+
+                                {% if settings.ask_do_you_need_1 != blank %}
+                                <input checked id="do-you-need-1" type="radio" name="contact[{{ settings.ask_do_you_need | split: '|' | first }}]" value="{{ settings.ask_do_you_need_1 | split: '|' | first }}"/>
+                                <label for="do-you-need-1">
+                                    {{ settings.ask_do_you_need_1 }}
+                                </label>
+                                {% endif %}
+
+                                {% if settings.ask_do_you_need_2 != blank %}
+                                <input id="do-you-need-2" type="radio" name="contact[{{ settings.ask_do_you_need | split: '|' | first }}]" value="{{ settings.ask_do_you_need_2 | split: '|' | first }}"/>
+                                <label for="do-you-need-2">
+                                    {{ settings.ask_do_you_need_2 }}
+                                </label>
+                                {% endif %}
+
+                                {% if settings.ask_do_you_need_3 != blank %}
+                                <input id="do-you-need-3" type="radio" name="contact[{{ settings.ask_do_you_need | split: '|' | first }}]" value="{{ settings.ask_do_you_need_3 | split: '|' | first }}"/>
+                                <label for="do-you-need-3">
+                                    {{ settings.ask_do_you_need_3 }}
+                                </label> 
+                                {% endif %}
+                            </div>
+                            {% endif %}
+
+                            <div class="form-group">
+                                {% if settings.ask_form_mess != blank %}
+                                <label for="contactFormMessage" class="form-label">
+                                    {{ settings.ask_form_mess }}
+                                </label>
+                                {% endif %}
+                                <textarea rows="6" name="contact[Message]" id="contactFormMessage" class="form-control"></textarea>
+                            </div>
+
+                            {% if settings.enable_how_would_you_like_me_to_contact_you %}
+                            <div class="form-group custom-radio last">
+                                {% if settings.how_would_you_like_me_to_contact_you != blank %}
+                                <label class="form-label">
+                                    {{ settings.how_would_you_like_me_to_contact_you }}
+                                </label>
+                                {% endif %}
+
+                                {% if settings.contact_with_you_1 != blank %}
+                                <input checked id="contact-with-you-1" type="radio" name="contact[{{ settings.how_would_you_like_me_to_contact_you | split: '|' | first }}]" value="{{ settings.contact_with_you_1 | split: '|' | first }}"/>
+                                <label for="contact-with-you-1">
+                                    {{ settings.contact_with_you_1 }}
+                                </label>
+                                {% endif %}
+
+                                {% if settings.contact_with_you_2 != blank %}
+                                <input id="contact-with-you-2" type="radio" name="contact[{{ settings.how_would_you_like_me_to_contact_you | split: '|' | first }}]" value="{{ settings.contact_with_you_2 | split: '|' | first }}"/>
+                                <label for="contact-with-you-2">
+                                    {{ settings.contact_with_you_2 }}
+                                </label>  
+                                {% endif %}
+
+                                {% if settings.contact_with_you_3 != blank %}
+                                <input id="contact-with-you-3" type="radio" name="contact[{{ settings.how_would_you_like_me_to_contact_you | split: '|' | first }}]" value="{{ settings.contact_with_you_3 | split: '|' | first }}"/>
+                                <label for="contact-with-you-3">
+                                    {{ settings.contact_with_you_3 }}
+                                </label> 
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <div class="ask__terms-conditions">
+                                <input type="checkbox" id="terms-conditions-ask" value="">
+                                <label class="title_terms" for="terms-conditions-ask">
+                                    {{settings.protection_policy_ask}}
+                                </label>
+                            </div>
+                                
+                            <div class="actions">
+                                <input type="submit" class="btn btn--secondary" value="{{ 'contact.form.submit_one' | t }}">
+                            </div>
+                        </div>
+                        {% endform %}
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

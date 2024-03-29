@@ -1,0 +1,120 @@
+
+.main-row, 
+.main-row.slick-slider {
+    width: auto;
+    padding: 0;
+    min-width: 100%;
+    overflow: visible;
+}
+
+.icon-with-text__icon {
+    color:  rgb(var(--color-button));
+    fill:  rgb(var(--color-button));
+}
+
+[data-section-type="icon-with-text"] {
+    
+    padding: 3.8rem 0 1.8rem;
+}
+
+[data-section-type="icon-with-text"] .main-row__item:first-child {
+    border-left: none;
+}
+
+.icon-with-text {
+    font-size: 0;
+    max-width: 31rem;
+    display: flex;
+    position: relative;
+}
+
+.icon-with-text__icon {
+    width: 4rem;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    top: .3rem;
+}
+
+.icon-with-text__icon .icon,
+.icon-with-text__icon svg {
+    font-size: 30px;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+}
+
+.icon-with-text__content {
+    font-size: 14px;
+    padding-left: 1.9rem;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.icon-with-text__content .title {
+    font-size: 18px;
+    margin: 0 0 .1rem;
+    color: rgb(var(--color-heading));
+    font-family: var(--font-heading-family);
+    font-weight: bold;
+}
+
+.filters-toolbar__input-title .title {
+    font-family: var(--font-body-family);
+
+}
+
+.collection-sortBy {
+    font-family: var(--font-heading-family);
+}
+
+.icon-with-text__content .description {
+    font-weight: normal;
+    margin: 0;
+    font-size: 16px;
+    color: rgb(var(--color-foreground));
+}
+
+
+[data-section-type="icon-with-text"].section_layout_2 .icon-with-text {
+    display: block;
+    max-width: 100%;
+}
+
+[data-section-type="icon-with-text"].section_layout_2 .icon-with-text__icon {
+    display: inherit;
+    width: 100%;
+}
+
+[data-section-type="icon-with-text"].section_layout_2 .icon-with-text__content {
+    padding-left: 0;
+}
+
+[data-section-type="icon-with-text"].section_layout_2 .icon-with-text__content .title {
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+}
+
+[data-section-type="icon-with-text"].section_layout_2 .icon-with-text__content .description {
+    font-size: 16px;
+    color: rgb(var(--color-foreground));
+}
+
+[data-section-type="icon-with-text"].section_layout_2 .icon-with-text__icon .icon,
+[data-section-type="icon-with-text"].section_layout_2 .icon-with-text__icon svg {
+    font-size: 30px;
+    width: 7.5rem;
+    height: 7.5rem;
+    line-height: 7.5rem;
+}
+
+[data-section-type="icon-with-text"].section_layout_2 .icon-with-text__icon {
+    color: rgb(var(--color-button));
+    fill:  rgb(var(--color-button));
+    height: 8.2rem;
+    width: 8.2rem;
+    overflow: hidden;
+}
+[data-section-type="icon-with-text"].section_layout_2 .icon-with-text__icon svg {
+     fill:  rgb(var(--color-button));
+}

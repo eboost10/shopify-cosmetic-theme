@@ -1,0 +1,14 @@
+<div class="page-width">
+	<div class="cart-page-top">
+	{% render 'breadcrumb' %}
+	<div class="title-wrapper-with-link">
+      <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+    </div>
+	{% if settings.enable_progress_bar_shipping %}
+	    <div class="cart__progress_bar">
+	        <div class="progress_bar_shipping"></div>
+	        <div class="progress_bar_shipping_message"></div>
+	    </div>
+	{% endif %}
+	</div>
+</div>

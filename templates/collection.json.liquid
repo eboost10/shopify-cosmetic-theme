@@ -1,0 +1,61 @@
+{% layout none %}
+{%-liquid
+
+assign media_aspect_ratio = canonical_url | split: 'media_aspect_ratio%3d' | last | split: 'image_shape' | first 
+assign image_shape = canonical_url | split: 'image_shape%3d' | last | split: 'show_secondary_image' | first
+assign show_secondary_image = canonical_url | split: 'show_secondary_image%3d' | last | split: 'show_vendor' | first
+assign show_vendor = canonical_url | split: 'show_vendor%3d' | last | split: 'show_rating' | first
+assign show_rating = canonical_url | split: 'show_rating%3d' | last | split: 'show_quick_add' | first
+assign show_quick_add = canonical_url | split: 'show_quick_add%3d' | last | split: '%2bid' | first
+
+if show_secondary_image == 'true'
+	assign show_secondary_image = true
+else
+	assign  show_secondary_image = false
+endif 
+if show_vendor == 'true'
+	assign show_vendor = true
+else
+	assign show_vendor = false
+endif
+if show_rating == 'true'
+	assign show_rating = true
+else
+	assign show_rating = false
+endif
+if show_quick_add == 'true'
+	assign show_quick_add = true
+else
+	assign show_quick_add = false
+endif
+-%}
+
+
+{% assign limit = canonical_url | split: 'limit%3d' | last | split: 'media_aspect_ratio' | first %}
+{% assign id = canonical_url | split: 'id%3d' | last %}
+<div class="main-row {{collection.products_count}}"> 
+{% if collection.products_count > 0 %}   
+{% paginate collection.products by limit: limit %} 
+    {% for product in collection.products   %}
+    <div class="main-row__item">  
+    	{% render 'card-product',
+              card_product: product,
+              serial: forloop.index,
+              section_id: id, 
+              media_aspect_ratio: media_aspect_ratio,
+              image_shape: image_shape,
+              show_secondary_image: show_secondary_image,
+              show_vendor: show_vendor,
+              show_rating: show_rating,
+              show_quick_add: show_quick_add
+            %}
+
+    </div>
+    {% endfor%}
+{% endpaginate %}    
+{% else %}
+    <div class="main-item main-item-full">
+        {{ 'collections.general.no_matches' | t }}
+    </div>
+{% endif %}
+</div>

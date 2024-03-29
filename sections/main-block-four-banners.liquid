@@ -1,0 +1,418 @@
+
+{{ 'component-four-banner.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="block-four-banner color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding" data-section-id="{{ section.id }}">
+  <div class="page-width ">
+    <div class="title text-center {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}>
+        <h2 class="{{ section.settings.heading_size }} inline-richtext ">{{ section.settings.title_header }}</h2>
+    </div>          
+        {% if section.settings.description != blank %}
+          <div class=" text-center rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} {% endif %} >
+            <p>{{ section.settings.description }}</p>
+          </div>  
+        {% endif %}
+    
+
+    <div class="mansory-layout color-{{ section.settings.color_scheme_item }}">
+        <div class="item item-2-height item-custom {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: 1;"
+              {% endif %}>
+          {% if section.settings.image_2 != blank%}
+          {% assign img_url_view2 = section.settings.image_2 %}
+          <div class="mansory-item-wrapper animation-scale adaptive_height" style="padding-top: {{ 1 | divided_by: img_url_view2.aspect_ratio | times: 100 }}%" >
+              {% assign img_url = section.settings.image_2 | img_url: 'master' %}
+              {% assign img_url_2 = section.settings.image_2 | img_url: '770x' %}
+               <img class="lazyload"
+                  src="{{ img_url_2 }} 180w, {{ img_url }} 768w"
+                  data-sizes="auto" alt="" data-image>
+           {% if section.settings.link_2 != blank %} <a href="{{section.settings.link_3}}" class="mansory-item"></a>{% endif %}
+            <div class="banner-content ">
+              {% if section.settings.title_2_top != blank %}
+              <h3 class="top-title">
+                {{section.settings.title_2_top}}
+              </h3>
+              {% endif %}
+              {% if section.settings.title_2 != blank %}
+              <h3 class="title">
+                {{section.settings.title_2}}
+              </h3>
+              {% endif %}
+
+              {% if section.settings.link_text_2 != blank %}
+              <a href=" {{section.settings.link_2}}" class="link-banner button">
+                {{section.settings.link_text_2}}
+              </a>
+              {% endif%}
+            </div>
+          </div>
+          {% else %}
+          <div class="no-image animate-scale hover-images mansory-item-wrapper">
+             {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+          {% endif %}
+        </div>
+        <div class="group-items">
+          <div class="item item-2-width-pc">
+            <div class="item-child {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: 2;"
+              {% endif %}>
+              {% if section.settings.image_3 != blank%}
+               {% assign img_url_view3 = section.settings.image_3 %}
+              <div class="mansory-item-wrapper animation-scale adaptive_height"  style="padding-top: {{ 1 | divided_by: img_url_view3.aspect_ratio | times: 100 }}%" >
+                  {% assign img_url = section.settings.image_3 | img_url: 'master' %}
+                  {% assign img_url_2 = section.settings.image_3 | img_url: '390x' %}
+                   <img class="lazyload"
+                      src="{{ img_url_2 }} 180w, {{ img_url }} 768w"
+                      data-sizes="auto" alt="" data-image>
+                {% if section.settings.link_3 != blank %} <a href="{{section.settings.link_3}}" class="mansory-item"></a>{% endif %}
+                <div class="banner-content ">
+                {% if section.settings.title_3_top != blank %}
+                <h3 class="top-title">
+                  {{section.settings.title_3_top}}
+                </h3>
+                {% endif %}
+                {% if section.settings.title_3 != blank %}
+                <h3 class="title">
+                  {{section.settings.title_3}}
+                </h3>
+                {% endif %}
+
+                {% if section.settings.link_text_3 != blank %}
+                <a href=" {{section.settings.link_3}}" class="link-banner button">
+                  {{section.settings.link_text_3}}
+                </a>
+                {% endif%}
+              </div>
+              </div>
+              {% else %}
+                <div class="no-image animate-scale hover-images mansory-item">
+                   {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="item-child {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: 3;"
+              {% endif %}>
+              {% if section.settings.image_4 != blank%}
+              {% assign img_url_view4 = section.settings.image_4 %}
+              <div class="mansory-item-wrapper animation-scale adaptive_height" style="padding-top: {{ 1 | divided_by: img_url_view4.aspect_ratio | times: 100 }}%" >
+                  {% assign img_url = section.settings.image_4 | img_url: 'master' %}
+                  {% assign img_url_2 = section.settings.image_4 | img_url: '370x' %}
+                   <img class="lazyload"
+                      src="{{ img_url_2 }} 180w, {{ img_url }} 768w"
+                      data-sizes="auto" alt="" data-image>
+
+                {% if section.settings.link_4 != blank %} <a href="{{section.settings.link_3}}" class="mansory-item"></a>{% endif %}
+                <div class="banner-content ">
+                  {% if section.settings.title_4_top != blank %}
+                  <h3 class="top-title">
+                    {{section.settings.title_4_top}}
+                  </h3>
+                  {% endif %}
+                  {% if section.settings.title_4 != blank %}
+                  <h3 class="title">
+                    {{section.settings.title_4}}
+                  </h3>
+                  {% endif %}
+
+                  {% if section.settings.link_text_4 != blank %}
+                  <a href=" {{section.settings.link_4}}" class="link-banner button">
+                    {{section.settings.link_text_4}}
+                  </a>
+                  {% endif%}
+                </div>
+              </div>
+              {% else %}
+                <div class="no-image animate-scale  mansory-item">
+                   {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+                {% endif %}
+            </div>
+          </div>
+          <div class="item item-2-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: 4;"
+              {% endif %}>
+            {% if section.settings.image_top != blank%}
+            {% assign img_url_view = section.settings.image_top %}
+            <div class="mansory-item-wrapper animation-scale adaptive_height" style="padding-top: {{ 1 | divided_by: img_url_view.aspect_ratio | times: 100 }}%" >
+                  {% assign img_url = section.settings.image_top | img_url: 'master' %}
+                  {% assign img_url_2 = section.settings.image_top | img_url: '770x' %}
+                   <img class="lazyload"
+                      src="{{ img_url_2 }} 180w, {{ img_url }} 768w"
+                      data-sizes="auto" alt="" data-image>
+
+                {% if section.settings.link!= blank %} <a href="{{section.settings.link_3}}" class="mansory-item"></a>{% endif %}
+                <div class="banner-content ">
+                  {% if section.settings.title_top != blank %}
+                  <h3 class="top-title">
+                    {{section.settings.title_top}}
+                  </h3>
+                  {% endif %}
+                  {% if section.settings.title != blank %}
+                  <h3 class="title">
+                    {{section.settings.title}}
+                  </h3>
+                  {% endif %}
+
+                  {% if section.settings.link_text != blank %}
+                  <a href=" {{section.settings.link}}" class="link-banner button">
+                    {{section.settings.link_text}}
+                  </a>
+                  {% endif%}
+                </div>
+            </div>
+            {% else %}
+              	<div class="no-image animate-scale logo-banner hover-images" >
+                   {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }} 
+                </div>
+              {% endif %}
+          </div>
+        </div>  
+    </div>
+  </div>
+</div>
+{% schema %}
+    {
+        "name": "Custom Block Four Banners",
+        "tag": "section",
+        "class": "section",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Section Layout"
+            },
+            {
+              "type": "color_scheme",
+              "id": "color_scheme",
+              "label": "t:sections.all.colors.label",
+              "default": "scheme-1"
+            },
+            {
+                "type": "range",
+                "id": "padding_top",
+                "label": "Spacing Top",
+                "default": 0,
+                "min": 0,
+                "max": 100,
+                "step": 10,
+                "unit": "px"
+            },
+            {
+                "type": "range",
+                "id": "padding_bottom",
+                "label": "Spacing bottom",
+                "default": 0,
+                "min": 0,
+                "max": 100,
+                "step": 10,
+                "unit": "px"
+            },
+            {
+                "type": "header",
+                "content": "Heading Section"
+            },
+            {
+                "type": "text",
+                "id": "title_header",
+                "label": "Header Title",
+                "default": "Image With Text"
+            },
+            {
+              "type": "select",
+              "id": "heading_size",
+              "options": [
+                {
+                  "value": "h2",
+                  "label": "t:sections.all.heading_size.options__1.label"
+                },
+                {
+                  "value": "h1",
+                  "label": "t:sections.all.heading_size.options__2.label"
+                },
+                {
+                  "value": "h0",
+                  "label": "t:sections.all.heading_size.options__3.label"
+                }
+              ],
+              "default": "h2",
+              "label": "t:sections.all.heading_size.label"
+            },
+            {
+                "type": "textarea",
+                "id": "description",
+                "label": "Description"
+            },
+            {
+                "type": "header",
+                "content": "Layout"
+            },
+            {
+                "type": "header",
+                "content": "Item"
+            },
+            {
+              "type": "color_scheme",
+              "id": "color_scheme_item",
+              "label": "t:sections.all.colors.label",
+              "default": "scheme-1"
+            },
+
+            {
+              "type":"header",
+              "content":"Banner 1"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_2",
+              "label": "Image"
+            },
+            {
+              "type" : "text",
+              "id" : "title_2_top",
+              "label" : "Sub Title",
+              "default" : "Sale up to 60% Off"
+            },
+            {
+              "type" : "text",
+              "id" : "title_2",
+              "label" : "Title",
+              "default" : "Lorem Comodous"
+            },
+            {
+              "type" : "text",
+              "id" : "link_text_2",
+              "label" : "Link",
+              "default":"Shop Now"
+            },
+            {
+              "type": "url",
+              "id": "link_2",
+              "label": "Add Link"
+            },
+            
+            {
+              "type":"header",
+              "content":"Banner 2"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_3",
+              "label": "Image"
+            },
+            {
+              "type" : "text",
+              "id" : "title_3_top",
+              "label" : "Sub Title",
+              "default" : "Sale 10% Off"
+            },
+            {
+              "type" : "text",
+              "id" : "title_3",
+              "label" : "Title",
+              "default" : "Dincidunteros"
+            },
+            {
+              "type" : "text",
+              "id" : "link_text_3",
+              "label" : "Link",
+              "default":"Shop Now"
+            },
+            {
+              "type": "url",
+              "id": "link_3",
+              "label": "Add Link",
+              "info":"=================="
+            },
+            {
+              "type":"header",
+              "content":"Banner 3"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_4",
+              "label": "Image"
+            },
+             {
+              "type" : "text",
+              "id" : "title_4_top",
+              "label" : "Sub Title",
+              "default" : "Sale 30% Off"
+            },
+            {
+              "type" : "text",
+              "id" : "title_4",
+              "label" : "Title",
+              "default" : "Namdos Hempus"
+            },
+            {
+              "type" : "text",
+              "id" : "link_text_4",
+              "label" : "Link",
+              "default":"Shop Now"
+            },
+            {
+              "type": "url",
+              "id": "link_4",
+              "label": "Add Link"
+            },
+            {
+              "type":"header",
+              "content":"Banner 4"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_top",
+              "label": "Image"
+            },
+            {
+              "type" : "text",
+              "id" : "title_top",
+              "label" : "Sub Title",
+              "default" : "Today Only: Sale 40% Off"
+            },
+            {
+              "type" : "text",
+              "id" : "title",
+              "label" : "Title",
+              "default" : "Pellento Habitande"
+            },
+            {
+              "type" : "text",
+              "id" : "link_text",
+              "label" : "Link",
+              "default":"Shop now"
+            },
+            {
+              "type": "url",
+              "id": "link",
+              "label": "Add Link"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Four Banners",
+                "category": "Images"
+            }
+        ]
+    }
+{% endschema %}

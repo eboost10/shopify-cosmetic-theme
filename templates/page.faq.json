@@ -1,0 +1,135 @@
+{
+  "sections": {
+    "main": {
+      "type": "faq-template",
+      "blocks": {
+        "dfb06955-8893-4742-8fe0-d3152cc18a2f": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Will your template be fully compatible with Shopify?",
+            "answer_faqs": "<p>Yes it is.<\/p>",
+            "faq_type": "1"
+          }
+        },
+        "f217e85f-710f-4cbd-88fe-644effa26f12": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Do you offer free trials?",
+            "answer_faqs": "<p>No, We don't<\/p>",
+            "faq_type": "1"
+          }
+        },
+        "63573467-18aa-47a8-b1af-e34ed56a5cf2": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Do you offer refund or exchange?",
+            "answer_faqs": "<div class=\"tab_custom_faq\">\n\t<p class=\"italic\">All purchases at Cosmetic are covered by our \"Money Back Cosmetic Policy\". If you're not satisfied with your themes and\/or add-ons \/ plugins \/ extensions, we will try our very best to help you as much as possible.<\/p>\n\t<p class=\"text_bold\">In case our templates or extensions get any issue that we cannot help, we will refund the full price you paid immediately.<\/p>\n    <p class=\"title one\">WHY A REFUND MAY NOT BE GIVEN<\/p>\n    <ul>\n    \t<li><span>You don't want it after you've downloaded it.<\/span><\/li>\n    \t<li><span>The item did not meet your expectations.<\/span><\/li>\n    \t<li><span>You simply change your mind.<\/span><\/li>\n    \t<li><span>You bought an item by mistake<\/span><\/li>\n    \t<li><span>You do not have sufficient expertise to use the item.<\/span><\/li>\n    \t<li><span>You ask for goodwill, or<\/span><\/li>\n    \t<li><span>You can no longer access the item because it has been removed \/ discontinue (we advise you to download items as soon as you have purchased them to avoid this situation).<\/span><\/li>\n    \t<li><span>Refund is not applicable on Custom Service (such as custom development works, consulting works and any order services we provide)<\/span><\/li>\n    <\/ul>\n    <p class=\"title two\">A REFUND MAY BE GIVEN<\/p>\n    <p class=\"number one\">1. Product Not-As-Described<\/p>\n    <p class=\"des\">Such issues should be reported to our Technical Support Department within 7 days from the date of the purchase. Clear evidence must be provided proving that the purchased product is not as it is described on the website. Complaints which are based merely on the customers false expectations or wishes are not honored.<\/p>\n    <p class=\"number two\">2. Major Defects<\/p>\n    <p class=\"des\">Although all the products are thoroughly tested before release, unexpected errors may occur. Such issues must be submitted for our Technical Support Department. We keep the right to rectify the error or defect within 72 hours (exclude Sartuday and Sunday). Please note that our technicians can request temporary access to your server in order to identify and fix the possible issues with our Products. Failure to provide such access in a timely manner may result in a delayed resolution of the issue. Refusal to provide access to your sever will result in your inability to qualify for a refund.<\/p>\n    <p class=\"number\">3. Item support extension not used<\/p>\n    <p class=\"des\">If you purchase an item support extension and request a refund of that extension before your existing item support expires, we will provide you with a refund of that item support extension.<\/p>\n<\/div>",
+            "faq_type": "1"
+          }
+        },
+        "ee19789a-a60d-4024-bda6-9fea25e45896": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "I cannot upload the theme to my Shopify store \/ Shopify alerts that the file is too big to upload, what is the problem?",
+            "answer_faqs": "<p>Please make sure that you follow below steps:<\/p>\n<p>1\/ Download the package from themeforest.net (the file is in zip format)<br><br>2\/ Extract the file you've just downloaded.<br><br>3\/ Find this file: belle-dolls-1.0.0-sections-ready.zip in the folder Ella Sections Ready 3.0.0, then you just need to upload belle-dolls-1.0.0-sections-ready.zip file to your Shopify store.<br><\/p>",
+            "faq_type": "2"
+          }
+        },
+        "09ee9ac0-6098-4c28-af7a-acabab05035d": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "What I have to do when I need your support?",
+            "answer_faqs": "<p>To save your time and reach our support quickly, please follow below steps:<\/p>\n<p>1\/ Create a staff account for us (with Themes permission and Settings permission) <a href=\"http:\/\/docs.shopify.com\/manual\/settings\/account\/staff-members\" title=\"http:\/\/docs.shopify.com\/manual\/settings\/account\/staff-members\">http:\/\/docs.shopify.com\/manual\/settings\/account\/staff-members<\/a><\/p>\n<p>2\/ Capture screenshot or video for the issue you get.<\/p>\n<p>3\/ Specify which template and version you are using.<\/p>\n<p>4\/ Describe clearly how to reproduce the issue.<\/p>\n<p>5\/ Send all information (staff account, screenshot, video, template name and version, description of the issues, link) to <a href=\"mailto:eboost10@gmail.com\" title=\"mailto:eboost10@gmail.com\">eboost10@gmail.com<\/a><\/p>",
+            "faq_type": "2"
+          }
+        },
+        "6db6b10b-b664-4232-874c-96ba260e9e64": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Would assistance be available to upload the template if needed?",
+            "answer_faqs": "<p>Yes, we will assist you to install the template if needed<\/p>",
+            "faq_type": "2"
+          }
+        },
+        "8b9bf4d7-ea27-4a2d-86e2-644d895acb42": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Do you guys offer customisation services for your themes?",
+            "answer_faqs": "<p>Yes, we do. Please send your customisation requests to <a href=\"mailto:eboost10@gmail.com\" title=\"mailto:eboost10@gmail.com\">eboost10@gmail.com<\/a>, we will give you our quote. Thank you.<\/p>",
+            "faq_type": "2"
+          }
+        },
+        "07eed8ec-c17f-453d-b5c6-ef2ebdc6894e": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Can I turn on\/off Lazy Loading Image \/ Item Animation \/ Fade Up on the page?",
+            "answer_faqs": "<p>Yes. You can turn on\/off the animation in the Setting page.<\/p>",
+            "faq_type": "2"
+          }
+        },
+        "4eb7ee58-a967-4f7b-96e6-ecf62bbcaf33": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Can I turn on\/off some blocks on the page?",
+            "answer_faqs": "<p>Yes. You can turn on\/off almost any blocks on the page (featured products, slideshow, banners, related products, recent products,...).<\/p>",
+            "faq_type": "2"
+          }
+        },
+        "ce0e8e3b-14c1-4591-86d6-36be12749214": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "I want to have the dropdown cart displayed automatically every time clients hover over it (instead of clicking on it). Is it possible?",
+            "answer_faqs": "<p>Yes, we have a setting for you to switch between these two options: Display on Hover and Display on Click.<\/p>",
+            "faq_type": "2"
+          }
+        },
+        "85abf7f0-b4a8-41e3-ad4e-d25097cd6ed1": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "What is included in the theme package?",
+            "answer_faqs": "<p>The theme package includes theme source, Photoshop design files, sample data and manual guide.<\/p>",
+            "faq_type": "2"
+          }
+        },
+        "42695713-e1fc-4359-ab56-91e96cbc6b46": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "I notice that the images used in the theme are all portrait. Will that be a problem if I use square images for our products? How will they be displayed in the theme?",
+            "answer_faqs": "<p>That is not a problem. You just need to modify the width\/height ratio in theme settings.<\/p>",
+            "faq_type": "2"
+          }
+        }
+      },
+      "block_order": [
+        "dfb06955-8893-4742-8fe0-d3152cc18a2f",
+        "f217e85f-710f-4cbd-88fe-644effa26f12",
+        "63573467-18aa-47a8-b1af-e34ed56a5cf2",
+        "ee19789a-a60d-4024-bda6-9fea25e45896",
+        "09ee9ac0-6098-4c28-af7a-acabab05035d",
+        "6db6b10b-b664-4232-874c-96ba260e9e64",
+        "8b9bf4d7-ea27-4a2d-86e2-644d895acb42",
+        "07eed8ec-c17f-453d-b5c6-ef2ebdc6894e",
+        "4eb7ee58-a967-4f7b-96e6-ecf62bbcaf33",
+        "ce0e8e3b-14c1-4591-86d6-36be12749214",
+        "85abf7f0-b4a8-41e3-ad4e-d25097cd6ed1",
+        "42695713-e1fc-4359-ab56-91e96cbc6b46"
+      ],
+      "settings": {
+        "header_title": "Frequently Asked Questions",
+        "des_heading": "Below FAQ are some common concerns of our clients before purchasing the theme, if you have other questions, please just send it to stores@domain.com",
+        "link_1": "",
+        "link_2": "",
+        "show_faqs_1": true,
+        "faqs_1_title": "Pre-Sales Questions",
+        "show_faqs_2": true,
+        "faqs_2_title": "Theme Questions",
+        "faq_text": "Unable to find satisfactory answers ?",
+        "btn_text": "Contact Support",
+        "btn_text_link": "shopify:\/\/pages\/contact-us"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

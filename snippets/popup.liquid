@@ -1,0 +1,94 @@
+
+
+<div class="popup-sidebar popup-sidebar--right flex" id="login-form-mobile">
+    <div class="cart-header">
+        <h2 class="title">{{ 'customer.account.title' | t }}</h2>
+        <a href="javascript:void(0)" class="close" data-close-login-form>
+            <span class="icon"><svg class="icon icon-close"><use xlink:href="#icon-close" /></svg></span>
+            <span class="text">{{ 'general.accessibility.close_modal' | t }}</span>
+        </a>
+    </div>
+    <div class="popup-sidebar__wrapper">
+    </div>
+</div>
+
+
+<div class="modal" id="cart-edit-modal" >
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        {% render 'cart-edit' %}
+    </div>
+</div>
+
+{% if settings.enable_ask_an_expert %}
+    {% render 'ask-an-expert-popup' %}
+{% endif %}
+
+
+<div class="newsletter-success-modal">
+<div class="modal-overlay"></div>
+<div class="main-modal-content">
+    <a class="close close-modal" title="{{ 'cart.ajax_cart.close' | t }}">
+        <svg class="icon icon-close"><use xlink:href="#icon-close" />
+    </a>
+    
+    <div class="main-modal-body success">
+         <p class="form-message form-message--success" tabindex="-1" data-form-status>
+            <svg class="icon"><use xlink:href="#icon-check" />
+            <span> {{ 'general.newsletter_form.confirmation' | t }}</span>
+        </p>
+    </div>
+    <div class="main-modal-body error">
+       <p class="form-message form-message--success" tabindex="-1" data-form-status>
+        <svg class="icon"><use xlink:href="#icon-error" />
+         <span>{{ 'general.newsletter_form.error' | t }}</span>
+        </p>
+    </div>
+
+</div>  
+</div>
+
+
+
+{% if settings.enable_popup_newsletter %}
+    {% render 'newsletter-popup' %}
+{% endif %}
+
+
+{% if settings.show_product_quickview %}
+    {% render 'product-quickview-popup' %}
+{% endif %}
+
+<div class="modal" id="loading-modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="loading-modal-content">
+            <svg
+                aria-hidden="true"
+                focusable="false"
+                class="spinner"
+                viewBox="0 0 66 66"
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+              >
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade main-modal" id="notify-soldout">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <a data-dismiss="modal" class="close close-modal" href="javascript:void(0)" aria-describedby="a11y-external-message">
+                <svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg>
+            </a>
+            <div class="modal-body">
+                {{ 'products.notify_form.success_product' | t }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="overlay_background"></div>

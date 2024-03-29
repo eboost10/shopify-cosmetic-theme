@@ -1,0 +1,249 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_DCY678": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HVqALj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome to our store",
+            "heading_size": "h1"
+          }
+        },
+        "text_Nnybkw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Based on our experience in the world of health products and beauty supplies, we have specified care products to both genders (male-female) we've got you the best solutions and treatments. Which has been tested for magnificent quality, manufacturing, excellent and satisfying based on previews clients feedback.<br\/><br\/>We're always ready to introduce the best to you all kind of support on a daily basis follow up, our keys to success integrity and ethics. <br\/><br\/>Welcome to COSMETIC family for the healthcare and beauty, don't hesitate to contact us to place your order or to answer your valued questions.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HVqALj",
+        "text_Nnybkw"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_EddK9d": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_z7ahm9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Quisque vehicula cursus justo",
+            "heading_size": "h2"
+          }
+        },
+        "text_xCVpkD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum sagittis vestibulum. Phasellus mattis dolor vitae risus dictum, eu consequat purus posuere. Aliquam vehicula urna nec bibendum aliquet. Proin sodales erat massa, quis interdum lectus dapibus vitae. Pellentesque aliquet orci sed nulla ultrices faucibus. Cras a lectus eget ipsum cursus euismod vitae in sapien. Quisque vehicula cursus justo, vitae aliquam ex cursus eget. Sed sit amet cursus risus.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_z7ahm9",
+        "text_xCVpkD"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image": "shopify:\/\/shop_images\/pexels-photo-4620859.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_N6BNMq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_BCVTXw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Integer nec ultrices diam",
+            "heading_size": "h2"
+          }
+        },
+        "text_HF9e3w": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Proin euismod, elit sed sollicitudin commodo, augue tortor ullamcorper erat, id laoreet lorem tellus quis quam. Maecenas vehicula justo finibus felis luctus molestie. Phasellus quis nibh lobortis arcu fringilla fermentum vel vitae est. Integer nec ultrices diam. Suspendisse mollis id enim quis finibus. Vivamus sodales est eu hendrerit condimentum. Etiam sagittis nibh feugiat justo pellentesque, in tempus eros finibus. Sed eu libero egestas, gravida risus vel, elementum ex. Vivamus vel urna lacus. Vestibulum euismod, urna a consequat porta, odio dui bibendum metus, ultrices consequat felis erat vel velit. Sed quis sagittis arcu. Vestibulum congue sem a elit varius, id rhoncus justo elementum.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BCVTXw",
+        "text_HF9e3w"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "image": "shopify:\/\/shop_images\/pexels-photo-3212179.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_MRtNpA": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nACprx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Duis congue mollis tempor",
+            "heading_size": "h2"
+          }
+        },
+        "text_FAQTfM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Duis mauris massa, luctus ac risus nec, sollicitudin ultricies diam. Sed a arcu vitae erat tincidunt pharetra eu a orci. Vestibulum laoreet volutpat vestibulum. Suspendisse a turpis vel nisi condimentum faucibus. Duis congue mollis tempor. Vivamus a ligula sit amet lectus imperdiet ullamcorper sit amet id libero. Etiam venenatis at lectus ac convallis. Phasellus eget elit a ex consectetur imperdiet nec vitae purus. Donec semper egestas orci. Suspendisse hendrerit suscipit nulla, a dictum sapien consequat non. Nulla convallis est a nulla congue blandit. In hac habitasse platea dictumst.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nACprx",
+        "text_FAQTfM"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "image": "shopify:\/\/shop_images\/pexels-photo-56827562.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_APYEt9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cryi6N": {
+          "type": "heading",
+          "settings": {
+            "heading": "Quisque faucibus dignissim faucibus",
+            "heading_size": "h1"
+          }
+        },
+        "text_qDY3aN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Praesent vel blandit mi, finibus imperdiet magna. Quisque vitae aliquet nulla. Nunc convallis quis mi tempus imperdiet. Sed ut cursus elit. Cras ac velit risus. Nunc turpis enim, hendrerit a varius sit amet, volutpat et magna. Praesent malesuada magna vestibulum, tincidunt diam nec, posuere lacus.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cryi6N",
+        "text_qDY3aN"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_CQAfid": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_qhRe96": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/photo-1613803136995-ecb98d3302b4.jpg",
+            "title": "Praesent vel blandit mi, finibus imperdiet magna",
+            "text": "<p>Vestibulum elementum diam in enim vehicula rhoncus. Praesent sed urna ex.<\/p>",
+            "link_label": "",
+            "link": "shopify:\/\/products\/classic-leather-jacket-s"
+          }
+        },
+        "column_nEaHRi": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/photo-1616683693504-3ea7e9ad6fec.jpg",
+            "title": "Quisque vitae aliquet nulla",
+            "text": "<p>Maecenas tempus turpis et purus scelerisque, eu blandit massa rhoncus. Nullam sit amet lorem tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.<\/p>",
+            "link_label": "",
+            "link": "shopify:\/\/pages\/contact-us"
+          }
+        },
+        "column_M8BGN8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/portrait-of-young-afro-woman-with-bright-make-up.jpg",
+            "title": "Sed a arcu vitae erat tincidunt pharetra eu a orci",
+            "text": "<p>Sed efficitur non leo sit amet vulputate. Duis eu pharetra urna, sed rhoncus lectus. Praesent ultricies viverra efficitur. Interdum et malesuada fames ac ante ipsum primis in faucibus.<\/p>",
+            "link_label": "",
+            "link": "shopify:\/\/blogs\/news"
+          }
+        }
+      },
+      "block_order": [
+        "column_qhRe96",
+        "column_nEaHRi",
+        "column_M8BGN8"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "shape_img": "round",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_DCY678",
+    "image_with_text_EddK9d",
+    "image_with_text_N6BNMq",
+    "image_with_text_MRtNpA",
+    "rich_text_APYEt9",
+    "multicolumn_CQAfid"
+  ]
+}

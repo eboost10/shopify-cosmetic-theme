@@ -1,0 +1,92 @@
+.nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
+}
+
+.nav-link {
+    display: block;
+    padding: .5rem 1rem
+}
+
+.nav-link:focus,.nav-link:hover {
+    text-decoration: none
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: -0.1rem;
+}
+
+.tab-content>.tab-pane {
+    display: none
+}
+
+.tab-content>.active {
+    display: block
+}
+
+
+.nav-tabs .dropdown-menu {
+    margin-top: -0.1rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0
+}
+.home-product-tabs .section-header {
+    margin-bottom: 1.6rem;
+    margin-top: .3rem;
+}
+
+.home-product-tabs .main-collection-tab .nav-tabs {
+    justify-content: center;
+    margin-bottom: 3.7rem;
+    border: none;
+}
+
+.home-product-tabs.grid .main-collection-tab .nav-tabs {
+    margin-bottom: 0;
+}
+
+.home-product-tabs .main-collection-tab .nav-tabs li a {
+    border: none;
+    color: rgb(var(--color-button));
+    font-size: var(--font_size_base);
+    padding: 1rem 2.5rem;
+    background: transparent;
+    text-transform: uppercase;
+}
+
+.home-product-tabs.grid .main-collection-tab .nav-tabs li a {
+    padding: 1rem 2.5rem .3rem;
+}
+
+.home-product-tabs .main-collection-tab .nav-tabs li a.active {
+    color: rgb(var(--color-foreground));
+    font-weight: 600;
+}
+
+.home-product-tabs .main-collection-tab .nav-tabs li a.active span {
+    border-bottom: .1rem solid rgb(var(--color-button));
+}
+
+.home-product-tabs .main-loading {
+    position: relative;
+}
+
+.home-product-tabs .main-loading p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--font_size_base);
+    color: rgb(var(--color-foreground));
+    text-align: center;
+}
+
+.home-product-tabs .main-row {
+    white-space: inherit;
+}

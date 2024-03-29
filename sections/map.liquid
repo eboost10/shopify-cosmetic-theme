@@ -1,0 +1,28 @@
+
+<div class="map" >
+  {{ section.settings.map_code }}
+</div>
+
+{% schema %}
+{
+  "name": "Map",
+  "class": "google-map",
+  "tag": "section",
+  "settings": [
+    
+    {
+      "type": "html",
+      "id": "map_code",
+      "label": "Map HTML",
+      "default": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3919.556706382846!2d106.67235477587614!3d10.76860715933615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee00ae03643%3A0x900d847c1e7f0ba0!2zNzQ4IMSQLiDEkGnhu4duIEJpw6puIFBo4bunLCBQaMaw4budbmcgMTAsIFF14bqtbiAzLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1710821494146!5m2!1sen!2s\" width=\"1920\" height=\"600\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"
+    }
+    
+  ],
+  
+  "presets": [
+    {
+      "name": "Map"
+    }
+  ]
+}
+{% endschema %}

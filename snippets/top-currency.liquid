@@ -1,0 +1,19 @@
+{% if settings.enable_currencies %}
+    <div class="currency-dropdown dropdown" data-currency-switcher>
+        <button class="dropdown-toggle dropdown-label" data-toggle="{{ dropdown }}" data-currency-label title="{{ 'general.currency.title' | t }}" aria-expanded="false">
+            <span class="icon">
+                {%- for i in (1..10) -%}
+                    {%- capture curr_unit -%}currency_{{- i -}}_unit{%- endcapture -%}
+                    {%- capture curr_icon -%}currency_{{- i -}}_icon{%- endcapture -%}
+                    {%- assign curr_unit_downcase = settings[curr_unit] | downcase -%}
+                    {%- assign curr_curr_downcase = cart.currency.iso_code  | downcase -%}
+                    {%- if curr_unit_downcase == curr_curr_downcase -%}
+                        {{ settings[curr_icon] }}
+                    {%- endif -%}
+                {%- endfor -%}
+            </span>
+            <span class="text">{{ cart.currency.iso_code }}</span>
+            <svg class="icon icon-arrow"><use xlink:href="#icon-chevron-down-nav" /></svg>
+        </button>
+    </div>
+{% endif %}

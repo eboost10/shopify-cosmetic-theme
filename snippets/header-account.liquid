@@ -1,0 +1,28 @@
+{% if customer %}
+    <div class="customer_top">
+        <a class="navUser-action icon-toggle acc-title" href="{% if pagename == 'customers-account' %}javascript:void(0){% else %}{{ routes.account_url }}{% endif %}" aria-label="link">
+            {{ customer.first_name  }}
+        </a>
+    </div>
+    <div class="customer_bottom navUser-action">
+        <a class="navUser-action acc-logout" href="{{ routes.account_logout_url }}" >
+            <span>{{ 'layout.customer.log_out' | t }}</span>
+        </a>
+    </div>
+{% else %}
+    <div class="customer_top">
+        <a class="navUser-action icon-toggle acc-title" href="{% if pagename == 'customers-login' %}javascript:void(0){% else %}{{ routes.account_url }}{% endif %}">
+            <span>{{ 'layout.customer.account' | t }}</span>
+        </a>
+    </div>
+    <div class="customer_bottom">
+        <a class="navUser-action icon-toggle" href="{% if pagename == 'customers-login' %}javascript:void(0){% else %} {{ routes.account_login_url }} {% endif %}" aria-label="link" data-login-form-pc>
+            {{ 'layout.customer.log_in' | t }}
+        </a>
+        <span class="navUser-action"> {{ 'layout.customer.or' | t }}</span>
+        <a class="navUser-action icon-toggle  acc-regis" href=" {% if pagename == 'customers-login' %}javascript:void(0){% else %} {{ routes.account_login_url }} {% endif %}">
+            <span> {{ 'layout.customer.register' | t }}</span>
+        </a>
+    </div>
+    {% render 'login-form' %}
+{% endif %}

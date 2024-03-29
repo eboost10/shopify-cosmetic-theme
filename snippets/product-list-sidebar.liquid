@@ -1,0 +1,29 @@
+{% if block.settings.collection %}
+{% assign collectionSidebar =  collections[block.settings.collection] %}
+{% assign collectionLimit =  block.settings.number %}
+{% assign collectionViewAll =  block.settings.title_view_link %}
+{% assign collectionTitle =  block.settings.title %}
+<div class="block block-sidebar block-product-list-sidebar">
+	{% if collectionTitle != blank %}
+	<div class="block-title">
+		<strong>{{collectionTitle}}</strong>
+	</div>
+	{% endif %}
+	{%- for product in block.settings.collection.products limit: collectionLimit -%}
+          <div class="list__item" >
+            {% render 'card-list',
+              card_product: product,
+              media_aspect_ratio: section.settings.image_ratio,
+              image_shape: section.settings.image_shape,
+              show_vendor: section.settings.show_vendor,
+              section_id: section.id
+            %}
+          </div>
+    {%- endfor -%}      
+	{% if collectionViewAll != blank %}
+	<div class="block-buttons">
+		<a href="{{ collectionSidebar.url }}">{{ collectionViewAll }}</a>
+	</div>
+	{% endif %}
+</div>
+{% endif %}

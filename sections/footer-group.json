@@ -1,0 +1,62 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text_CRTKVg": {
+          "type": "text",
+          "settings": {
+            "heading": "Cosmetic",
+            "subtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat euismod sed non erat.<\/p>"
+          }
+        },
+        "link_list_QfDaH8": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "main-menu"
+          }
+        },
+        "link_list_ja4XbM": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Search",
+            "menu": "main-menu"
+          }
+        },
+        "text_TAkWHt": {
+          "type": "text",
+          "settings": {
+            "heading": "Contact Us",
+            "subtext": "<p>123 ABC, TAN st, HCM city, Vietnam.<\/p><p><strong>T<\/strong>: <a href=\"tel:0123456989\" target=\"_blank\" title=\"tel:0123456989\">0123456989<\/a><\/p><p><strong>E<\/strong>: <a href=\"mailto:support@cosmetic.com\" target=\"_blank\" title=\"mailto:support@cosmetic.com\">support@cosmetic.com<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_CRTKVg",
+        "link_list_QfDaH8",
+        "link_list_ja4XbM",
+        "text_TAkWHt"
+      ],
+      "settings": {
+        "color_scheme": "scheme-7a5f0461-cee8-4641-b964-b0d2ac4adb86",
+        "border-top": true,
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "copyrighttext": "<p>Shopify Theme by <a href=\"\/\/eboosttech.net\" target=\"_blank\" title=\"\/\/eboosttech.net\">eboosttech.net<\/a><\/p>"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

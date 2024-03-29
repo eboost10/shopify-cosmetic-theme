@@ -1,0 +1,254 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "sku_6yBU8H": {
+          "type": "sku",
+          "settings": {
+            "text_style": "body"
+          }
+        },
+        "inventory_r7CAki": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
+        "count_down_HLHEWf": {
+          "type": "count_down",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description_CkYHky": {
+          "type": "description",
+          "settings": {}
+        },
+        "delivery_BtynG6": {
+          "type": "delivery",
+          "settings": {
+            "order_ready": "2",
+            "delivered": "3"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "sku_6yBU8H",
+        "inventory_r7CAki",
+        "count_down_HLHEWf",
+        "price",
+        "description_CkYHky",
+        "delivery_BtynG6",
+        "share",
+        "variant_picker",
+        "buy_buttons"
+      ],
+      "settings": {
+        "id_section": "product-description",
+        "enable_sticky_info": true,
+        "color_scheme": "background-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "product_description_RkdEfN": {
+      "type": "product-description",
+      "settings": {
+        "background": "shopify:\/\/shop_images\/pexels-photo-13283792.jpg",
+        "background_color": "",
+        "show_parallax": true,
+        "use_description": true,
+        "id_section": "product-description",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat euismod sed non erat. Nulla non felis id metus bibendum iaculis quis sit amet eros. Nam suscipit mollis tellus vel malesuada. Cum sociis natoque penatibus et magnis.<\/p><p>Duis danos an molestie, sem in sollicitudin sodales mi justo sagittis est id consequat ipsum ligula. Praesent deu odio des nisios dullamcorper sultricies.<\/p>",
+        "minheight": 300,
+        "top": 60,
+        "bottom": 60
+      }
+    },
+    "main_faq_NkeXjX": {
+      "type": "main-faq",
+      "blocks": {
+        "question_Ujxywb": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Lorem ipsum",
+            "answer_faqs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus erat vel augue mattis condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean condimentum lacus at ipsum faucibus, at placerat turpis condimentum. Pellentesque nec est ac odio varius finibus. Nullam id nulla sollicitudin, feugiat felis vel, maximus libero. Fusce laoreet nisl in nibh venenatis mattis. Nullam egestas pulvinar arcu eget accumsan. Aliquam iaculis pretium ultricies. Nam interdum semper auctor. Nullam sed dui urna. Vivamus nunc massa, bibendum id semper quis, tristique et dui. Sed posuere consectetur dignissim. Vestibulum posuere risus molestie dignissim porta. Nam at eleifend elit, id malesuada mi. Praesent imperdiet porta turpis, ac mollis augue."
+          }
+        },
+        "question_CHW9wX": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "In lobortis nulla id tempor iaculis.",
+            "answer_faqs": "In lobortis nulla id tempor iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras placerat facilisis massa ac elementum. Vivamus tempor et ante vitae bibendum. Duis eget dictum quam, ac feugiat magna. Aenean eget lectus arcu. Nullam tincidunt lobortis lacus eget cursus. Sed laoreet consequat suscipit. Sed efficitur metus libero, at mollis turpis mollis eget. Nulla faucibus urna augue, vel consequat ligula consectetur ac. Cras aliquam faucibus leo, et faucibus velit ullamcorper a."
+          }
+        },
+        "question_YRWCTX": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Pellentesque auctor orci in ante consequat",
+            "answer_faqs": "Pellentesque auctor orci in ante consequat, id feugiat sem mollis. Maecenas maximus sem vitae dui pharetra viverra. Pellentesque ex neque, tincidunt in orci in, volutpat venenatis libero. Maecenas nibh libero, eleifend a neque id, vulputate ultrices diam. Nullam consectetur erat vel nisi rutrum molestie. Sed venenatis laoreet facilisis. Phasellus eget molestie quam. Sed venenatis gravida eros, at tempus diam auctor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        },
+        "question_PMjzJd": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Proin nec est in nibh elementum placerat",
+            "answer_faqs": "Proin nec est in nibh elementum placerat. Proin eu metus ac urna tempor ultrices. In ut suscipit ipsum. Curabitur ac sem semper, pretium sapien quis, placerat urna. Nullam eget sapien a quam porta convallis nec ac justo. Aenean dignissim mauris sed aliquam vestibulum. Phasellus tincidunt ante id dapibus mollis. Nunc placerat ipsum orci, venenatis convallis neque rutrum eget. Suspendisse egestas ex nec ornare laoreet. Aliquam porttitor dolor a laoreet malesuada. Mauris dictum, velit nec pretium fringilla, tellus arcu blandit massa, non viverra urna lorem vitae lorem. Morbi hendrerit eget nisi at congue. Aenean sollicitudin suscipit massa vitae varius. In pulvinar augue nec sem scelerisque, at iaculis nisl elementum."
+          }
+        },
+        "question_yFdFBj": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Mauris et dapibus nulla. Vivamus auctor",
+            "answer_faqs": "Mauris et dapibus nulla. Vivamus auctor, nunc at volutpat aliquam, nulla urna auctor metus, nec convallis nisi sem sit amet neque. Maecenas gravida vehicula risus sed gravida. Suspendisse tincidunt mollis molestie. Quisque in varius libero. Donec in ante condimentum, efficitur metus non, pulvinar eros. Nunc nisl libero, tincidunt varius neque nec, consequat vulputate augue. Quisque sodales turpis nulla. Aenean varius tempus ipsum eget venenatis. Cras vel pharetra mi, a tempus lorem. Phasellus blandit nec lacus ac tincidunt. Nullam lobortis, erat non semper rhoncus, nibh magna efficitur metus, sed lobortis arcu ex non odio. Sed non sollicitudin sapien. Quisque pulvinar urna vel tortor tempor, id aliquam erat lobortis."
+          }
+        }
+      },
+      "block_order": [
+        "question_Ujxywb",
+        "question_CHW9wX",
+        "question_YRWCTX",
+        "question_PMjzJd",
+        "question_yFdFBj"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "show_my_story": false,
+        "story_sub_title": "My Story",
+        "story_title": "Don't stop giving love even if you don't receive it.Smile and have patience.",
+        "story_des": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat euismod sed non erat. Nulla non felis id metus bibendum iaculis quis sit amet eros. Nam suscipit mollis tellus vel malesuada. Cum sociis natoque penatibus et magnis.<\/p><p>Duis danos an molestie, sem in sollicitudin sodales mi justo sagittis est id consequat ipsum ligula. Praesent deu odio des nisios dullamcorper sultricies.<\/p>",
+        "author_name": "Coco Lee",
+        "author_note": "Store Owner at Cosmetic",
+        "show_faqs": true,
+        "faqs_title": "Help and FAQs",
+        "view_all": "",
+        "link_view_all": "",
+        "border-top": false,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 5,
+        "columns_desktop": 5,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "main_icon_with_text_zyPiLx": {
+      "type": "main-icon-with-text",
+      "blocks": {
+        "icon_item_Dm46eU": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shipping-fast\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 640 512\" class=\"svg-inline--fa fa-shipping-fast fa-w-20 fa-3x\"><path fill=\"currentColor\" d=\"M280 192c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240zm352 192h-24V275.9c0-16.8-6.8-33.3-18.8-45.2l-83.9-83.9c-11.8-12-28.3-18.8-45.2-18.8H416V78.6c0-25.7-22.2-46.6-49.4-46.6H113.4C86.2 32 64 52.9 64 78.6V96H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H96V78.6c0-8.1 7.8-14.6 17.4-14.6h253.2c9.6 0 17.4 6.5 17.4 14.6V384H207.6C193 364.7 170 352 144 352c-18.1 0-34.6 6.2-48 16.4V288H64v144c0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16h195.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H632c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm-488 96c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm272-320h44.1c8.4 0 16.7 3.4 22.6 9.4l83.9 83.9c.8.8 1.1 1.9 1.8 2.8H416V160zm80 320c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-96h-16.4C545 364.7 522 352 496 352s-49 12.7-63.6 32H416v-96h160v96zM256 248v-16c0-4.4-3.6-8-8-8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8z\" class=\"\"><\/path><\/svg>",
+            "title": "Free Ground Shipping",
+            "description": "on all orders over $80"
+          }
+        },
+        "icon_item_pprhbb": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"user-tag\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 640 512\" class=\"svg-inline--fa fa-user-tag fa-w-20 fa-3x\"><path fill=\"currentColor\" d=\"M223.9 256c70.7 0 128-57.3 128-128S294.6 0 223.9 0C153.3 0 96 57.3 96 128s57.3 128 127.9 128zm0-224c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96c.1-52.9 43.1-96 96-96zm406.7 332.8l-90.2-90.3c-12-12-28.3-18.7-45.2-18.7h-79.3c-17.7 0-32 14.3-32 32v79.3c0 17 6.7 33.3 18.7 45.3l90.2 90.3c6.2 6.2 14.4 9.4 22.6 9.4 8.2 0 16.4-3.1 22.6-9.4l92.5-92.5c12.6-12.6 12.6-32.9.1-45.4zM515.5 480l-90.2-90.3c-6-6-9.4-14.1-9.4-22.6v-79.3h79.3c8.5 0 16.6 3.3 22.6 9.4l90.2 90.3-92.5 92.5zm-51.6-160c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm-64 160H48c-8.8 0-16-7.2-16-16v-41.6C32 365.9 77.9 320 134.4 320c19.6 0 39.1 16 89.6 16 50.3 0 70-16 89.6-16 13.6 0 26.5 2.8 38.4 7.6v-33.4c-12.2-3.7-25-6.2-38.4-6.2-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h351.9c15.6 0 29.3-7.6 38.1-19.1l-23.2-23.2c-2.4 6-8.1 10.3-14.9 10.3z\" class=\"\"><\/path><\/svg>",
+            "title": "Member Discount",
+            "description": "on order over $100"
+          }
+        },
+        "icon_item_ncwdtb": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"undo\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 512 512\" class=\"svg-inline--fa fa-undo fa-w-16 fa-3x\"><path fill=\"currentColor\" d=\"M20 8h10c6.627 0 12 5.373 12 12v110.625C85.196 57.047 165.239 7.715 256.793 8.001 393.18 8.428 504.213 120.009 504 256.396 503.786 393.181 392.834 504 256 504c-63.926 0-122.202-24.187-166.178-63.908-5.113-4.618-5.354-12.561-.482-17.433l7.069-7.069c4.503-4.503 11.749-4.714 16.482-.454C150.782 449.238 200.935 470 256 470c117.744 0 214-95.331 214-214 0-117.744-95.331-214-214-214-82.862 0-154.737 47.077-190.289 116H180c6.627 0 12 5.373 12 12v10c0 6.627-5.373 12-12 12H20c-6.627 0-12-5.373-12-12V20c0-6.627 5.373-12 12-12z\" class=\"\"><\/path><\/svg>",
+            "title": "Easy Free Returns",
+            "description": "Description For Icon With text"
+          }
+        },
+        "icon_item_jngDiK": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"user-headset\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 448 512\" class=\"svg-inline--fa fa-user-headset fa-w-14 fa-3x\"><path fill=\"currentColor\" d=\"M320 352h-4.7c-12.16 0-24 2.9-35.5 6.8a173.76 173.76 0 0 1-111.64 0c-11.48-3.9-23.29-6.78-35.42-6.78H128A128 128 0 0 0 0 480a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32 128 128 0 0 0-128-128zM32 480a96.1 96.1 0 0 1 96-96h4.74c6.92 0 14.92 1.62 25.16 5.09a205.75 205.75 0 0 0 132.16 0c10.31-3.49 18.33-5.11 25.24-5.11h4.7a96.1 96.1 0 0 1 96 96zm16-256a16 16 0 0 0 16-16v-16c0-88.22 71.78-160 160-160s160 71.78 160 160v16a80.09 80.09 0 0 1-80 80h-32a32 32 0 0 0-32-32h-32a32 32 0 0 0 0 64h96a112.14 112.14 0 0 0 112-112v-16C416 86.12 329.88 0 224 0S32 86.12 32 192v16a16 16 0 0 0 16 16zM224 96a95.57 95.57 0 0 1 71.23 159.76c0 .09.13.15.18.24H304a47.89 47.89 0 0 0 40.55-22.58C349 220.36 352 206.58 352 192a128 128 0 0 0-256 0c0 40.42 19.1 76 48.35 99.47-.06-1.17-.35-2.28-.35-3.47a63.25 63.25 0 0 1 8.93-32A95.58 95.58 0 0 1 224 96z\" class=\"\"><\/path><\/svg>",
+            "title": "Outstanding Customer Service",
+            "description": "support 24 hours a day"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_Dm46eU",
+        "icon_item_pprhbb",
+        "icon_item_ncwdtb",
+        "icon_item_jngDiK"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "section_layout": "layout_1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "column": 4
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_description_RkdEfN",
+    "main_faq_NkeXjX",
+    "related-products",
+    "main_icon_with_text_zyPiLx"
+  ]
+}

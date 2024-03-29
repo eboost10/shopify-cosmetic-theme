@@ -1,0 +1,56 @@
+{% if section.settings.display_sidebar == false %}
+    <style>
+        .page .page-sidebar,
+        .page .sidebar_mobile_wrapper .sidebar_mobile {
+            display: none !important;
+        }
+
+        .page .page-content,
+        .page .page-sidebar + .page-content {
+            display: block;
+            width: 100%;
+            padding-left: 0;
+        }
+    </style>
+{% endif %}
+
+{% if section.settings.position_sidebar == 'right' %}
+    <style>
+        @media only screen and (min-width: 1025px) {
+            .page .page-sidebar {
+                float: right;
+                padding-left: 15px;
+                padding-right: 0;
+            }
+
+            .page .page-sidebar + .page-content {
+                padding-left: 0;
+                padding-right: 15px;
+            }
+        }
+    </style>
+{% endif %}
+{% if section.settings.display_sidebar == true %}
+<div class="page-sidebar">
+  
+  <div class="page-sidebar__close">
+      <a href="javascript:void(0)" class="close close-modal">
+          <svg class="icon icon-close"><use xlink:href="#icon-close" /></svg>
+          <span class="text">{{ 'general.accessibility.close_modal' | t }}</span>
+      </a>
+  </div>
+  <div class="page-sidebar__content">
+      {% for block in section.blocks %}
+          {% case block.type %}
+              {% when 'recent_post' %}
+                  {% render 'recent-posts', block: block %}
+              {% when 'product_list' %}
+                  {% render 'product-list-sidebar', block: block %}
+              {% when 'image' %}
+                  {% render 'image-sidebar', block: block %}
+          {% endcase %}
+      {% endfor %}
+  </div>
+
+</div>
+{% endif %}

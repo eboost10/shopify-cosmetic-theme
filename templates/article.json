@@ -1,0 +1,72 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        },
+        "recent_post_zRyYMg": {
+          "type": "recent_post",
+          "settings": {
+            "title": "Recently Posts",
+            "number": 3
+          }
+        },
+        "product_list_dFFtxf": {
+          "type": "product_list",
+          "settings": {
+            "title": "Best Seller",
+            "title_view_link": "View All",
+            "collection": "home-garden",
+            "number": 3
+          }
+        },
+        "image_KTaQfe": {
+          "type": "image",
+          "settings": {
+            "title": "Heading",
+            "image": "shopify:\/\/shop_images\/free-photo-of-beauticians-putting-makeup-on-smiling-woman-face.jpg",
+            "link": "shopify:\/\/products\/chequered-red-shirt"
+          }
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "title",
+        "share",
+        "content",
+        "recent_post_zRyYMg",
+        "product_list_dFFtxf",
+        "image_KTaQfe"
+      ],
+      "settings": {
+        "display_sidebar": true,
+        "position_sidebar": "left"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

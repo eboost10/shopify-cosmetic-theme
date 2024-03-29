@@ -1,0 +1,139 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link_text": "read more",
+            "link": "\/"
+          }
+        },
+        "announcement_jcCY8c": {
+          "type": "announcement",
+          "settings": {
+            "text": "test announcement second",
+            "link_text": "Read more",
+            "link": "shopify:\/\/products\/antique-drawers"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0",
+        "announcement_jcCY8c"
+      ],
+      "settings": {
+        "color_scheme": "scheme-7a5f0461-cee8-4641-b964-b0d2ac4adb86",
+        "home_page_only": false,
+        "show_line_separator": false,
+        "auto_rotate": true,
+        "change_slides_speed": 5
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "style_1_7BFbFK": {
+          "type": "style_1",
+          "settings": {
+            "megamenu_items_1": "New Arrivals",
+            "title_menu_1": "Shop by",
+            "url_shop_1": "shopify:\/\/collections",
+            "link_menu_1": "main-menu",
+            "title_featured_product_1": "Featured Products",
+            "collection_1": "all",
+            "banner_image_1_1": "shopify:\/\/shop_images\/make-up-palette-and-brushes-professional-eyeshadow-palette.jpg",
+            "link_banner_image_1_1": "shopify:\/\/collections\/home-garden"
+          }
+        },
+        "style_2_Jiqmib": {
+          "type": "style_2",
+          "settings": {
+            "megamenu_items_2": "Sale",
+            "title_menu_2": "Shop by",
+            "url_shop_2": "shopify:\/\/collections\/all",
+            "link_menu_2": "main-menu",
+            "title_featured_product_2": "Top Brands",
+            "brands_image_2_1": "shopify:\/\/shop_images\/cos.png",
+            "brands_link_2_1": "\/",
+            "brands_image_2_2": "shopify:\/\/shop_images\/cos3.png",
+            "brands_link_2_2": "",
+            "brands_image_2_3": "shopify:\/\/shop_images\/cos4.png",
+            "brands_link_2_3": "",
+            "brands_image_2_4": "shopify:\/\/shop_images\/cos2.png",
+            "brands_link_2_4": "",
+            "banner_image_2_1": "shopify:\/\/shop_images\/pexels-amir-seilsepour-3912572.jpg",
+            "link_banner_image_2_1": "\/",
+            "banner_image_2_2": "shopify:\/\/shop_images\/pexels-photo-26612562.jpg",
+            "link_banner_image_2_2": "\/"
+          }
+        },
+        "style_3_qdRfyY": {
+          "type": "style_3",
+          "settings": {
+            "megamenu_items_3": "Collections",
+            "banner_image_style_3_1": "shopify:\/\/shop_images\/autumn-skincare-and-autumn-makeup-concept-with-beauty-products-on-table.jpg",
+            "banner_image_style_3_2": "shopify:\/\/shop_images\/pexels-photo-208052.jpg",
+            "banner_image_style_3_3": "shopify:\/\/shop_images\/make-up-products-prsented-on-white-podiums-on-pink-pastel-background.jpg",
+            "banner_image_style_3_4": "shopify:\/\/shop_images\/pexels-photo-634524.jpg",
+            "banner_image_style_3_5": "shopify:\/\/shop_images\/pexels-photo-3552894.jpg",
+            "countdown_text": "Special offer: Sale upto 40% off on selected items.",
+            "countdown_text_end": "End ins:",
+            "countdown_timer": "2024\/12\/25 22:11:00"
+          }
+        },
+        "style_4_ay3gKz": {
+          "type": "style_4",
+          "settings": {
+            "megamenu_items_4": "Kids products",
+            "banner_image_4_1": "shopify:\/\/shop_images\/pexels-photo-2720447.jpg",
+            "link_banner_image_4_1": "shopify:\/\/collections\/all",
+            "title_featured_product_4": "Top Rated",
+            "collection_4": "home-garden",
+            "banner_image_4_2": "shopify:\/\/shop_images\/make-up-products-prsented-on-white-podiums-on-pink-pastel-background.jpg",
+            "link_banner_image_4_2": "shopify:\/\/collections\/all",
+            "banner_image_4_3": "shopify:\/\/shop_images\/pexels-photo-1438065.jpg",
+            "link_banner_image_4_3": "shopify:\/\/collections"
+          }
+        }
+      },
+      "block_order": [
+        "style_1_7BFbFK",
+        "style_2_Jiqmib",
+        "style_3_qdRfyY",
+        "style_4_ay3gKz"
+      ],
+      "settings": {
+        "color_scheme": "scheme-96abc58e-d546-4e46-a311-0f0c9cbe8b6d",
+        "color_scheme_1": "scheme-1",
+        "logo_position": "middle-left",
+        "enable-header-wishlist": true,
+        "menu": "main-menu",
+        "menu_type_desktop": "drawer",
+        "sticky_header_type": "always",
+        "show_line_separator": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "label_1": "Sale",
+        "label_1_collection": "sale",
+        "label_2": "New",
+        "label_2_collection": "New Arrivals",
+        "label_3": "",
+        "label_3_collection": "",
+        "enable_megamenu": true
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

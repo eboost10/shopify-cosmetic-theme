@@ -1,0 +1,122 @@
+{% assign isProduct = false %}
+{% if section.settings.use_description == true and template contains 'product' %}
+{% assign isProduct = true %}
+{% endif %}
+{% if isProduct == true or section.settings.description != blank %}
+    {{ 'component-description.css' | asset_url | stylesheet_tag }}
+
+    <style>
+        .section-description-{{section.id}}{
+            padding-top: {{section.settings.top}}px;
+            padding-bottom: {{section.settings.bottom }}px;
+            background-color: {{ section.settings.background_color | default: '#fff' }};
+            {% if section.settings.background != blank %}
+                background-image:url({{ section.settings.background | img_url: 'master'}}) ;
+            {% endif %}
+            {% if section.settings.checkbox != true %}
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            {% endif %}
+            min-height: {{section.settings.minheight}};
+        }
+        
+       
+    </style>
+
+    <div id="{{section.settings.id_section}}" class="section-description section-description-{{section.id}} main-section" data-section-id="{{ section.id }}">
+        <div class="page-width">
+            <div class="description-content">
+            {% if isProduct == true %}
+                {{ product.description }}
+            {% else %}
+                {{ section.settings.description }}
+            {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Description product",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type":"image_picker",
+            "id":"background",
+            "label":"Background"
+        },
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color"
+        },
+       
+        {
+            "type" : "checkbox",
+            "id" : "show_parallax",
+            "label" : "Show Parallax background",
+            "default": true
+        },
+        {
+            "type" : "checkbox",
+            "id" : "use_description",
+            "label" : "Use description of product",
+            "default": true
+        },
+        {
+            "type" : "text",
+            "id" : "id_section",
+            "label" : "set ID to the view details link to this section",
+            "default": "product-description"
+        },
+        {
+            "type" : "richtext",
+            "id" : "description",
+            "label" : "Description",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat euismod sed non erat. Nulla non felis id metus bibendum iaculis quis sit amet eros. Nam suscipit mollis tellus vel malesuada. Cum sociis natoque penatibus et magnis.</p><p>Duis danos an molestie, sem in sollicitudin sodales mi justo sagittis est id consequat ipsum ligula. Praesent deu odio des nisios dullamcorper sultricies.</p>"
+        },
+        {
+            "type": "range",
+            "id": "minheight",
+            "label": "Min Height",
+            "default": 300,
+            "min": 200,
+            "max": 700,
+            "step": 100,
+            "unit": "px"
+        },
+       
+        {
+            "type": "range",
+            "id": "top",
+            "label": "Spacing Top",
+            "default": 30,
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "bottom",
+            "label": "Spacing bottom",
+            "default": 30,
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Description product"
+        }
+    ]
+   
+    
+}
+{% endschema %}

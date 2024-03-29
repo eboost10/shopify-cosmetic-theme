@@ -1,0 +1,79 @@
+<div id="product-compare-modal" class="modal color-{{ settings.color_scheme_compare }} gradient"  tabindex="-1" role="dialog" aria-labelledby="product-compare-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h2 class="modal-title">{{ 'general.compare.title_popup' | t }}</h2>
+                <a href="javascript:void(0)"  class="remove-all" data-compare-remove-all ><span>
+                 {{ 'general.compare.remove_all' | t }}</span></a>
+                <a href="javascript:void(0)" data-bs-dismiss="modal"  aria-label="close" title="close" class="close"><svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg></a>
+            </div>
+            <div class="modal-body">
+                <div class="compare-modal-wrapper" data-compare-modal>
+                    <div class="product-row row t-product">
+                        <div class="compare-header col-6 col-md-2 col-lg-2">{{ 'cart.label.product' | t }}</div>
+                        <div class="compare-content col-6 col-md-10 col-lg-10">
+                            <div class="product-grid grid"></div>
+                        </div>
+                    </div>
+                    <div class="product-row row t-description grid">
+                        <div class="compare-header col-6 col-md-2 col-lg-2">{{ 'general.compare.description' | t }}</div>
+                        <div class="compare-content col-6 col-md-10 col-lg-10">
+                            <div class="description grid"></div>
+                        </div>
+                    </div>
+
+                    <div class="product-row row t-collection grid">
+                        <div class="compare-header col-6 col-md-2 col-lg-2">{{ 'collections.general.collection_label' | t }}</div>
+                        <div class="compare-content col-6 col-md-10 col-lg-10">
+                            <div class="collection grid"></div>
+                        </div>
+                    </div>
+
+                    <div class="product-row row t-availability">
+                        <div class="compare-header col-6 col-md-2 col-lg-2">{{ 'products.product.availability' | t }}</div>
+                        <div class="compare-content col-6 col-md-10 col-lg-10">
+                            <div class="availability grid"></div>
+                        </div>
+                    </div>
+
+                    <div class="product-row row t-product-type">
+                        <div class="compare-header col-6 col-md-2 col-lg-2">{{ 'general.compare.type' | t }}</div>
+                        <div class="compare-content col-6 col-md-10 col-lg-10">
+                            <div class="product-type grid"></div>
+                        </div>
+                    </div>
+
+                    <div class="product-row row t-product-vendor">
+                        <div class="compare-header col-6 col-md-2 col-lg-2">{{ 'products.product.vendor' | t }}</div>
+                        <div class="compare-content col-6 col-md-10 col-lg-10">
+                            <div class="product-vendor grid"></div>
+                        </div>
+                    </div>
+
+                    <div class="product-row row t-option1">
+                        <div class="compare-header col-6 col-md-2 col-lg-2">{{ 'products.product.option1' | t }}</div>
+                        <div class="compare-content col-6 col-md-10 col-lg-10">
+                            <div class="option1 grid"></div>
+                        </div>
+                    </div>
+
+                    <div class="product-row row t-option2">
+                        <div class="compare-header col-6 col-md-2 col-lg-2">{{ 'products.product.option2' | t }}</div>
+                        <div class="compare-content col-6 col-md-10 col-lg-10">
+                            <div class="option2 grid"></div>
+                        </div>
+                    </div>
+
+                    <div class="product-row row t-option3">
+                        <div class="compare-header col-6 col-md-2 col-lg-2">{{ 'products.product.option3' | t }}</div>
+                        <div class="compare-content col-6 col-md-10 col-lg-10">
+                            <div class="option3 grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

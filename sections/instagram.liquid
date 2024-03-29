@@ -1,0 +1,243 @@
+{{ 'component-ins.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.border-top %}
+    {% assign border_top = 'main-section-border-top' %}
+{% endif %}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="main-section color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding section-instagram-{{ section.id }} main-section {{ border_top }}" data-section-id="{{ section.id }}"   >
+    <div class="page-width">
+        {% if section.settings.title != blank %}
+            <div class="title text-center {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}>
+                <h2 class=" {{ section.settings.heading_size }} inline-richtext">
+                    {{ section.settings.title }}
+                </h2>
+            </div>
+        {% endif %}  
+        {% if section.settings.description != blank %}
+            <div class=" text-center rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} {% endif %} >
+                <p>{{ section.settings.description }}</p>
+            </div>
+        {% endif %}
+           
+        <div class="instagram {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+          {% endif %}>
+            {% if section.settings.instagram_option == 'app' %}
+                {{ section.settings.accessToken }}
+            {% else %}
+                <div class="main-column main-row column-4">
+                    {% for block in section.blocks %}
+                        {% assign img_url = block.settings.instagram_image | img_url: '385x385', crop: 'center' %}
+                        {% assign img_url_full = block.settings.instagram_image | img_url: 'master' %}
+                        <div class="main-column__item {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}>
+                            <a class="instagram__item2 animation-scale" href="{{ img_url_full }}" aria-label="link" data-fancybox="images-instagram">
+                                {% if block.settings.instagram_image != blank %}
+                                <span >
+                                    <img class="lazyload" src="{{ img_url }}" alt="" data-image>
+                                </span>
+                                {% else %}
+                                    <div class="no-image" >
+                                        {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }} 
+                                     </div>
+                                {% endif %}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        {% if section.settings.button != blank %}
+        <div class="instagram_footer">
+            <a href="{{ section.settings.button_link }}" class="button" aria-label="link">
+                {{ section.settings.button }}
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+    "name": "Instagram",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "scheme-1"
+        },
+        {
+            "type": "header",
+            "content": "Section Layout"
+        },
+        {
+            "type": "checkbox",
+            "id": "border-top",
+            "label": "Show border top",
+            "default": false
+        },
+        {
+            "type": "range",
+            "id": "top",
+            "label": "Spacing Top",
+            "default": 30,
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "bottom",
+            "label": "Spacing bottom",
+            "default": 30,
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "px"
+        },
+        {
+            "type": "header",
+            "content": "Heading Section"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Instagram"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            }
+          ],
+          "default": "h2",
+          "label": "t:sections.all.heading_size.label"
+        },
+        {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+        },
+        {
+          "type" : "header",
+          "content" : "Instagram Option"
+        },
+        {
+            "type": "select",
+            "id": "instagram_option",
+            "label": "Instagram Option",
+            "options": [
+                {
+                    "value": "app",
+                    "label": "Use app Snapppt"
+                },
+                {
+                    "value": "block",
+                    "label": "Use Block Gallery Image"
+                }
+            ],
+            "default": "block"
+        },
+        {
+            "type": "text",
+            "id": "accessToken",
+            "label": "Script Instagram",
+            "info": "Insert Script Instagram from App Snapppt"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "instagram_block",
+            "name": "Instagram Image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "instagram_image",
+                    "label": "Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Instagram",
+            "category": "Instagram",
+            "blocks": [
+                {
+                    "type": "instagram_block"
+                },
+                {
+                    "type": "instagram_block"
+                },
+                {
+                    "type": "instagram_block"
+                },
+                {
+                    "type": "instagram_block"
+                },
+                {
+                    "type": "instagram_block"
+                },
+                {
+                    "type": "instagram_block"
+                },
+                {
+                    "type": "instagram_block"
+                },
+                {
+                    "type": "instagram_block"
+                },
+                {
+                    "type": "instagram_block"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

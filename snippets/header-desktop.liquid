@@ -1,0 +1,97 @@
+{% assign pagename = request.page_type | handle %}
+
+<div class="header-desktop">
+    <div class="{% if settings.enable_header_effect %}header-sticky{% endif %}">
+        <div class="page-width">
+            <div class="header-middle">
+                <div class="header-middle__left">
+                    <div class="item--hamburger">
+                        <a href="" class="mobileMenu-toggle" data-mobile-menu>
+                            <span class="mobileMenu-toggle__Icon"></span>
+                        </a>
+                    </div>
+                    <div class="logo-wrapper" itemscope itemtype="http://schema.org/Organization">
+                        <meta itemprop="url" content="{{ shop.url }}">
+                        {% if section.settings.logo != blank %}
+                        {% assign img_size = section.settings.logo_max_width | append: 'x' %}
+                            {% assign img_url = section.settings.logo | img_url: 'master' %}
+                            <a href="{{ routes.root_url }}" class="site-header__logo-image" aria-label="logo" style="width: {{ section.settings.logo_max_width }}px; max-width: {{ section.settings.logo_max_width }}px">
+                                {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
+                                <img itemprop="logo" src="{{ img_url }}" alt="{{ logo_alt | escape }}">
+                            </a>
+                        {% else %}
+                            <a class="logo_text" href="{{ routes.root_url }}" aria-label="logo" style="width: {{ section.settings.logo_max_width }}px">
+                                {% if section.settings.logo_text != blank %}
+                                    {{ section.settings.logo_text }}
+                                {% else %}
+                                    {{ shop.name }}
+                                {% endif %}
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="header-middle__center">
+                    <div class="header-middle__item header-middle__item--quickSearch">
+                        {% render 'search-bar' %}
+                    </div>
+                </div>
+                <div class="header-middle__right">
+                    {% if shop.customer_accounts_enabled %}
+                        {% if section.settings.enable-header-account  %}
+                            <div class="header-middle__item header-middle__item--account">
+                                {% render 'header-account', pagename: pagename %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                    
+                    {% if section.settings.enable-header-wishlist  %}
+                        <div class="header-middle__item header-middle__item--wishlist">
+                            <a class="navUser-action" href="{{ routes.cart_url | split: '/cart' | first }}/pages/wish-list" aria-label="link">
+                                <svg class="icon"><use xlink:href="#icon-heart" /></svg>
+                            </a>
+                        </div>
+                    {% endif %}
+                    {% if section.settings.enable-header-cart  %}
+                        <div class="header-middle__item header-middle__item--cart">
+                            {% render 'header-cart', pagename: pagename %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-width">
+        <div class="header_bottom">
+             <div class="header_bottom__nav">
+                {% render 'site-nav', main_menu: section.settings.main_linklist %}
+            </div>
+             <div class="header_bottom__language_currency">
+                
+                    {% assign dropdown = 'dropdown' %}
+                    {% if settings.enable_language and settings.enable_currencies %}
+                        {% assign dropdown = 'test' %}
+                    {% endif %}
+                    {% if settings.enable_language %}
+                        <div class="header_bottom__item header_bottom__language">
+                           {% render 'top-language' %} 
+                        </div>
+                    {% endif %}
+                    {% if settings.enable_currencies %}
+                        <div class="header_bottom__item header_bottom__currency">
+                             {% render 'top-currency'%}
+                        </div>
+                    {% endif %}
+
+                    <div class="dropdown-language-currency">
+                        {% if settings.enable_language %}
+                            {% render 'header-language', dropdown: dropdown %}
+                        {% endif %}
+                        {% if settings.enable_currencies %}
+                            {% render 'header-currency', dropdown: dropdown %}
+                        {% endif %}
+                    </div>
+
+             </div>
+        </div>
+    </div>
+</div>

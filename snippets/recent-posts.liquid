@@ -1,0 +1,27 @@
+<div class="recent-posts">
+    {% if block.settings.title != blank %}
+    <h3 class="heading">{{ block.settings.title }}</h3>
+    {% endif %}
+    <div class="block__content">
+        <div class="recentposts-list">
+            {% for article in blog.articles limit : block.settings.number %}
+                <div class="item">
+                    {% if article.image %}
+                        <div class="recent-blog__image">
+                            {% assign img_url = article.image | img_url: 'master' %}
+                            <a class="recent-blog__link" href="{{ article.url }}" aria-label="link">
+                                <img class="lazyload"
+                                    src="{{ img_url }}"
+                                    alt="" data-image>
+                            </a>
+                        </div>
+                    {% endif %}
+                    <div class="recentpost">
+                        <h5 class="title"><a href="{{ article.url }}" aria-label="link">{{ article.title }}</a></h5>
+                        <p class="date">{{ article.published_at | date: "%B %d, %Y" }}</em>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

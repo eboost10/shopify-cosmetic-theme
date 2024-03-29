@@ -1,0 +1,8 @@
+
+{%- if cart != empty -%}
+{%- if cart.item_count < 100 -%}
+      <span aria-hidden="true">{{ cart.item_count }}</span>
+{%- endif -%}
+{% else %}
+<span aria-hidden="true">0</span>
+{%- endif -%}

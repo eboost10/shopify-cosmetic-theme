@@ -1,0 +1,59 @@
+{% if show_product_variant %}
+    <div class="product-card__variant">
+        {% for option in product.options_with_values %}
+            {% assign option_color_swatch = settings.option_color_swatch | downcase %}
+            {% assign option_name = option.name | downcase %}
+            {% if option_color_swatch contains option_name %}
+                {% assign option_index0 = forloop.index0 %}
+                {% assign option_count = 0 %}
+                {% for variant in product.variants %}
+                    {% assign value = variant.options[option_index0] %}
+                    {% unless values contains value %}
+                        {% assign values = values | join: ';' %}
+                        {% assign values = values | append: ';' | append: value %}
+                        {% assign values = values | split: ';' %}
+                        {% assign value_2 = value | remove: " " | downcase %}
+                        {% if option_count < 4 %}
+                        <div class="product-card__variant--item color {{ value_2 }}">
+                            <label 
+                                data-toggle="tooltip" 
+                                data-placement="top" 
+                                title="{{ value }}" 
+                                data-name="{{ value }}" 
+                                {% if variant.image != blank and settings.variant_image_swatch %} 
+                                    data-image="{{ variant.image.src | product_img_url: '450x450' }}"
+                                    style="background-color: {{ value_2 }}; background-image: url({{ variant.image.src | product_img_url: '50x' }})"
+                                {% else %} 
+                                    {% if settings.show_product_variant_img %}
+                                        data-image="{{ variant.image.src | product_img_url: '450x450' }}"
+                                        style="background-color: {{ value_2 }}; background-image: url({{ value_2 | handle | append: '.png' | file_url }})"
+                                    {% else %}
+                                        data-image="{{ variant.image.src | product_img_url: '450x450' }}"
+                                        style="background-color: {{ value_2 }};"
+                                    {% endif %}
+                                {% endif %}>
+                                {{ value }}
+                            </label>
+                        </div>
+                        {% assign option_count = option_count | plus : 1 %}
+                        {% endif %}
+                    {% endunless %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        {% for option in product.options_with_values %}
+            {% assign option_color_swatch = settings.option_color_swatch | downcase %}
+            {% assign option_name = option.name | downcase %}
+            {% if option_color_swatch contains option_name %}
+                {% if option.values.size > 4 %}
+                    <div class="product-card__variant--item product-card__variant--item--last">
+                        <a href="{{ product.url}}" aria-label="color">
+                            +{{ option.values.size | minus : 4 }}
+                        </a>
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    
+{% endif %}

@@ -1,0 +1,60 @@
+.instagram {
+    font-size: 0;
+    position: relative;
+}
+
+.instagram .main-column__item {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0 .5rem;
+}
+
+.instagram .main-column {
+    margin: 0 -.5rem;
+}
+
+.instagram::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.instagram__item {
+    width: 50%;
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+.instagram_footer {
+    text-align: center;
+}
+
+.instagram_footer .button {
+    min-width: 20rem;
+    margin: 4.5rem 0 7rem;
+}
+
+.instagram__item:before {
+    content: "";
+    display: block;
+    position: relative;
+    padding-bottom: 100%;
+}
+
+.instagram__item img {
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: auto;
+    max-width: none;
+    position: absolute;
+    display: inline-block;
+    transform: translate(-50%, -50%);
+}
+
+.instagram__item2 {
+    position: relative;
+    display: block;
+    font-size: 0;
+}

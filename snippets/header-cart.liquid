@@ -1,0 +1,7 @@
+<a class="navUser-action" href="javascript:void(0)" aria-label="cart" data-cart-pc>
+    <svg class="icon"><use xlink:href="#icon-cart" /></svg>
+    <span class="countPill cart-quantity" data-cart-count id="cart-icon-bubble">{{ cart.item_count }}</span>
+</a>
+{% unless template == 'cart' %}
+{% render 'cart-quickview' %}
+{% endunless %}

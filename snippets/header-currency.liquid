@@ -1,0 +1,29 @@
+
+<div class="currency-dropdown dropdown" data-currency-switcher>
+    <div class="dropdown-menu currency-menu currencies" >
+        <div class="dropdown-item dropdown-item--full">{{ 'general.currency.title' | t }}</div>
+        <div class="dropdown-divider"></div>
+        {%- for currency in shop.enabled_currencies -%}
+        <a class="dropdown-item{% if currency == cart.currency %} active {% endif %}" href="#" data-currency="{{currency.symbol}}" aria-label="link">
+            <span class="icon">
+                {%- for i in (1..10) -%}
+                    {%- capture curr_unit -%}currency_{{- i -}}_unit{%- endcapture -%}
+                    {%- capture curr_icon -%}currency_{{- i -}}_icon{%- endcapture -%}
+                    {%- assign curr_unit_downcase = settings[curr_unit] | downcase -%}
+                    {%- assign curr_curr_downcase = currency.iso_code  | downcase -%}
+                    {%- if curr_unit_downcase == curr_curr_downcase -%}
+                        {{ settings[curr_icon] }}
+                    {%- endif -%}
+                {%- endfor -%}
+
+            </span>
+            <span class="text">{{currency.iso_code}}</span>
+            <svg class="icon icon-arrow"><use xlink:href="#icon-chevron-down-nav" /></svg>
+        </a>      
+        {%- endfor -%}
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,16 @@
+<div class="language-dropdown dropdown " >
+    <button class="dropdown-toggle dropdown-label" data-toggle="{{ dropdown }}" data-language-label title="{{ 'general.language.title' | t }}" aria-expanded="false">
+    	<span class="icon">
+    		{% for i in (1..5) %}
+	            {% capture lang_unit %}lange_{{ i }}{% endcapture %}
+	            {% capture lang_icon %}lange_{{ i }}_icon{% endcapture %}
+	            {% assign lang_unit_downcase = settings[lang_unit] | downcase %}
+	            {% if lang_unit_downcase == localization.language.iso_code %}
+	                {{ settings[lang_icon] }}
+	            {% endif %}
+	         {% endfor %}
+    	</span>
+    	<span class="text">{{ localization.language.iso_code }}</span>
+    	
+    </button>
+</div>

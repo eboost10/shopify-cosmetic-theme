@@ -1,0 +1,61 @@
+<style >
+
+  .template-404 {
+      margin: 0 auto;
+      line-height: 1;
+      font-weight: normal;
+      padding: 5rem 0;
+  }
+  .template-404 h1 {
+    margin: 0;
+    font-size: 10rem;
+  }
+  .template-404 h2 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin: 0 0 1rem;
+  }
+
+  .template-404 .button {
+      margin-top: 2rem;
+  }
+
+  @media (min-width: 551px) {
+      .template-404 h1 {
+          font-size: 15rem;
+      }
+  }
+
+  @media (min-width: 768px) {
+      .template-404 h1 {
+          font-size: 20rem;
+      }
+
+      .template-404 h2 {
+          font-size: 4rem;
+          margin-bottom: 1.5rem;
+      }
+
+      .template-404 .button {
+          margin-top: 3rem;
+      }
+  }
+
+  @media (min-width: 1025px) {
+      .template-404 {
+          padding: 10rem 0;
+      }
+  }
+</style>
+
+<div class="template-404 page-width page-margin center">
+  <h1>
+    {{ 'templates.404.subtext' | t }}
+  </h1>
+  <h2 class="title">
+    {{ 'templates.404.title' | t }}
+  </h2>
+  <a href="{{ routes.all_products_collection_url }}" class="button">
+    {{ 'general.continue_shopping' | t }}
+  </a>
+</div>

@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "blocks": {
+        "recent_post_PxHitc": {
+          "type": "recent_post",
+          "settings": {
+            "title": "Recently Posts",
+            "number": 3
+          }
+        },
+        "product_list_tpnnz4": {
+          "type": "product_list",
+          "settings": {
+            "title": "Best Seller",
+            "title_view_link": "View All",
+            "collection": "all",
+            "number": 3
+          }
+        },
+        "image_FXMg9a": {
+          "type": "image",
+          "settings": {
+            "title": "Heading",
+            "image": "shopify:\/\/shop_images\/free-photo-of-close-up-portrait-of-a-woman-with-a-smudged-red-lipstick.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "recent_post_PxHitc",
+        "product_list_tpnnz4",
+        "image_FXMg9a"
+      ],
+      "settings": {
+        "layout": "collage",
+        "show_image": true,
+        "image_height": "medium",
+        "show_date": true,
+        "show_author": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

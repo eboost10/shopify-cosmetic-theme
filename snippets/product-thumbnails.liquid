@@ -1,0 +1,42 @@
+{%- liquid
+  assign media_count = product.media.size
+  assign id_append = ''
+  if is_duplicate
+    assign id_append = '-duplicate'
+  endif
+-%}
+ {%- liquid
+    assign media_to_render = product.featured_media.id
+    for variant in product.variants
+      assign media_to_render = media_to_render | append: variant.featured_media.id | append: ' '
+    endfor
+  -%}
+{%- if media_count > 1 -%}
+  <div class="thumbnails-list list-unstyled">
+    {%- for media in product.media -%}
+      {%- if media_to_render contains media.id
+                  and media.id != product.selected_or_first_available_variant.featured_media.id
+                -%}
+        <div class="thumbnail-list__item_slide">
+          <a href="#{{media.id}}" data-media="{{media.id}}">
+          {%- capture thumbnail_id -%}
+            Thumbnail-{{ section.id }}-{{ forloop.index }}{{ id_append }}
+          {%- endcapture -%}
+            {{
+              media.preview_image
+              | image_url: width: 416
+              | image_tag:
+                loading: 'lazy',
+                sizes: sizes,
+                widths: '54, 74, 104, 162, 208, 324, 416',
+                id: thumbnail_id,
+                alt: media.alt
+              | escape
+            }}
+          </a>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+

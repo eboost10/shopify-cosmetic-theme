@@ -1,0 +1,368 @@
+
+
+.search-box .search-form__trending-title,
+.search-box .search-form__product-title,
+.search-box .search-form__list-tags {
+    text-align: left !important;
+}
+
+#predictive-search-results-queries-list,
+.search-form__list-tags {
+  margin: 0;
+  padding: 0;
+}
+#predictive-search-results-queries-list li {
+  vertical-align: top;
+  display: inline-block;
+  margin: 0 1rem 1rem 0;
+}
+
+
+.search-form {
+    position: relative;
+}
+
+.search-form--close {
+    position: absolute;
+    right: 10%;
+    top: 18%;
+    display: block;
+    z-index: 5;
+    cursor: pointer;
+    pointer-events: auto;
+    font-size: 50px;
+    line-height: 3rem;
+    display: none;
+    color: var(--color_search_bar);
+}
+
+.search-form__results {
+    right: 0;
+    z-index: 5;
+    width: 100%;
+    line-height: 2.2rem;
+    white-space: normal;
+    color: var(--color_body_text);
+    background-color: var(--color_body);
+    font-size: var(--font_size_base);
+    font-family: var(--font-body-family);
+    font-weight: var(--font-body-weight);
+    border-radius: .3rem;
+}
+#predictive-search-results-queries-list li a:hover,
+.search-form__tag-item .highlight:hover {
+    background: #dddd;
+    color: #000;
+}
+
+.search-form__no-product {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.search-form__results.is-open {
+    display: block;
+}
+
+
+
+.search-form__results-wrapper::-webkit-scrollbar-track {
+    background-color: #fafafa;
+}
+
+.search-form__results-wrapper::-webkit-scrollbar {
+    width: 0;
+    background-color: #fafafa;
+}
+
+.search-form__results-wrapper::-webkit-scrollbar-thumb {
+    background-color: #e6e6e6;
+}
+.predictive-search__heading,
+.search-form__trending-title,
+.search-form__product-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+    text-transform: uppercase;
+    font-family: var(--font-heading-family);
+    font-weight: bold;
+    line-height: inherit;
+    color: rgb(var(--color-heading));
+}
+
+.search-form__tag-item {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 1rem 1rem 0;
+}
+#predictive-search-results-queries-list li a,
+.search-form__tag-item .highlight {
+    display: block;
+    color: #969696;
+    background-color: #fafafa;
+    padding: .6rem 1.2rem .8rem;
+    cursor: pointer;
+    pointer-events: auto;
+    border-radius: .3rem;
+}
+
+.search-form__tag-item .highlight .icon {
+    pointer-events: none;
+    margin-right: .4rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-top: -.2rem;
+}
+
+.search-form__products .products-row {
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.5rem;
+}
+.search-form__products .products-row.column-3 .products-row__item{
+  flex:0 0 33.33333%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.search-form__product .product-card {
+    width: 18rem;
+}
+
+.predictive-search {
+  display: none;
+  max-height: 80vh!important;
+  overflow-y: scroll;
+  right: 0;
+  z-index: 5;
+  left: 0;
+  top: calc(100% + 1.5rem);
+  width: 100%;
+  line-height: 2.2rem;
+  white-space: normal;
+  padding: 2.5rem;
+  position: absolute;
+  color: var(--color_body_text);
+  background-color: var(--color_body);
+  font-size: var(--font_size_base);
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-weight);
+  box-shadow: 0 0 0 .1rem #0000000f,0 .2rem .2rem #0000001a;
+}
+.predictive-search.focus {
+  display: block;
+}
+.predictive-search--search-template {
+  z-index: 2;
+  width: calc(100% + 2px);
+}
+.search_ajax {
+  max-height: none!important;
+}
+
+@media screen and (max-width: 1024px) {
+  .predictive-search--header {
+      right: 0;
+      left: 0;
+      top: 100%;
+      display: block;
+      box-shadow: 0 0 0;
+      border-radius: 0;
+      height: calc(100vh - 75px);
+      padding: 1.5rem;
+      max-height: none!important;
+  }
+
+  .predictive-search__results-groups-wrapper {
+    flex-direction: column;
+  }
+
+  .predictive-search__results-groups-wrapper:not(.predictive-search__results-groups-wrapper--no-suggestions) {
+    /* On mobile, when there are no suggestions the first .predictive-search__results-groups-wrapper
+     * is virtually empty due to a display: hidden on the predictive-search__pages-wrapper child.
+     * This causes the gap to render and look like a big top margin */
+    gap: 2rem;
+  }
+  
+}
+@media screen and (max-width: 749px){
+  .header__search #predictive-search-results-products-lists>li, 
+  .header__search #predictive-search-results-products-list>li {
+      flex: 0 0 calc(50% - 17px);
+  }
+}
+@media screen and (min-width: 750px) {
+  .predictive-search {
+    border-top: none;
+   
+  }
+}
+
+predictive-search[open] .predictive-search,
+predictive-search[loading] .predictive-search {
+  display: block;
+}
+#predictive-search-results-products-lists,
+#predictive-search-results-products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.7rem;
+}
+#predictive-search-results-products-lists > li,
+#predictive-search-results-products-list > li {
+  flex: 0 0 calc(25% - 17px);
+}
+
+predictive-search .spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 0;
+  display: none;
+}
+
+predictive-search:not([loading]) .predictive-search__loading-state,
+predictive-search:not([loading]) .predictive-search-status__loading {
+  display: none;
+}
+
+predictive-search[loading] .predictive-search__loading-state {
+  display: none;
+  justify-content: center;
+  padding: 1rem;
+}
+
+predictive-search[loading] .predictive-search__search-for-button {
+  display: none;
+}
+
+predictive-search[loading] .predictive-search__results-groups-wrapper ~ .predictive-search__loading-state {
+  display: none;
+}
+
+predictive-search[loading] .predictive-search__results-groups-wrapper ~ .predictive-search__search-for-button {
+  display: initial;
+}
+
+.predictive-search__item {
+  display: flex;
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+  flex-flow: column;
+  gap: 1.7rem;
+}
+
+
+.predictive-search__item-content {
+  grid-area: product-content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.predictive-search__item-content--centered {
+  justify-content: center;
+}
+
+.predictive-search__item-vendor {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground),0.5);
+}
+
+.predictive-search__item-heading {
+  margin: 0;
+}
+
+.predictive-search__item-query-result *:not(mark) {
+  font-weight: bolder;
+}
+
+.predictive-search__item-query-result mark {
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.predictive-search__item-query-result mark {
+  background-color: transparent;
+}
+
+.predictive-search__item .price {
+  color: rgba(var(--color-foreground), 0.7);
+  font-size: 1.2rem;
+}
+
+.predictive-search__item-vendor + .predictive-search__item-heading,
+.predictive-search .price {
+  margin-top: 0.5rem;
+}
+
+.predictive-search__item--term {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 2rem;
+  word-break: break-all;
+  font-weight: 700;
+  line-height: calc(1 + 0.4 / var(--font-body-scale));
+}
+
+@media screen and (min-width: 750px) {
+  .predictive-search__item--term {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.predictive-search__item--term .icon-arrow {
+  width: calc(var(--font-heading-scale) * 1.4rem);
+  height: calc(var(--font-heading-scale) * 1.4rem);
+  flex-shrink: 0;
+  margin-left: calc(var(--font-heading-scale) * 2rem);
+  color: rgb(var(--color-link));
+}
+
+.predictive-search__image {
+  width: 100%;
+  height: auto;
+}
+
+
+@media (min-width: 1025px) {
+    
+
+    .search-form__trending-title,
+    .search-form__product-title {
+        margin-bottom: 3rem;
+    }
+  
+    .search-bar {
+        position: relative;
+        top: -0.3rem;
+    }
+
+    .search-form .form_search_type select {
+        padding-bottom: .9rem;
+    }
+
+    .search-form .form_search_type {
+        height: 4.6rem;
+    }
+
+    .search-bar input {
+        height: 4.6rem;
+        width: calc(100% - 191px);
+    }
+}
+#predictive-search-option-search-keywords {
+  display: none;
+}
+#predictive-search-results-queries-list p.predictive-search__item-heading,
+body .predictive-search__pages-wrapper  p.predictive-search__item-heading {
+  margin: 1rem 0;
+  font-weight: normal;
+}
+body .predictive-search__pages-wrapper  .predictive-search__item-content--centered {
+  justify-content: flex-start;
+  text-align: left;
+}

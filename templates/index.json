@@ -1,0 +1,847 @@
+{
+  "sections": {
+    "slideshow_aGrFXw": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_X9Y9kB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-photo-7290118.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/pexels-photo-7290118_811f2cb1-9db0-475b-b9e7-3c114925f38c.jpg",
+            "heading": "SAFE 50% OFF",
+            "heading_size": "h1",
+            "h1_color": "#ffffff",
+            "subheading": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento.",
+            "color_richtext": "#ffffff",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/products\/antique-drawers",
+            "button_style_secondary": false,
+            "button_label_color": "#000000",
+            "button_bg_color": "#ffffff",
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "right",
+            "image_overlay_opacity": 0,
+            "text_alignment_mobile": "right"
+          }
+        },
+        "slide_wqqKg9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-photo-1722868.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/pexels-photo-1722868_0176e51b-60b1-4117-9fe8-5682935ed225.jpg",
+            "heading": "Nullam aliquet",
+            "heading_size": "h1",
+            "h1_color": "#000000",
+            "subheading": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento.",
+            "color_richtext": "#000000",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/home-garden",
+            "button_style_secondary": false,
+            "button_label_color": "#000000",
+            "button_bg_color": "#ffffff",
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "text_alignment_mobile": "left"
+          }
+        },
+        "slide_cEmkWE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-photo-4620843.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/pexels-photo-4620843_76616cc8-3b19-46f3-9685-2961a03caff0.jpg",
+            "heading": "CRAS COSMO",
+            "heading_size": "h1",
+            "h1_color": "#ffffff",
+            "subheading": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento.",
+            "color_richtext": "#ffffff",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/all",
+            "button_style_secondary": false,
+            "button_label_color": "#ffffff",
+            "button_bg_color": "#000000",
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_X9Y9kB",
+        "slide_wqqKg9",
+        "slide_cEmkWE"
+      ],
+      "settings": {
+        "layout": "full_width",
+        "slide_height": "medium",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "ambient",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "main_icon_with_text_eYyJAy": {
+      "type": "main-icon-with-text",
+      "blocks": {
+        "icon_item_TPq6Bz": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shipping-fast\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 640 512\" class=\"svg-inline--fa fa-shipping-fast fa-w-20 fa-3x\"><path fill=\"currentColor\" d=\"M280 192c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240zm352 192h-24V275.9c0-16.8-6.8-33.3-18.8-45.2l-83.9-83.9c-11.8-12-28.3-18.8-45.2-18.8H416V78.6c0-25.7-22.2-46.6-49.4-46.6H113.4C86.2 32 64 52.9 64 78.6V96H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H96V78.6c0-8.1 7.8-14.6 17.4-14.6h253.2c9.6 0 17.4 6.5 17.4 14.6V384H207.6C193 364.7 170 352 144 352c-18.1 0-34.6 6.2-48 16.4V288H64v144c0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16h195.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H632c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm-488 96c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm272-320h44.1c8.4 0 16.7 3.4 22.6 9.4l83.9 83.9c.8.8 1.1 1.9 1.8 2.8H416V160zm80 320c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-96h-16.4C545 364.7 522 352 496 352s-49 12.7-63.6 32H416v-96h160v96zM256 248v-16c0-4.4-3.6-8-8-8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8z\" class=\"\"><\/path><\/svg>",
+            "title": "Free Ground Shipping",
+            "description": "on all orders over $80"
+          }
+        },
+        "icon_item_F6GYTg": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"user-tag\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 640 512\" class=\"svg-inline--fa fa-user-tag fa-w-20 fa-3x\"><path fill=\"currentColor\" d=\"M223.9 256c70.7 0 128-57.3 128-128S294.6 0 223.9 0C153.3 0 96 57.3 96 128s57.3 128 127.9 128zm0-224c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96c.1-52.9 43.1-96 96-96zm406.7 332.8l-90.2-90.3c-12-12-28.3-18.7-45.2-18.7h-79.3c-17.7 0-32 14.3-32 32v79.3c0 17 6.7 33.3 18.7 45.3l90.2 90.3c6.2 6.2 14.4 9.4 22.6 9.4 8.2 0 16.4-3.1 22.6-9.4l92.5-92.5c12.6-12.6 12.6-32.9.1-45.4zM515.5 480l-90.2-90.3c-6-6-9.4-14.1-9.4-22.6v-79.3h79.3c8.5 0 16.6 3.3 22.6 9.4l90.2 90.3-92.5 92.5zm-51.6-160c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm-64 160H48c-8.8 0-16-7.2-16-16v-41.6C32 365.9 77.9 320 134.4 320c19.6 0 39.1 16 89.6 16 50.3 0 70-16 89.6-16 13.6 0 26.5 2.8 38.4 7.6v-33.4c-12.2-3.7-25-6.2-38.4-6.2-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h351.9c15.6 0 29.3-7.6 38.1-19.1l-23.2-23.2c-2.4 6-8.1 10.3-14.9 10.3z\" class=\"\"><\/path><\/svg>",
+            "title": "Member Discount",
+            "description": "on order over $100"
+          }
+        },
+        "icon_item_kf4CiF": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"undo\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 512 512\" class=\"svg-inline--fa fa-undo fa-w-16 fa-3x\"><path fill=\"currentColor\" d=\"M20 8h10c6.627 0 12 5.373 12 12v110.625C85.196 57.047 165.239 7.715 256.793 8.001 393.18 8.428 504.213 120.009 504 256.396 503.786 393.181 392.834 504 256 504c-63.926 0-122.202-24.187-166.178-63.908-5.113-4.618-5.354-12.561-.482-17.433l7.069-7.069c4.503-4.503 11.749-4.714 16.482-.454C150.782 449.238 200.935 470 256 470c117.744 0 214-95.331 214-214 0-117.744-95.331-214-214-214-82.862 0-154.737 47.077-190.289 116H180c6.627 0 12 5.373 12 12v10c0 6.627-5.373 12-12 12H20c-6.627 0-12-5.373-12-12V20c0-6.627 5.373-12 12-12z\" class=\"\"><\/path><\/svg>",
+            "title": "Easy Free Returns",
+            "description": "Description For Icon With text"
+          }
+        },
+        "icon_item_hQdqMB": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"user-headset\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 448 512\" class=\"svg-inline--fa fa-user-headset fa-w-14 fa-3x\"><path fill=\"currentColor\" d=\"M320 352h-4.7c-12.16 0-24 2.9-35.5 6.8a173.76 173.76 0 0 1-111.64 0c-11.48-3.9-23.29-6.78-35.42-6.78H128A128 128 0 0 0 0 480a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32 128 128 0 0 0-128-128zM32 480a96.1 96.1 0 0 1 96-96h4.74c6.92 0 14.92 1.62 25.16 5.09a205.75 205.75 0 0 0 132.16 0c10.31-3.49 18.33-5.11 25.24-5.11h4.7a96.1 96.1 0 0 1 96 96zm16-256a16 16 0 0 0 16-16v-16c0-88.22 71.78-160 160-160s160 71.78 160 160v16a80.09 80.09 0 0 1-80 80h-32a32 32 0 0 0-32-32h-32a32 32 0 0 0 0 64h96a112.14 112.14 0 0 0 112-112v-16C416 86.12 329.88 0 224 0S32 86.12 32 192v16a16 16 0 0 0 16 16zM224 96a95.57 95.57 0 0 1 71.23 159.76c0 .09.13.15.18.24H304a47.89 47.89 0 0 0 40.55-22.58C349 220.36 352 206.58 352 192a128 128 0 0 0-256 0c0 40.42 19.1 76 48.35 99.47-.06-1.17-.35-2.28-.35-3.47a63.25 63.25 0 0 1 8.93-32A95.58 95.58 0 0 1 224 96z\" class=\"\"><\/path><\/svg>",
+            "title": "Outstanding Customer Service",
+            "description": "support 24 hours a day"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_TPq6Bz",
+        "icon_item_F6GYTg",
+        "icon_item_kf4CiF",
+        "icon_item_hQdqMB"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "section_layout": "layout_1",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "column": 4
+      }
+    },
+    "main_img_link_Fyr7Ky": {
+      "type": "main-img-link",
+      "blocks": {
+        "image_item_DdUR9g": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1.png",
+            "link_url": "\/"
+          }
+        },
+        "image_item_pFBVrM": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_e0432bb2-54e7-442d-8986-e44db90fe047.png",
+            "link_url": "\/"
+          }
+        },
+        "image_item_9FGRn8": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3.png",
+            "link_url": "\/"
+          }
+        },
+        "image_item_EYdpR9": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5.png",
+            "link_url": "\/"
+          }
+        },
+        "image_item_RniHfD": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/8.png",
+            "link_url": "\/"
+          }
+        }
+      },
+      "block_order": [
+        "image_item_DdUR9g",
+        "image_item_pFBVrM",
+        "image_item_9FGRn8",
+        "image_item_EYdpR9",
+        "image_item_RniHfD"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 10,
+        "padding_bottom": 40,
+        "title": "Shop By Brands",
+        "heading_size": "h2",
+        "description": "Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento",
+        "column": 5,
+        "shape_img": "square"
+      }
+    },
+    "main_block_four_banners_G6ELgm": {
+      "type": "main-block-four-banners",
+      "settings": {
+        "color_scheme": "scheme-5",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "title_header": "Image With Text",
+        "heading_size": "h2",
+        "description": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento",
+        "color_scheme_item": "scheme-3",
+        "image_2": "shopify:\/\/shop_images\/pexels-photo-9817940.png",
+        "title_2_top": "Sale up to 60% Off",
+        "title_2": "Lorem Comodous",
+        "link_text_2": "Shop Now",
+        "link_2": "shopify:\/\/collections\/all",
+        "image_3": "shopify:\/\/shop_images\/pexels-photo-106948782.png",
+        "title_3_top": "Sale 10% Off",
+        "title_3": "Dincidunteros",
+        "link_text_3": "Shop Now",
+        "link_3": "shopify:\/\/products\/classic-varsity-top",
+        "image_4": "shopify:\/\/shop_images\/pexels-photo-119356702_9556419e-0663-4e49-a6d3-60f156771c78.png",
+        "title_4_top": "Sale 30% Off",
+        "title_4": "Namdos Hempus",
+        "link_text_4": "Shop Now",
+        "link_4": "shopify:\/\/products\/chequered-red-shirt",
+        "image_top": "shopify:\/\/shop_images\/pexels-photo-78175902.png",
+        "title_top": "Today Only: Sale 40% Off",
+        "title": "Pellento Habitande",
+        "link_text": "Shop now",
+        "link": "shopify:\/\/collections"
+      }
+    },
+    "main_product_tabs_hyLhPN": {
+      "type": "main-product-tabs",
+      "blocks": {
+        "product_tabs_hkUPCM": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "Perfume",
+            "collection": "perfume"
+          }
+        },
+        "product_tabs_KKrLWL": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "Lipsticks",
+            "collection": "home-garden"
+          }
+        },
+        "product_tabs_cKEJAk": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "All",
+            "collection": "all"
+          }
+        }
+      },
+      "block_order": [
+        "product_tabs_hkUPCM",
+        "product_tabs_KKrLWL",
+        "product_tabs_cKEJAk"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 10,
+        "padding_bottom": 40,
+        "title": "New Products",
+        "heading_size": "h2",
+        "description": "<p>Nullam aliquet vestibulum augue non varius.<\/p>",
+        "collection_layout": "carousel",
+        "column": 5,
+        "limit_product": 10,
+        "carousel-arrows": true,
+        "carousel-dots": false,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "enable_quick_add": true
+      }
+    },
+    "main_image_with_text_overlay_m4U7Aa": {
+      "type": "main-image-with-text-overlay",
+      "blocks": {
+        "image_item_8Kq4yw": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/free-photo-of-beauty-products-on-a-blue-background.png",
+            "title": "Face",
+            "des_bottom": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento",
+            "link": "shop now",
+            "link_url": "\/"
+          }
+        },
+        "image_item_ijLazJ": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-photo-2533266.png",
+            "title": "Líps",
+            "des_bottom": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento",
+            "link": "shop now",
+            "link_url": "\/"
+          }
+        },
+        "image_item_6RTt7N": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-photo-2517447.png",
+            "title": "Eyes",
+            "des_bottom": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento",
+            "link": "shop now",
+            "link_url": ""
+          }
+        },
+        "image_item_HNzABm": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1photo-1615041359204-45a4dff5ec92.jpg",
+            "title": "Body",
+            "des_bottom": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento",
+            "link": "shop now",
+            "link_url": ""
+          }
+        },
+        "image_item_hVFXXc": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-photo-2547462.png",
+            "title": "Nullam aliquet",
+            "des_bottom": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento",
+            "link": "shop now",
+            "link_url": ""
+          }
+        },
+        "image_item_PnzDP9": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-photo-2633986.png",
+            "title": "Makeup Tools",
+            "des_bottom": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento",
+            "link": "shop now",
+            "link_url": ""
+          }
+        },
+        "image_item_ArFyeH": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-photo-4041391.png",
+            "title": "Makeup Sets and Gifts",
+            "des_bottom": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento",
+            "link": "shop now",
+            "link_url": ""
+          }
+        },
+        "image_item_8TTeUB": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shu-nau.webp",
+            "title": "Hair care",
+            "des_bottom": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento",
+            "link": "shop now",
+            "link_url": "shopify:\/\/products\/cream-sofa"
+          }
+        }
+      },
+      "block_order": [
+        "image_item_8Kq4yw",
+        "image_item_ijLazJ",
+        "image_item_6RTt7N",
+        "image_item_HNzABm",
+        "image_item_hVFXXc",
+        "image_item_PnzDP9",
+        "image_item_ArFyeH",
+        "image_item_8TTeUB"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "padding_top": 10,
+        "padding_bottom": 40,
+        "title": "Shop categories",
+        "heading_size": "h2",
+        "description": "Nullam aliquet vestibulum augue non varius.",
+        "button": "",
+        "button_link": "",
+        "button2": "view all",
+        "button_link2": "shopify:\/\/collections\/all",
+        "color_scheme_item": "scheme-3"
+      }
+    },
+    "featured_product_WT9JV8": {
+      "type": "featured-product",
+      "blocks": {
+        "text_FXkyBF": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_8yFERN": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "count_down_mXgNN3": {
+          "type": "count_down",
+          "settings": {}
+        },
+        "price_fa3Mtg": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_UcD4d7": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons_KXzG7k": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "text_FXkyBF",
+        "title_8yFERN",
+        "count_down_mXgNN3",
+        "price_fa3Mtg",
+        "variant_picker_UcD4d7",
+        "buy_buttons_KXzG7k"
+      ],
+      "settings": {
+        "product": "yellow-watering-can",
+        "title": "",
+        "heading_size": "h2",
+        "description": "",
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_color": false,
+        "background_color": "#e2e2e7",
+        "color_heading": "#ea2176",
+        "color_text": "#000000",
+        "color_btn_text": "#fafafa",
+        "back_btn": "#000000",
+        "border_botton_color": "#000000"
+      }
+    },
+    "image_with_text_KiGUWw": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_wwDULP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Cras cosmo",
+            "heading_size": "h2"
+          }
+        },
+        "text_r93FnF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesentoNullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_tddFPy": {
+          "type": "button",
+          "settings": {
+            "button_label": "Discover",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wwDULP",
+        "text_r93FnF",
+        "button_tddFPy"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "image": "shopify:\/\/shop_images\/pexels-photo-9748638.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "full_width": true,
+        "image_behavior": "ambient",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-c552c7b8-e38f-4a1e-900f-b6c6dccd546c",
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+        "show_description": false,
+        "collection": "face",
+        "column": 5,
+        "limit": 10,
+        "carousel-arrows": true,
+        "carousel-dots": true,
+        "show_view_all": true,
+        "enable_slider": true,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "main_icon_with_text_rdzYc7": {
+      "type": "main-icon-with-text",
+      "blocks": {
+        "icon_item_kkXXth": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg fill=\"#000000\" height=\"800px\" width=\"800px\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 512.001 512.001\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xml:space=\"preserve\">\n<g>\n\t<g>\n\t\t<path d=\"M287.065,175.235v285.362c0,28.389,23.014,51.404,51.404,51.404h44.393c28.389,0,51.404-23.014,51.404-51.404V175.235\n\t\t\tH287.065z\"><\/path>\n\t<\/g>\n<\/g>\n<g>\n\t<g>\n\t\t<polygon points=\"168.032,206.374 168.032,171.091 184.727,171.091 184.727,137.7 168.032,137.7 168.032,129.75 203.79,129.75 \n\t\t\t203.79,96.358 168.032,96.358 168.032,88.408 203.79,88.408 203.79,55.017 168.032,55.017 168.032,47.066 184.727,47.066 \n\t\t\t184.727,13.675 168.032,13.675 168.032,0 134.64,0 134.64,13.675 117.945,13.675 117.945,47.066 134.64,47.066 134.64,55.017 \n\t\t\t98.882,55.017 98.882,88.408 134.64,88.408 134.64,96.358 98.882,96.358 98.882,129.75 134.64,129.75 134.64,137.7 117.945,137.7 \n\t\t\t117.945,171.091 134.64,171.091 134.64,206.374 96.145,206.374 96.145,243.698 206.526,243.698 206.526,206.374 \t\t\"><\/polygon>\n\t<\/g>\n<\/g>\n<g>\n\t<g>\n\t\t<path d=\"M77.736,277.089v183.507c0,28.389,23.014,51.404,51.404,51.404h44.393c28.389,0,51.404-23.014,51.404-51.404V277.089\n\t\t\tH77.736z\"><\/path>\n\t<\/g>\n<\/g>\n<\/svg>",
+            "title": "Cras cosmo",
+            "description": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento"
+          }
+        },
+        "icon_item_67NziW": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg fill=\"#000000\" height=\"800px\" width=\"800px\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 512 512\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xml:space=\"preserve\">\n<g>\n\t<g>\n\t\t<path d=\"M345.498,33.391l60.68,45.617l20.065-26.69L356.65,0H116.837v33.391h50.298v41.804h-31.498v78.978\n\t\t\tc-44.01,12.215-76.408,52.63-76.408,100.477V512h316.057V254.649c0-47.846-32.4-88.262-76.409-100.477V75.195h-31.499V33.391\n\t\t\tH345.498z\"><\/path>\n\t<\/g>\n<\/g>\n<g>\n\t<g>\n\t\t<path d=\"M429.775,111.144c-1.031-1.317-2.003-2.56-2.886-3.716l-10.68-14.01l-10.682,14.009c-0.882,1.156-1.853,2.399-2.884,3.715\n\t\t\tc-9.159,11.706-23,29.396-23,48.27c0,20.161,16.403,36.563,36.563,36.563s36.563-16.402,36.563-36.563\n\t\t\tC452.773,140.537,438.934,122.849,429.775,111.144z\"><\/path>\n\t<\/g>\n<\/g>\n<\/svg>",
+            "title": "Cras cosmo",
+            "description": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento"
+          }
+        },
+        "icon_item_WTVUHz": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg fill=\"#000000\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 512 512\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xml:space=\"preserve\">\n<g>\n\t<g>\n\t\t<path d=\"M255.999,0C138.16,0,42.633,95.527,42.633,213.366s95.527,213.366,213.366,213.366s213.366-95.527,213.366-213.366\n\t\t\tS373.838,0,255.999,0z M255.999,361.244c-81.671,0-147.878-66.207-147.878-147.878S174.329,65.488,255.999,65.488\n\t\t\ts147.878,66.207,147.878,147.878S337.67,361.244,255.999,361.244z\"><\/path>\n\t<\/g>\n<\/g>\n<g>\n\t<g>\n\t\t<path d=\"M255.999,426.732H7.879C7.879,473.825,46.055,512,93.147,512h325.707c47.092,0,85.268-38.176,85.268-85.268H255.999z\"><\/path>\n\t<\/g>\n<\/g>\n<g>\n\t<g>\n\t\t\n\t\t\t<rect x=\"139.434\" y=\"172.529\" transform=\"matrix(0.4472 -0.8944 0.8944 0.4472 -64.6556 273.8331)\" width=\"99.548\" height=\"33.39\"><\/rect>\n\t<\/g>\n<\/g>\n<g>\n\t<g>\n\t\t\n\t\t\t<rect x=\"165.309\" y=\"189.222\" transform=\"matrix(0.4472 -0.8944 0.8944 0.4472 -54.9658 322.8984)\" width=\"136.878\" height=\"33.39\"><\/rect>\n\t<\/g>\n<\/g>\n<\/svg>",
+            "title": "Cras cosmo",
+            "description": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento"
+          }
+        },
+        "icon_item_MB8NcD": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "<svg fill=\"#000000\" height=\"800px\" width=\"800px\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 512 512\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xml:space=\"preserve\">\n<g>\n\t<g>\n\t\t<path d=\"M192.779,378.894v93.284h-33.391v-93.285H12.017c2.857,39.428,16.729,78.309,41.816,111.763L69.839,512h212.49\n\t\t\tl16.004-21.343c25.087-33.454,38.959-72.334,41.816-111.763H192.779z\"><\/path>\n\t<\/g>\n<\/g>\n<g>\n\t<g>\n\t\t<path d=\"M75.065,211.167l-11.187,12.788c-30.631,35.014-47.927,77.77-51.651,121.548h147.161V211.167H75.065z\"><\/path>\n\t<\/g>\n<\/g>\n<g>\n\t<g>\n\t\t<path d=\"M395.803,0c-49.262,0-90.534,23.746-101.387,55.652h-70.421V22.654h-47.911h-47.911v88.401H89.671v66.72h172.826v-66.72\n\t\t\th-38.502V89.044h70.421c10.854,31.906,52.125,55.652,101.387,55.652c57.538,0,104.181-32.392,104.181-72.348S453.341,0,395.803,0z\n\t\t\t\"><\/path>\n\t<\/g>\n<\/g>\n<g>\n\t<g>\n\t\t<path d=\"M288.289,223.955l-11.187-12.789h-84.323v134.337H339.94C336.215,301.725,318.92,258.97,288.289,223.955z\"><\/path>\n\t<\/g>\n<\/g>\n<\/svg>",
+            "title": "Cras cosmo",
+            "description": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_kkXXth",
+        "icon_item_67NziW",
+        "icon_item_WTVUHz",
+        "icon_item_MB8NcD"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "section_layout": "layout_2",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "column": 4
+      }
+    },
+    "main_customer_review_VjNLnw": {
+      "type": "main-customer-review",
+      "blocks": {
+        "review_item_Mw4pC8": {
+          "type": "review_item",
+          "settings": {
+            "title": "Customer reviews",
+            "heading_size": "h2",
+            "icon_user": "shopify:\/\/shop_images\/1628155.jpg",
+            "description": "<p>Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesentoNullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le<\/p>",
+            "name": "Catherine J.",
+            "company_name": "Alita Wedding + Events Co."
+          }
+        },
+        "review_item_bRXBkJ": {
+          "type": "review_item",
+          "settings": {
+            "title": "Customer reviews",
+            "heading_size": "h2",
+            "icon_user": "shopify:\/\/shop_images\/dids-186.jpg",
+            "description": "<p>Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesentoNullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le<\/p>",
+            "name": "Teresa J.",
+            "company_name": "Alita Wedding + Events Co."
+          }
+        },
+        "review_item_8R9gGz": {
+          "type": "review_item",
+          "settings": {
+            "title": "Customer reviews",
+            "heading_size": "h2",
+            "icon_user": "shopify:\/\/shop_images\/lisa-fotios-344.jpg",
+            "description": "<p>Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesentoNullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le<\/p>",
+            "name": "Helen B.",
+            "company_name": "Alita Wedding + Events Co."
+          }
+        }
+      },
+      "block_order": [
+        "review_item_Mw4pC8",
+        "review_item_bRXBkJ",
+        "review_item_8R9gGz"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "image": "shopify:\/\/shop_images\/pexels-photo-19266202.jpg",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_full_width": true
+      }
+    },
+    "featured_collection_aihYLx": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "title": "Featured collection",
+        "heading_size": "h2",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat euismod sed non erat.<\/p>",
+        "show_description": false,
+        "collection": "new-arrrivals",
+        "column": 5,
+        "limit": 8,
+        "carousel-arrows": true,
+        "carousel-dots": true,
+        "show_view_all": true,
+        "enable_slider": true,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "video_jaRRXd": {
+      "type": "video",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "heading": "Cras cosmo",
+        "heading_size": "h2",
+        "description_1": "Duis danos an molestie, sem in sollicitudin sodales mi justo sagittis est id consequat ipsum ligula. Praesent deu odio des nisios dullamcorper sultricies.",
+        "enable_video_looping": true,
+        "video_url": "https:\/\/www.youtube.com\/watch?v=-Ztod88RxlM&ab_channel=ShonaghScott",
+        "cover_image": "shopify:\/\/shop_images\/pexels-photo-3246552.jpg",
+        "description": "CLEARN MORE",
+        "full_width": false,
+        "padding_top": 8,
+        "padding_bottom": 36
+      }
+    },
+    "main_faq_p33ian": {
+      "type": "main-faq",
+      "blocks": {
+        "question_Bqkt89": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Duis tristique del",
+            "answer_faqs": "<p>Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento<\/p>"
+          }
+        },
+        "question_yTWzpq": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Cras cosmo congue delos melitos",
+            "answer_faqs": "<p>Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento<\/p>"
+          }
+        },
+        "question_mqpEBD": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Duis tristique del ante le maliquam praesent",
+            "answer_faqs": "<p>Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento<\/p>"
+          }
+        },
+        "question_ARtapR": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Felos melitos",
+            "answer_faqs": "<p>Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento<\/p>"
+          }
+        },
+        "question_9FJ77Q": {
+          "type": "question",
+          "settings": {
+            "question_faqs": "Non varius",
+            "answer_faqs": "<p>Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesento<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_Bqkt89",
+        "question_yTWzpq",
+        "question_mqpEBD",
+        "question_ARtapR",
+        "question_9FJ77Q"
+      ],
+      "settings": {
+        "color_scheme": "scheme-c552c7b8-e38f-4a1e-900f-b6c6dccd546c",
+        "show_my_story": true,
+        "icon_user": "shopify:\/\/shop_images\/1628155.jpg",
+        "story_sub_title": "My Story",
+        "story_title": "Don't stop giving love even if you don't receive it.Smile and have patience.",
+        "story_des": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat euismod sed non erat. Nulla non felis id metus bibendum iaculis quis sit amet eros. Nam suscipit mollis tellus vel malesuada. Cum sociis natoque penatibus et magnis.<\/p><p>Duis danos an molestie, sem in sollicitudin sodales mi justo sagittis est id consequat ipsum ligula. Praesent deu odio des nisios dullamcorper sultricies.<\/p>",
+        "author_name": "Coco Lee",
+        "author_note": "Store Owner at Cosmetic",
+        "show_faqs": true,
+        "faqs_title": "Help and FAQs",
+        "view_all": "View all topics",
+        "link_view_all": "",
+        "border-top": false,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "featured_blog_f4WB6C": {
+      "type": "featured-blog",
+      "settings": {
+        "color_scheme": "scheme-5",
+        "heading": "Blog posts",
+        "heading_size": "h2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat euismod sed non erat.",
+        "blog": "news",
+        "post_limit": 4,
+        "columns_desktop": 4,
+        "show_image": true,
+        "show_date": true,
+        "show_author": true,
+        "show_view_all": true,
+        "padding_top": 28,
+        "padding_bottom": 24
+      }
+    },
+    "instagram_ef3WEw": {
+      "type": "instagram",
+      "blocks": {
+        "instagram_block_VQR8Bz": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/free-photo-of-close-up-portrait-of-a-woman-with-a-smudged-red-lipstick.jpg"
+          }
+        },
+        "instagram_block_rhYDwH": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-2463027.jpg"
+          }
+        },
+        "instagram_block_zAahYQ": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-1722868_5a86004f-3068-4396-8caf-815559aca01a.jpg"
+          }
+        },
+        "instagram_block_bH3hgJ": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-4788317.jpg"
+          }
+        },
+        "instagram_block_zJ7PCV": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/free-photo-of-beauticians-putting-makeup-on-smiling-woman-face.jpg"
+          }
+        },
+        "instagram_block_VEfpVX": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-7281295.jpg"
+          }
+        },
+        "instagram_block_qHJKqb": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-4004112.jpg"
+          }
+        },
+        "instagram_block_LPeJzJ": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-7281295.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "instagram_block_VQR8Bz",
+        "instagram_block_rhYDwH",
+        "instagram_block_zAahYQ",
+        "instagram_block_bH3hgJ",
+        "instagram_block_zJ7PCV",
+        "instagram_block_VEfpVX",
+        "instagram_block_qHJKqb",
+        "instagram_block_LPeJzJ"
+      ],
+      "settings": {
+        "color_scheme": "scheme-c552c7b8-e38f-4a1e-900f-b6c6dccd546c",
+        "border-top": false,
+        "top": 0,
+        "bottom": 30,
+        "title": "Instagram",
+        "heading_size": "h2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat euismod sed non erat.",
+        "button": "Discover",
+        "button_link": "\/",
+        "instagram_option": "block",
+        "accessToken": ""
+      }
+    }
+  },
+  "order": [
+    "slideshow_aGrFXw",
+    "main_icon_with_text_eYyJAy",
+    "main_img_link_Fyr7Ky",
+    "main_block_four_banners_G6ELgm",
+    "main_product_tabs_hyLhPN",
+    "main_image_with_text_overlay_m4U7Aa",
+    "featured_product_WT9JV8",
+    "image_with_text_KiGUWw",
+    "featured_collection",
+    "main_icon_with_text_rdzYc7",
+    "main_customer_review_VjNLnw",
+    "featured_collection_aihYLx",
+    "video_jaRRXd",
+    "main_faq_p33ian",
+    "featured_blog_f4WB6C",
+    "instagram_ef3WEw"
+  ]
+}

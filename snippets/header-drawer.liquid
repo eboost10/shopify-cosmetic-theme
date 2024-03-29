@@ -1,0 +1,484 @@
+{% comment %}
+Renders a header drawer menu for mobile and desktop.
+Usage:
+{% render 'header-drawer' %}
+{% endcomment %}
+{% liquid
+assign label_1_collection = section.settings.label_1_collection | split:"," | strip | downcase | handle
+assign label_2_collection = section.settings.label_2_collection | split:"," | strip | downcase | handle
+assign label_3_collection = section.settings.label_3_collection | split:"," | strip | downcase | handle
+%}
+<header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
+    <details id="Details-menu-drawer-container" class="menu-drawer-container ">
+        <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
+            {% render 'icon-hamburger' %}
+            {% render 'icon-close' %}
+            </span>
+        </summary>
+        <div id="menu-drawer" class="color-{{ section.settings.color_scheme_1 }} gradient menu-drawer motion-reduce">
+            <span class="bkg-overlay-drawmenu"></span>
+            <div class="menu-drawer__inner-container">
+                <div class="menu-drawer__navigation-container">
+                    <nav class="menu-drawer__navigation">
+                        <ul class="site-nav-mobile menu-drawer__menu has-submenu list-menu" role="list">
+                            {%- for link in section.settings.menu.links -%}
+                                {% assign i = forloop.index | downcase %}
+                                {% assign cat = link.title | handleize %}
+                                {% if section.settings.label_1 != blank %}
+                                    {% assign label_1_link = link.title | downcase | handle %}
+                                {% endif %}
+                                {% if section.settings.label_2 != blank %}
+                                    {% assign label_2_link = link.title | downcase | handle %}
+                                {% endif %}
+                                {% if section.settings.label_3 != blank %}
+                                    {% assign label_3_link = link.title | downcase | handle %}
+                                {% endif %}
+                                {% if section.settings.enable_megamenu %}
+                                    {% assign is_megamenu = false %}
+                                    {% for block in section.blocks %}
+                                        {% for i in (1..4) %}
+                                            {% capture cap_megamenu_item %}megamenu_items_{{ i }}{% endcapture %}
+                                            {% capture cap_link_menu %}link_menu_{{ i }}{% endcapture %}
+                                            {% capture cap_collection %}collection_{{ i }}{% endcapture %}
+                                            {% capture cap_title_product %}title_featured_product_{{ i }}{% endcapture %}
+                                            {% capture cap_banner_image_1 %}banner_image_{{ i }}_1{% endcapture %}
+                                            {% capture cap_banner_image_2 %}banner_image_{{ i }}_2{% endcapture %}
+                                            {% capture cap_banner_image_3 %}banner_image_{{ i }}_3{% endcapture %}
+                                            {% capture cap_banner_image_4 %}banner_image_{{ i }}_4{% endcapture %}
+                                            {% capture cap_brands_image_1 %}brands_image_{{ i }}_1{% endcapture %}
+                                            {% capture cap_brands_image_2 %}brands_image_{{ i }}_2{% endcapture %}
+                                            {% capture cap_brands_image_3 %}brands_image_{{ i }}_3{% endcapture %}
+                                            {% capture cap_brands_image_4 %}brands_image_{{ i }}_4{% endcapture %}
+                                            {% capture cap_brands_link_1 %}brands_link_{{ i }}_1{% endcapture %}
+                                            {% capture cap_brands_link_2 %}brands_link_{{ i }}_2{% endcapture %}
+                                            {% capture cap_brands_link_3 %}brands_link_{{ i }}_3{% endcapture %}
+                                            {% capture cap_brands_link_4 %}brands_link_{{ i }}_4{% endcapture %}
+                                            {% capture cap_title_shop %}title_menu_{{ i }}{% endcapture %}
+                                            {% capture cap_url_shop %}url_shop_{{ i }}{% endcapture %}
+                                            {% capture cap_link_banner_image_1 %}link_banner_image_{{ i }}_1{% endcapture %}
+                                            {% capture cap_link_banner_image_2 %}link_banner_image_{{ i }}_2{% endcapture %}
+                                            {% capture cap_link_banner_image_3 %}link_banner_image_{{ i }}_3{% endcapture %}
+                                            {% capture cap_link_banner_image_4 %}link_banner_image_{{ i }}_4{% endcapture %}
+                                            {% capture cap_text_breadcrumb %}text_breadcrumb_{{ i }}{% endcapture %}
+                                            {% capture cap_link_breadcrumb %}link_breadcrumb_{{ i }}{% endcapture %}
+                                            {% if block.settings[cap_megamenu_item] != blank %}
+                                                {% assign megamenu_item = block.settings[cap_megamenu_item] | handleize %}
+                                                {% if megamenu_item == cat %}
+                                                    {% assign is_megamenu = true %}
+                                                    {% assign block_style = block.type %}
+                                                    {% assign link_menu = block.settings[cap_link_menu] %}
+                                                    {% assign block_collection = block.settings[cap_collection] %}
+                                                    {% assign collection = collections[block_collection] %}
+                                                    {% assign title_featured_product = block.settings[cap_title_product] %}
+                                                    {% assign banner_image_1 = block.settings[cap_banner_image_1] %}
+                                                    {% assign banner_image_2 = block.settings[cap_banner_image_2] %}
+                                                    {% assign banner_image_3 = block.settings[cap_banner_image_3] %}
+                                                    {% assign banner_image_4 = block.settings[cap_banner_image_4] %}
+                                                    {% assign brands_image_1 = block.settings[cap_brands_image_1] %}
+                                                    {% assign brands_image_2 = block.settings[cap_brands_image_2] %}
+                                                    {% assign brands_image_3 = block.settings[cap_brands_image_3] %}
+                                                    {% assign brands_image_4 = block.settings[cap_brands_image_4] %}
+                                                    {% assign brands_link_1 = block.settings[cap_brands_link_1] %}
+                                                    {% assign brands_link_2 = block.settings[cap_brands_link_2] %}
+                                                    {% assign brands_link_3 = block.settings[cap_brands_link_3] %}
+                                                    {% assign brands_link_4 = block.settings[cap_brands_link_4] %}
+                                                    {% assign title_shop = block.settings[cap_title_shop] %}
+                                                    {% assign url_shop = block.settings[cap_url_shop] %}
+                                                    {% assign link_banner_image_1 = block.settings[cap_link_banner_image_1] %}
+                                                    {% assign link_banner_image_2 = block.settings[cap_link_banner_image_2] %}
+                                                    {% assign link_banner_image_3 = block.settings[cap_link_banner_image_3] %}
+                                                    {% assign link_banner_image_4 = block.settings[cap_link_banner_image_4] %}
+                                                    {% assign text_breadcrumb = block.settings[cap_text_breadcrumb] %}
+                                                    {% assign link_breadcrumb = block.settings[cap_link_breadcrumb] %}
+                                                    {%- assign banner_image_style_3_1 = block.settings.banner_image_style_3_1 -%}
+                                                    {%- assign banner_image_style_3_2 = block.settings.banner_image_style_3_2 -%}
+                                                    {%- assign banner_image_style_3_3 = block.settings.banner_image_style_3_3 -%}
+                                                    {%- assign banner_image_style_3_4 = block.settings.banner_image_style_3_4 -%}
+                                                    {%- assign banner_image_style_3_5 = block.settings.banner_image_style_3_5 -%}
+                                                    {%- assign countdown_text = block.settings.countdown_text -%}
+                                                    {%- assign countdown_text2 = block.settings.countdown_text_end -%}
+                                                    {%- assign countdown_timer = block.settings.countdown_timer -%}
+                                                    {%- assign block_id = block.id -%}
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endfor %}
+                                {% endif %}
+                                <li class="menu-lv-1 item">
+                                    {%- if link.links != blank -%}
+                                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                                        <summary id="HeaderDrawer-{{ link.handle }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
+                                            <span class="menu-drawer-link">
+                                                {{ link.title | escape }}
+                                                {% if label_1_collection contains label_1_link %}
+                                                    <span class="icon-label label_1">
+                                                        {{ section.settings.label_1 }}
+                                                    </span>
+                                                {% endif %}
+                                                {% if label_2_collection contains label_2_link %}
+                                                    <span class="icon-label label_2">
+                                                        {{ section.settings.label_2 }}
+                                                    </span>
+                                                {% endif %}
+                                                {% if label_3_collection contains label_3_link %}
+                                                    <span class="icon-label label_3">
+                                                        {{ section.settings.label_3 }}
+                                                    </span>
+                                                {% endif %}
+                                            </span>
+                                            <svg class="icon icon-arrow-nav icon-arrow">
+                                                <use xlink:href="#icon-chevron-right"></use>
+                                            </svg>
+                                            <svg class="icon icon-arrow-nav icon-caret">
+                                                <use xlink:href="#icon-chevron-left"></use>
+                                            </svg>
+                                        </summary>
+                                        <div id="link-{{ link.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
+                                            <div class="menu-drawer__inner-submenu">
+                                                <button class="nav-title-mobile text-center menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+                                                    <span class="icon-dropdown">
+                                                        <svg class="icon icon-arrow-nav  icon-arrow ">
+                                                            <use xlink:href="#icon-chevron-left"></use>
+                                                        </svg>
+                                                    </span>
+                                                    {{ link.title | escape }}
+                                                </button>
+                                                <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                                    {% if block_style == "style_4" and section.settings.enable_megamenu and is_megamenu %}
+                                                        {% if banner_image_1 != blank %}
+                                                            <li class="menu-lv-2">
+                                                                {% assign img_url = banner_image_1 | img_url: '610x' %}
+                                                                {% assign img_url_2 = banner_image_1 | img_url: '330x' %}
+                                                                <a href="{{ link_banner_image_1 }}" class="link image--hover">
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                </a>
+                                                            </li>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    <li class="menu-lv-2 menu-lv-2-view-all">
+                                                        <a href="{{ link.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                                            {{ 'accessibility.view_all' | t }}
+                                                        </a>
+                                                    </li>
+                                                    {% if block_style == "style_2" or block_style == "style_1" and section.settings.enable_megamenu and is_megamenu %}
+                                                    {% if title_shop != blank %}
+                                                    <li class="menu-lv-2">
+                                                        <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
+                                                            <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                                                {{ title_shop }}
+                                                                <svg class="icon icon-arrow-nav icon-arrow">
+                                                                    <use xlink:href="#icon-chevron-right"></use>
+                                                                </svg>
+                                                                <svg class="icon icon-arrow-nav icon-caret">
+                                                                    <use xlink:href="#icon-chevron-left"></use>
+                                                                </svg>
+                                                            </summary>
+                                                            {% if linklists[link_menu] != empty %}
+                                                            <div id="childlink-{{ childlink.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce">
+                                                                <button class="nav-title-mobile text-center menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+                                                                    <span class="icon-dropdown">
+                                                                        <svg class="icon icon-arrow-nav  icon-arrow ">
+                                                                            <use xlink:href="#icon-chevron-left"></use>
+                                                                        </svg>
+                                                                    </span>
+                                                                    {{ title_shop }}
+                                                                </button>
+                                                                <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                                                    <li class="menu-lv-3">
+                                                                        <a href="{{ url_shop }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset" aria-label="link">
+                                                                            <span class="text"> {{ 'accessibility.view_all' | t }}</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    {% for link_child_item in linklists[link_menu].links %}
+                                                                    <li class="menu-lv-3">
+                                                                        <a href="{{ link_child_item.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset" aria-label="link">
+                                                                            <span class="text">{{ link_child_item.title }}</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            </div>
+                                                            {% endif %}
+                                                        </details>
+                                                    </li>
+                                                    {% endif %}
+                                                    {% endif %}
+                                                    {%- for childlink in link.links -%}
+                                                    <li class="menu-lv-2">
+                                                        {%- if childlink.links == blank -%}
+                                                        <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}" {% if childlink.current %} aria-current="page" {% endif %}>
+                                                            {{ childlink.title | escape }}
+                                                        </a>
+                                                        {%- else -%}
+                                                        <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
+                                                            <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                                                {{ childlink.title | escape }}
+                                                                <svg class="icon icon-arrow-nav icon-arrow">
+                                                                    <use xlink:href="#icon-chevron-right"></use>
+                                                                </svg>
+                                                                <svg class="icon icon-arrow-nav icon-caret">
+                                                                    <use xlink:href="#icon-chevron-left"></use>
+                                                                </svg>
+                                                            </summary>
+                                                            <div id="childlink-{{ childlink.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce">
+                                                                <button class="nav-title-mobile text-center menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+                                                                    <span class="icon-dropdown">
+                                                                        <svg class="icon icon-arrow-nav  icon-arrow ">
+                                                                            <use xlink:href="#icon-chevron-left"></use>
+                                                                        </svg>
+                                                                    </span>
+                                                                    {{ childlink.title | escape }}
+                                                                </button>
+                                                                <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                                                    {% if block_style == "style_3" and section.settings.enable_megamenu and is_megamenu %}
+                                                                    <li class="menu-lv-3">
+                                                                        {% if forloop.index == 1 and banner_image_style_3_1 != blank %}
+                                                                        <a href="{{ l.url }}" class="current hover-images" aria-label="link">
+                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_1 | img_url :'290x' }}" alt="" data-image />
+                                                                        </a>
+                                                                        {% elsif forloop.index == 2 and banner_image_style_3_2 != blank %}
+                                                                        <a href="{{ l.url }}" class="current hover-images" aria-label="link">
+                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_2 | img_url :'290x' }}" alt="" data-image />
+                                                                        </a>
+                                                                        {% elsif forloop.index == 3 and banner_image_style_3_3 != blank %}
+                                                                        <a href="{{ l.url }}" class="current hover-images" aria-label="link">
+                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_3 | img_url :'290x' }}" alt="" data-image />
+                                                                        </a>
+                                                                        {% elsif forloop.index == 4 and banner_image_style_3_4 != blank %}
+                                                                        <a href="{{ l.url }}" class="current hover-images" aria-label="link">
+                                                                            <img class=" dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_4 | img_url :'290x' }}" alt="" data-image />
+                                                                        </a>
+                                                                        {% elsif forloop.index == 5 and banner_image_style_3_5 != blank %}
+                                                                        <a href="{{ l.url }}" class="current hover-images" aria-label="link">
+                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_5 | img_url :'290x' }}" alt="" data-image />
+                                                                        </a>
+                                                                        {% endif %}
+                                                                    </li>
+                                                                    {% endif %}
+                                                                    <li class="menu-lv-3">
+                                                                        <a href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset" aria-label="link">
+                                                                            <span class="text"> {{ 'accessibility.view_all' | t }}</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    {%- for grandchildlink in childlink.links -%}
+                                                                    <li class="menu-lv-3">
+                                                                        <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}" {% if grandchildlink.current %} aria-current="page" {% endif %}>
+                                                                            {{ grandchildlink.title | escape }}
+                                                                        </a>
+                                                                    </li>
+                                                                    {%- endfor -%}
+                                                                </ul>
+                                                            </div>
+                                                        </details>
+                                                        {%- endif -%}
+                                                    </li>
+                                                    {%- endfor -%}
+                                                    {% if block_style == "style_1" and section.settings.enable_megamenu and is_megamenu %}
+                                                    <li class="menu-lv-2">
+                                                        <div class="dropdown-megamenu-center--item dropdown-megamenu-center--item--productList">
+                                                            {% if title_featured_product != blank %}
+                                                            <h3 class="title">{{ title_featured_product }}</h3>
+                                                            {% endif %}
+                                                            <div class="dropdown-megamenu">
+                                                                {% for product in collection.products limit: 1 %}
+                                                                <div class="items">
+                                                                    {% render 'card-product-menu', card_product : product %}
+                                                                </div>
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    {% if banner_image_1 != blank %}
+                                                    <li class="menu-lv-2">
+                                                        {% if banner_image_1 != blank %}
+                                                        {% assign img_url = banner_image_1 | img_url: '645x' %}
+                                                        {% assign img_url_2 = banner_image_1 | img_url: '330x' %}
+                                                        <a href="{{ link_banner_image_1 }}" class="link">
+                                                            <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                        </a>
+                                                        {% endif %}
+                                                    </li>
+                                                    {% endif %}
+                                                    {% endif %}
+                                                    {% if block_style == "style_4" and section.settings.enable_megamenu and is_megamenu %}
+                                                    <li class="menu-lv-2">
+                                                        <div class="dropdown-megamenu-center--item dropdown-megamenu-center--item--productList">
+                                                            {% if title_featured_product != blank %}
+                                                            <h3 class="title">{{ title_featured_product }}</h3>
+                                                            {% endif %}
+                                                            <div class="dropdown-megamenu-center--item dropdown-megamenu-center--item--productList">
+                                                                {% for product in collection.products limit: 1 %}
+                                                                <div class="items">
+                                                                    {% render 'card-product-menu', card_product : product %}
+                                                                </div>
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    {% if banner_image_2 != blank or banner_image_3 != blank %}
+                                                    <li class="menu-lv-2">
+                                                        <div class="dropdown-megamenu-right--item style_4_images">
+                                                            {% if banner_image_2 != blank %}
+                                                            {% assign img_url = banner_image_2 | img_url: '270x' %}
+                                                            {% assign img_url_2 = banner_image_2 | img_url: '330x' %}
+                                                            <a href="{{ link_banner_image_2 }}" class="hover-images">
+                                                                <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                            </a>
+                                                            {% endif %}
+                                                            {% if banner_image_3 != blank %}
+                                                            {% assign img_url = banner_image_3 | img_url: '270x' %}
+                                                            {% assign img_url_2 = banner_image_3 | img_url: '330x' %}
+                                                            <a href="{{ link_banner_image_3 }}" class="hover-images">
+                                                                <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                            </a>
+                                                            {% endif %}
+                                                        </div>
+                                                    </li>
+                                                    {% endif %}
+                                                    {% endif %}
+                                                    {% if block_style == "style_3" and section.settings.enable_megamenu and is_megamenu %}
+                                                    {% if countdown_text != blank or countdown_timer != blank %}
+                                                    <li class="menu-lv-2">
+                                                        <div class="dropdown-megamenu--countdown">
+                                                            <span class="countdown-text">{{countdown_text}}</span>
+                                                            <div class="countdown_timer">
+                                                                <span class="text_end"> {{countdown_text2}}</span>
+                                                                <span data-countdown data-countdown-value="{{ countdown_timer }}"></span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    {% endif %}
+                                                    {% endif %}
+                                                    {% if block_style == "style_2" and section.settings.enable_megamenu and is_megamenu %}
+                                                    {% if brands_image_1 != blank or brands_image_2 != blank or brands_image_3 != blank or brands_image_4 != blank %}
+                                                    <li class="menu-lv-2">
+                                                        <div class="dropdown-megamenu-center--item--productList">
+                                                            {% if title_featured_product != blank %}
+                                                            <h3 class="title">{{ title_featured_product }}</h3>
+                                                            {% endif %}
+                                                            <div class="megamenu-brands">
+                                                                {% if brands_image_1 != blank %}
+                                                                {% assign img_url = brands_image_1 | img_url: '170x' %}
+                                                                {% assign img_url_2 = brands_image_1 | img_url: '170x' %}
+                                                                <a href="{{ brands_link_1 }}" class="link image--hover">
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                </a>
+                                                                {% endif %}
+                                                                {% if brands_image_2 != blank %}
+                                                                {% assign img_url = brands_image_2 | img_url: '170x' %}
+                                                                {% assign img_url_2 = brands_image_2 | img_url: '170x' %}
+                                                                <a href="{{ brands_link_2 }}" class="link image--hover">
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                </a>
+                                                                {% endif %}
+                                                                {% if brands_image_3 != blank %}
+                                                                {% assign img_url = brands_image_3 | img_url: '170x' %}
+                                                                {% assign img_url_2 = brands_image_3 | img_url: '170x' %}
+                                                                <a href="{{ brands_link_3 }}" class="link image--hover">
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                </a>
+                                                                {% endif %}
+                                                                {% if brands_image_4 != blank %}
+                                                                {% assign img_url = brands_image_4 | img_url: '170x' %}
+                                                                {% assign img_url_2 = brands_image_4 | img_url: '170x' %}
+                                                                <a href="{{ brands_link_4 }}" class="link image--hover">
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                </a>
+                                                                {% endif %}
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    {% endif %}
+                                                    {% if banner_image_1 != blank or banner_image_2 != blank %}
+                                                    <li class="menu-lv-2">
+                                                        <div class="dropdown-megamenu-right--item style_4_images">
+                                                            {% if banner_image_1 != blank %}
+                                                            {% assign img_url = banner_image_1 | img_url: '470x' %}
+                                                            {% assign img_url_2 = banner_image_1 | img_url: '330x' %}
+                                                            <div class="link">
+                                                                <a href="{{ link_banner_image_1 }}" class="link_1 hover-images">
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                </a>
+                                                            </div>
+                                                            {% endif %}
+                                                            {% if banner_image_2 != blank %}
+                                                            {% assign img_url = banner_image_2 | img_url: '470x' %}
+                                                            {% assign img_url_2 = banner_image_2 | img_url: '330x' %}
+                                                            <div class="link">
+                                                                <a href="{{ link_banner_image_2 }}" class="link_1 hover-images">
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                </a>
+                                                            </div>
+                                                            {% endif %}
+                                                        </div>
+                                                    </li>
+                                                    {% endif %}
+                                                    {% endif %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </details>
+                                    {%- else -%}
+                                    <a id="HeaderDrawer-{{ link.handle }}" href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}" {% if link.current %} aria-current="page" {% endif %}>
+                                        {{ link.title | escape }}
+                                    </a>
+                                    {%- endif -%}
+                                </li>
+                            {%- endfor -%}
+                        </ul>
+                    </nav>
+                    <div class="menu-drawer__utility-links">
+                        <ul class="site-nav-mobile two">
+                            {%- if shop.customer_accounts_enabled -%}
+                                {% if customer %}
+                                    <li class="menu-lv-1 item">
+                                        <p class="nav-action nav-action--end">
+                                            <a href="{{ routes.account_url }}" aria-label="link">
+                                                <svg class="icon">
+                                                    <use xlink:href="#icon-user" /></svg>
+                                                <span>{{ customer.name }}</span>
+                                            </a>
+                                        </p>
+                                    </li>
+                                {% else %}
+                                    <li class="menu-lv-1 item">
+                                        <p class="nav-action nav-action--end">
+                                            <a href="{{ routes.account_login_url }}" aria-label="link">
+                                                <svg class="icon">
+                                                    <use xlink:href="#icon-user" /></svg>
+                                                <span>{{ 'customer.login.title' | t }}</span>
+                                            </a>
+                                        </p>
+                                    </li>
+                                {% endif %}
+                            {%- endif -%}
+                            {% if section.settings.enable-header-wishlist %}
+                                <li class="menu-lv-1 item">
+                                    <p class="nav-action nav-action--end">
+                                        <a href="/pages/wish-list" aria-label="link">
+                                            <svg class="icon">
+                                                <use xlink:href="#icon-heart" /></svg>
+                                            <span>{{ 'general.wishlist.wishlist' | t }}</span>
+                                        </a>
+                                    </p>
+                                </li>
+                            {%- endif -%}
+                            {% if settings.enable_language or settings.enable_currencies %}
+                                <div class="menu-drawer__localization header-localization">
+                                    <div class="dropdown-language-currency">
+                                        {% if settings.enable_language %}
+                                            {% render 'header-language' %}
+                                        {% endif %}
+                                        {% if settings.enable_currencies %}
+                                            {% render 'header-currency' %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </details>
+</header-drawer>

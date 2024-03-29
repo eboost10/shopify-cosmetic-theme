@@ -1,0 +1,42 @@
+{{ 'component-wishlist.css' | asset_url | stylesheet_tag }}
+<div id="wishlistPage">
+    <div class="page page-wishlist">
+        <div class="page-width">
+            {% render 'breadcrumb' %}
+            <div class="section-header text-left">
+                <h1 class="title">{{ page_title }}</h1>
+            </div>
+            {% if page.content.size > 0 %}
+                <div class="rte mb-5">
+                    {{ page.content }}
+                </div>
+            {% endif %}
+            <div class="wishlist_table_wrapper">
+                <table class="wishlist_table" data-wishlist-content>
+                    <thead>
+                        <tr class="wishlist_row wishlist__row--heading">
+                            <th class="wishlist_image text-left">{{ 'cart.label.image' | t }}</th>
+                            <th class="wishlist_meta text-left">{{ 'cart.label.product_name' | t }}</th>
+                            <th class="wishlist_price text-left">{{ 'general.wishlist.unit_price' | t }}</th>
+                            <th class="wishlist_add text-center">{{ 'products.product.add' | t }}</th>
+                            <th class="wishlist_remove text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody data-wishlist-container>
+                    </tbody>
+                </table>
+            </div>
+            <div class="wishlist-footer">
+                <div class="button-share text-center">
+                    <a class="share" href="mailto:?subject= {{ page.title | strip_html }}&amp;body=">
+                        <svg class="icon"><use xlink:href="#icon-email" /></svg>
+                        <span class="text">{{ 'general.wishlist.share_wishlist' | t }}</span>
+                    </a>
+                </div>
+                <div class="mt-5 pagination-wrapper text-right">
+                    <ul id="wishlist_pagination" class="list--inline pagination"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

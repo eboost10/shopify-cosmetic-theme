@@ -1,0 +1,55 @@
+
+.quotes-slider__text {
+    display: block;
+    max-width: 115rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 .8rem;
+    border: none;
+}
+
+.quotes-slider__text cite {
+    font-size: calc(var(--font_size_base) + 2px );
+    font-style: normal;
+    color: rgba(var(--color-foreground), .5);
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.quotes-slider__text cite:before {
+    content: none;
+}
+
+.quotes-slider__text p {
+    color: rgb(var(--color-foreground));
+    margin-bottom: 1.5rem;
+}
+
+.quotes-slider__text p+cite {
+    margin-top: 0;
+}
+
+@media (min-width: 1025px) {
+    .quotes-slider__text {
+        padding: 0 1.5rem;
+    }
+
+    .quotes-slider__text p {
+        margin-bottom: 2.5rem;
+    }
+}
+
+.quote-content {
+    display: block;
+}
+
+.quote-author {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-author img {
+    margin-right: 1.5rem;
+}

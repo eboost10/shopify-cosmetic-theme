@@ -1,0 +1,264 @@
+{{ 'component-customer-review.css' | asset_url | stylesheet_tag }}
+
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding main-section main-customer-reviews-{{ section.id }} section_{{layout}}  review-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="main-customer-reviews">
+    {% if section.settings.show_full_width == false %}
+        <div class="page-width">
+    {% endif %}    
+        <div class="wrapper_container">
+            <div id="custom_review__image" class="custom_review__image"{% if section.settings.image != blank %} style="background: url({{  section.settings.image | img_url: 'master' }}) no-repeat center; background-attachment: fixed; background-position: center; background-size: cover; "{% endif %}>
+                {% if section.settings.image == blank %}
+                    <div class="no-image hover-images" >
+                        {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="wrapper_content">
+                <div class="container_mx">
+                    <div class="main-row column-1" data-slick='{
+                        "dots": true,
+                        "arrows": true,
+                        "infinite": false,
+                        "lazyLoad": "ondemand",
+                        "mobileFirst": true,
+                        "adaptiveHeight": false,
+                        "slidesToShow": 1,
+                        "slidesToScroll": 1,
+                        "prevArrow": "<div class=&apos;slick-prev slick-arrow&apos;><svg class=&apos;icon&apos;><use xlink:href=&apos;#icon-chevron-left&apos; /></svg></div>", 
+                        "nextArrow": "<div class=&apos;slick-next slick-arrow&apos;><svg class=&apos;icon&apos;><use xlink:href=&apos;#icon-chevron-right&apos; /></svg></div>"
+                        }'>
+                        {% if section.blocks.size > 0 %}
+                            {% for block in section.blocks %}
+                                {% liquid
+                                    assign ridx = forloop.rindex
+                                    if ridx == 5
+                                      assign ridx = 1
+                                    endif
+                                  %}
+                                {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}  
+                                <div class="main-row__item">
+                                    <div class="customer_review">
+                                        <div class="customer_review__content">
+                                            {% if block.settings.title != blank %}
+                                            <div class="title">
+                                                <h3 class=" {{ block.settings.heading_size }}">{{ block.settings.title }}</h3>
+                                            </div>
+                                            {% endif %}
+                                            <div class="avatar">
+                                                {% assign img_url = block.settings.icon_user | img_url: '110x110', crop: 'center' %}
+                                                {% if block.settings.icon_user != blank %}
+                                                    <img class="lazyload"
+                                                        src="{{ img_url }} 180w, {{ img_url }} 768w"
+                                                        data-sizes="auto" alt="" data-image>
+                                                {% else %}
+                                                    <div class="no-image hover-images">
+                                                        {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                            {% if block.settings.description != blank %}
+                                                <div class="description" >
+                                                    {{ block.settings.description }}
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.name != blank %}
+                                                <h3 class="name" >
+                                                    <span>{{block.settings.name}}</span>
+                                                </h3>
+                                            {% endif %}
+                                            {% if block.settings.company_name != blank %}
+                                                <p class="company_name" >
+                                                    <span>{{block.settings.company_name}}</span>
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            {%- for i in (1..3) -%}
+                                <div class="main-row__item">
+                                    <div class="customer_review">
+                                        <div class="customer_review__content">
+                                              {% liquid
+                                                assign ridx = forloop.rindex
+                                                if ridx == 5
+                                                  assign ridx = 1
+                                                endif
+                                              %}
+                                              {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
+                                            <h3 class="title">Customer reviews</h3>
+                                            <div class="avatar">
+                                                <div class="no-image hover-images">
+                                                    {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>Nullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le maliquam praesentoNullam aliquet vestibulum augue non varius. Cras cosmo congue delos melitos. Duis tristique del ante le</p>
+                                            </div>
+                                            <h3 class="name" >
+                                                <span>Catherine J.</span>
+                                            </h3>
+                                            <p class="company_name" >
+                                                <span>Alita Wedding + Events Co.</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {%- endfor -%}        
+                        {% endif %}    
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% if section.settings.show_full_width == false %}
+        </div>
+    {% endif %}  
+</div>
+
+
+
+{% schema %}
+{
+    "name": "Customer Reviews",
+    "tag": "section",
+    "class": "section",
+    "max_blocks": 20,
+    "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "scheme-1"
+        },
+        {
+            "type": "header",
+            "content": "Section Layout"
+        },
+        {
+            "type": "header",
+            "content": "Banner Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Spacing Top",
+            "default": 40,
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Spacing bottom",
+            "default": 40,
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "px"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_full_width",
+            "label": "Show full width",
+            "default": false
+        }
+    ],
+    "blocks": [
+        {
+            "type": "review_item",
+            "name": "Another image",
+            "settings": [
+                
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "Tile With text Review"
+                },
+                {
+                  "type": "select",
+                  "id": "heading_size",
+                  "options": [
+                    {
+                      "value": "h2",
+                      "label": "t:sections.all.heading_size.options__1.label"
+                    },
+                    {
+                      "value": "h1",
+                      "label": "t:sections.all.heading_size.options__2.label"
+                    },
+                    {
+                      "value": "h0",
+                      "label": "t:sections.all.heading_size.options__3.label"
+                    }
+                  ],
+                  "default": "h2",
+                  "label": "t:sections.all.heading_size.label"
+                },
+                {
+                    "type":"image_picker",
+                    "id":"icon_user",
+                    "label":"Avatar "
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description",
+                    "default": "<p>Description For Icon With Text Review.</p>"
+                },
+                {
+                    "type": "text",
+                    "id": "name",
+                    "label": "Name",
+                    "default": "Jessica B."
+                },
+                {
+                    "type": "text",
+                    "id": "company_name",
+                    "label": "Company Name",
+                    "default": "Alita Wedding + Events Co."
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Customer Reviews",
+            "category": "Customer Reviews",
+            "blocks": [
+                {
+                    "type": "review_item"
+                },
+                {
+                    "type": "review_item"
+                },
+                {
+                    "type": "review_item"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

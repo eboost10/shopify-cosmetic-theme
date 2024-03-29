@@ -1,0 +1,209 @@
+{% if settings.enable_recently_viewed_product %}
+    {% assign pagename = request.page_type | handle %}
+{{ 'component-recentlyviewed.css' | asset_url | stylesheet_tag }}
+    <div class="lst-seen-widget slided-up{% unless settings.enable_recently_viewed_product_mb %} lst-seen-widget--disableMobile{% endunless %}">
+        <div class="collapse-icon"><svg class="icon"><use xlink:href="#icon-double-arrow-right" /></svg></div>
+        <div class="top{% if pagename == 'cart' %} hide{% endif %}">
+            <div class="cart-icon with-products">
+               <a href="javascript:void(0)" aria-label="link" data-cart-recently>
+                    <svg class="icon"><use xlink:href="#icon-cart" /></svg>
+                    <span class="countPill cart-quantity" data-cart-count id="cart-icon-bubble-1"><span>{{ cart.item_count }}</span></span>
+                </a>
+           </div>
+        </div>
+        <div class="in-content">
+            <p class="title text-center">{{ 'general.recently_viewed.title' | t }}</p>
+            <div class="no-products hide">
+                <svg class="icon"><use xlink:href="#icon-nopicture" /></svg>
+            </div>
+            <div class="products-vertical-slider hide" id="recently-viewed-products-list">
+            </div>
+        </div>
+        <div class="bottom backtoTop">
+            <svg class="icon"><use xlink:href="#icon-arrow-right" /></svg>
+            <div class="text">{{ 'general.recently_viewed.top' | t }}</div>
+        </div>
+    </div>
+    <div class="wrap-icons{% unless settings.enable_recently_viewed_product_mb %} lst-seen-widget--disableMobile{% endunless %}">
+        <div class="expand"><svg class="icon"><use xlink:href="#icon-expand" /></svg></div>
+        <div class="backtoTop"><svg class="icon"><use xlink:href="#icon-arrow-right" /></svg></div>
+    </div>
+    <script src="{{ 'jquery.tmpl.min.js' | asset_url }}"></script>
+    <script src="{{ 'jquery.products.min.js' | asset_url }}"></script>
+
+    {% raw %}
+    <script id="recently-viewed-product-add-on" type="text/x-jquery-tmpl">
+        <div class="item product-card" data-target="img-1" data-product-card>
+            <div id="product-${handle}" class="product-recently-viewed" data-product-id="product-${id}">
+                <a href="${url}" class="recent_item_url" aria-label="link">
+                    <img srcset="${featured_image}" alt="${featured_image.alt}"/>
+                </a>
+                <div class="second-info">
+                    <div class="first product-recently-viewed-content product-card" data-product-id="product-${id}" data-product-card>
+                        <div class="product-content">
+                            {% endraw %}
+                                {% if settings.show_product_title %}
+                            {% raw %}
+                                <h4 class="product-card__title">
+                                    <a class="product-card__link" href="${url}" data-collections-related="/collections/${collection}?view=related" aria-label="title">${title}</a>
+                                </h4>
+                            {% endraw %}
+                                {% endif %}
+                            {% raw %}
+
+                            {% endraw %}
+                                {% if settings.show_product_price %}
+                            {% raw %}
+                                <div class="product-card__price {{if compare_at_price_min > price_min}}price--on-sale{{/if}}" data-price>
+                                    {{if compare_at_price_min > price_min}}
+                                        <span class="price-item price-item--regular" data-regular-price>
+                                            {{html Shopify.formatMoney(variants[0].compare_at_price, window.moneyFormat)}}
+                                        </span>
+                                        <span class="price-item price-item--sale">
+                                            {{if price_varies}}
+                                                {% endraw %}{{ 'products.product.from_text_html' | t }}{% raw %}
+                                            {{/if}}
+                                            {{html Shopify.formatMoney(variants[0].price, window.moneyFormat)}}
+                                        </span>
+                                    {{else}}
+                                        <span class="price-item price-item--regular" data-regular-price>
+                                            {{if price_varies}}
+                                                {% endraw %}{{ 'products.product.from_text_html' | t }}{% raw %}
+                                            {{/if}}
+                                            {{html Shopify.formatMoney(variants[0].price, window.moneyFormat)}}
+                                        </span>
+                                        <span class="price-item price-item--sale"></span>
+                                    {{/if}}
+                                </div>
+                            {% endraw %}
+                                {% endif %}
+                            {% raw %}
+
+                            {% endraw %}
+                                {% if settings.show_product_button %}
+                            {% raw %}
+                                <div class="product-card__button">
+                                    <!-- <form action="/cart/add" method="post" class="variants" id="recently-${id}" data-id="product-actions-${id}" enctype="multipart/form-data" data-product-form2>
+                                        {{if !available}}
+                                            <button class="product-card__btn product-card__btn-soldOut" type="submit" disabled="disabled">
+                                                {% endraw %}
+                                                {{ 'products.product.unavailable' | t }}
+                                                {% raw %}
+                                            </button>
+                                        {{else variants.length > 1 }}
+                                            <a class="product-card__btn" href="${url}" title="${title}" aria-label="button">
+                                                <span>
+                                                    {% endraw %}
+                                                    {{ 'products.product.quick_shop' | t }}
+                                                    {% raw %}
+                                                </span>
+                                            </a>
+                                        {{else}}
+                                            <input type="hidden" name="id" value="${variants[0].id}" />
+                                            <input type="hidden" name="quantity" value="1" />
+                                            <button data-btn-addToCart data-add-to-cart class="product-card__btn" type="submit" data-form-id="#recently-${id}" aria-disabled="true">
+                                                <span class="hide" data-loader>
+                                                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-spinner" viewBox="0 0 20 20"><path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path></svg>
+                                                </span>
+                                                <span data-add-to-cart-text>{% endraw %}{{ 'products.product.add_to_cart' | t }}{% raw %}</span>
+                                            </button>
+                                        {{/if}}
+                                    </form> -->
+                                    {{if !available}}
+                                        <button class="product-card__btn product-card__btn-soldOut" type="submit" disabled="disabled">
+                                            {% endraw %}
+                                            {{ 'products.product.unavailable' | t }}
+                                            {% raw %}
+                                        </button>
+                                    {{else}}
+                                        <a class="product-card__btn" href="${url}" title="${title}" aria-label="button">
+                                            <span>
+                                                {% endraw %}
+                                                {{ 'products.product.detail' | t }}
+                                                {% raw %}
+                                            </span>
+                                        </a>
+                                    {{/if}}
+                                </div>
+                        </div>
+                        <div class="product_width"></div>
+                        {% endraw %}
+                            {% endif %}
+                        {% raw %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    {% endraw %}
+
+    <script>
+        function checkNeedToConvertCurrency() {
+            return (window.show_multiple_currencies && Currency.currentCurrency != shopCurrency) || window.show_auto_currency;
+        }
+
+        $('.lst-seen-widget').find(".no-products").removeClass('hide');
+
+         Shopify.Products.showRecentlyViewed({ 
+            howManyToShow: 5,
+            wrapperId: 'recently-viewed-products-list', 
+            templateId: 'recently-viewed-product-add-on',
+            onComplete: function() {
+                var recentlyViewBlock = $('.lst-seen-widget');
+                var recentlyGrid = recentlyViewBlock.find('.products-vertical-slider');
+                var productGrid = recentlyGrid.children();
+                if(productGrid.length) {
+                    recentlyViewBlock.find(".products-vertical-slider").removeClass('hide');
+                    recentlyViewBlock.find(".no-products").addClass('hide');
+                    if (productGrid.length == 1){
+                        var $row = 1;
+                    }else if(productGrid.length == 2){
+                        var $row = 2;
+                    }else{
+                       var $row = 3; 
+                    }
+                    if (productGrid.length > 2) {
+                        recentlyGrid.addClass('has-arrows');
+                    }
+                    if (productGrid.length >= 1) {
+                        recentlyGrid.slick({
+                            dots: false,
+                            arrows: true,
+                            speed: 1000,
+                            infinite: false,
+                            slidesToShow: $row,
+                            vertical: true,
+                            adaptiveHeight: true,
+                            slidesToScroll: 1,
+                            prevArrow: "<div class='slick-prev slick-arrow'><svg class='icon'><use xlink:href='#icon-chevron-up' /></svg></div>", 
+                            nextArrow: "<div class='slick-next slick-arrow'><svg class='icon'><use xlink:href='#icon-chevron-down' /></svg></div>",
+                            responsive: [
+                                {
+                                    breakpoint: 768,
+                                    settings: {
+                                        slidesToScroll: 1,
+                                        slidesToShow: 1
+                                    }
+                                }
+                            ]
+                        });
+                        recentlyGrid.prepend('<div class="product-info"></div>');
+                    }
+                   
+                    if (checkNeedToConvertCurrency()) {
+                        Currency.convertAll(window.shop_currency, $('#currencies .active').attr('data-currency'), 'span.money', 'money_format');
+                    }
+                }
+            }
+        });
+
+        Shopify.Products.recordRecentlyViewed();
+    </script>
+{% endif %}
+
+<div class="backtoTop no_rcv {% if settings.enable_recently_viewed_product_mb == false %}show_mb{% endif %} {% if settings.enable_recently_viewed_product == false %}show_dk{% endif %}">
+    <a href="javascript:void(0)" aria-label="link">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-up" viewBox="0 0 498.98 284.49"><defs><style>.cls-1{fill:#231f20}</style></defs><path class="cls-1" d="M579.91 486.24A35 35 0 0 1 520.16 511L330.42 321.25 140.68 511a35 35 0 1 1-49.5-49.5L305.67 247a35 35 0 0 1 49.5 0l214.49 214.5a34.89 34.89 0 0 1 10.25 24.74z" transform="translate(-80.93 -236.76)"></path></svg>
+    </a>
+</div>
+

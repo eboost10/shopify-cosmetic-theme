@@ -1,0 +1,586 @@
+
+{% if block_style == "style_1" %}
+    <div class="site-nav-dropdown dropdown-megamenu {{ block_style }} page-width">
+        <div class="dropdown-megamenu-left dropdown-megamenu_item">
+            <div class="dropdown-megamenu--item">
+                {% if title_shop != blank %}
+                <ul class="site-nav-dropdown-child column-1">
+                    <li class="menu-lv-2{% if linklists[link_menu] != empty %} dropdown{% endif %}">
+                        <p class="nav-action {% if linklists[link_menu] == empty %}nav-action--end{% endif %}">
+                            <a href="{{ url_shop }}" class="link" aria-label="link">{{ title_shop }}</a>
+                            
+                        </p>
+                        {% if linklists[link_menu] != empty %}
+                            <div class="dropdown-menu-mobile">
+                               
+                                <ul class="site-nav-dropdown">
+                                    <li class="menu-lv-3 hide_pc">
+                                        <a href="{{ url_shop }}" class="nav-action nav-action--end" aria-label="link">
+                                            <span class="text">{{ 'layout.navigation.menu_all' | t }} {{ title_shop }}</span>
+                                        </a>
+                                    </li>
+                                    {% for link_child_item in linklists[link_menu].links %}                
+                                        <li class="menu-lv-3">
+                                            <a href="{{ link_child_item.url }}" class="nav-action nav-action--end" aria-label="link">
+                                                <span class="text">{{ link_child_item.title }}</span>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        <div class="dropdown-megamenu-center dropdown-megamenu_item">
+            
+            <div class="dropdown-megamenu-center--item">
+                <ul class="site-nav-dropdown-child column-3">
+                    {% for link_child_item in linklists[link_child].links %}
+                        <li class="menu-lv-2{% if linklists[link_child_item.handle] != empty %} dropdown{% endif %}">
+                            <p class="nav-action{%if linklists[link_child_item.handle] == empty %} nav-action--end{% endif %}">
+                                <a href="{{ link_child_item.url }}" class="link" aria-label="link">{{ link_child_item.title }}</a>
+                                
+                            </p>
+                            {% if linklists[link_child_item.handle] != empty %}
+                                <div class="dropdown-menu-mobile">
+                                    
+                                    <ul class="site-nav-dropdown">
+                                        <li class="menu-lv-3 hide_pc">
+                                            <a href="{{ link_child_item.url }}" class="nav-action nav-action--end" aria-label="link">
+                                                <span class="text">{{ 'layout.navigation.menu_all' | t }} {{ link_child_item.title }}</span>
+                                            </a>
+                                        </li>
+                                        {% for n in linklists[link_child_item.handle].links %}                
+                                            <li class="menu-lv-3">
+                                                <a href="{{ n.url }}" class="nav-action nav-action--end" aria-label="link">
+                                                    <span class="text">{{ n.title }}</span>
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="dropdown-megamenu-center--item dropdown-megamenu-center--item--productList">
+                {% if title_featured_product != blank %}
+                    <h3 class="title">{{ title_featured_product }}</h3>
+                {% endif %}
+                <div class="dropdown-megamenu--carousel has-row">
+                    {% for product in collection_megamenu.products limit: 4 %}
+                        <div class="items">
+                            {% render 'card-product-menu', card_product : product %}
+                            
+                        </div>
+                    {% else %}
+                        {% for i in (1..3) %}
+                            <div class="items">
+                                <div class="card-wrapper product-card-wrapper underline-links-hover" data-id="7744081330314">
+                                    <div class=" card card--standard  card--media" style="--ratio-percent: 100%;">
+                                        <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 100%;">
+                                            <div class="card__media">
+                                                <div class="media media--transparent media--hover-effect">
+                                                   {{ 'product-1' |  placeholder_svg_tag: 'placeholder-svg' }}
+                                                </div>
+                                            </div>
+                                            <div class="card__content text-center">
+                                                <div class="card__information text-center">
+                                                    <h3 class="card__heading">
+                                                        <a href="/"  class="full-unstyled-link" >
+                                                            {{ 'homepage.onboarding.product_title' | t }}
+                                                        </a>
+                                                    </h3>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="card__content text-center">
+                                            <div class="card__information text-center">
+                                                <h3 class="card__heading h3" id="title--7744081330314">
+                                                    <a href="/"  class="full-unstyled-link" >
+                                                        {{ 'homepage.onboarding.product_title' | t }}
+                                                    </a>
+                                                </h3>
+                                                <div class="card-information text-center">
+                                                    <span class="caption-large light"></span>
+                                                    <div class="price  price--on-sale">
+                                                        <div class="price__container">
+                                                            <div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+                                                                <span class="price-item price-item--regular">
+                                                                    $37.26
+                                                                </span></div>
+                                                            <div class="price__sale">
+                                                                <span class="visually-hidden visually-hidden--inline">Regular price</span>
+                                                                <span>
+                                                                    <s class="price-item price-item--regular">
+                                                                        $45.45
+                                                                    </s>
+                                                                </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
+                                                                <span class="price-item price-item--sale price-item--last">
+                                                                    $37.26
+                                                                </span>
+                                                            </div>
+                                                            <small class="unit-price caption hidden">
+                                                                <span class="visually-hidden">Unit price</span>
+                                                                <span class="price-item price-item--last">
+                                                                    <span></span>
+                                                                    <span aria-hidden="true">/</span>
+                                                                    <span class="visually-hidden">&nbsp;per&nbsp;</span>
+                                                                    <span>
+                                                                    </span>
+                                                                </span>
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="dropdown-megamenu-right dropdown-megamenu_item">
+            {% if banner_image_1 != blank %}
+                {% assign img_url = banner_image_1 | img_url: '645x' %}
+                {% assign img_url_2 = banner_image_1 | img_url: '330x' %}
+                <a href="{{ link_banner_image_1 }}" class="link">
+                    <img class="dropdown-megamenu__img lazyload" 
+                    src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
+                    data-sizes="auto" alt="" data-image>
+                </a>
+            {% else %}
+                <div class="no-image" style="padding-top: 68%">
+                    <span class="recommended_size">470x320</span>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% elsif block_style == "style_2" %}
+    <div class="site-nav-dropdown dropdown-megamenu {{ block_style }} page-width">
+        <div class="dropdown-megamenu-left dropdown-megamenu_item">
+            <div class="dropdown-megamenu--item">
+                {% if title_shop != blank %}
+                <ul class="site-nav-dropdown-child column-1">
+                    <li class="menu-lv-2{% if linklists[link_menu] != empty %} dropdown{% endif %}">
+                        <p class="nav-action {% if linklists[link_menu] == empty %}nav-action--end{% endif %}">
+                            <a href="{{ url_shop }}" class="link" aria-label="link">{{ title_shop }}</a>
+                            
+                        </p>
+                        {% if linklists[link_menu] != empty %}
+                            <div class="dropdown-menu-mobile">
+                               
+                                <ul class="site-nav-dropdown">
+                                    {% for link_child_item in linklists[link_menu].links %}                
+                                <li class="menu-lv-3">
+                                    <a href="{{ link_child_item.url }}" class="nav-action nav-action--end" aria-label="link">
+                                        <span class="text">{{ link_child_item.title }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        <div class="dropdown-megamenu-center dropdown-megamenu_item">
+            
+            <div class="dropdown-megamenu-center--item">
+                <ul class="site-nav-dropdown-child column-3">
+                    {% for link_child_item in linklists[link_child].links %}
+                        <li class="menu-lv-2{% if linklists[link_child_item.handle] != empty %} dropdown{% endif %}">
+                            <p class="nav-action{%if linklists[link_child_item.handle] == empty %} nav-action--end{% endif %}">
+                                <a href="{{ link_child_item.url }}" class="link" aria-label="link">{{ link_child_item.title }}</a>
+                                
+                            </p>
+                            {% if linklists[link_child_item.handle] != empty %}
+                                <div class="dropdown-menu-mobile">
+                                    
+                                    <ul class="site-nav-dropdown">
+                                        <li class="menu-lv-3 hide_pc">
+                                            <a href="{{ link_child_item.url }}" class="nav-action nav-action--end" aria-label="link">
+                                                <span class="text">{{ 'layout.navigation.menu_all' | t }} {{ link_child_item.title }}</span>
+                                            </a>
+                                        </li>
+                                        {% for n in linklists[link_child_item.handle].links %}                
+                                            <li class="menu-lv-3">
+                                                <a href="{{ n.url }}" class="nav-action nav-action--end" aria-label="link">
+                                                    <span class="text">{{ n.title }}</span>
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="dropdown-megamenu-center--item dropdown-megamenu-center--item--collectionList">
+                {% if title_featured_product != blank %}
+                    <h3 class="title">{{ title_featured_product }}</h3>
+                {% endif %}
+                <div class="megamenu-center--right">
+                    <div class="megamenu-center--right_item">
+                        {% if brands_image_1 != blank %}
+                            {% assign img_url = brands_image_1 | img_url: '170x' %}
+                            {% assign img_url_2 = brands_image_1 | img_url: '170x' %}
+                            <a href="{{ brands_link_1 }}" class="link image--hover">
+                                <img class="dropdown-megamenu__img lazyload" 
+                                src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
+                                data-sizes="auto" alt="" data-image>
+                            </a>
+                        {% else %}
+                            <a href="{{ brands_link_1 }}" class="link">
+                                 <div class="no-image" style="padding-top: 42%">
+                                    <span class="recommended_size">170x70</span>
+                                </div>
+                            </a>
+                        {% endif %}
+
+                        {% if brands_image_2 != blank %}
+                            {% assign img_url = brands_image_2 | img_url: '170x' %}
+                            {% assign img_url_2 = brands_image_2 | img_url: '170x' %}
+                            <a href="{{ brands_link_2 }}" class="link image--hover">
+                                <img class="dropdown-megamenu__img lazyload" 
+                                src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
+                                data-sizes="auto" alt="" data-image>
+                            </a>
+                        {% else %}
+                            <a href="{{ brands_link_2 }}" class="link">
+                                <div class="no-image" style="padding-top: 42%">
+                                    <span class="recommended_size">170x70</span>
+                                </div>
+                            </a>
+                        {% endif %}
+
+                        {% if brands_image_3 != blank %}
+                            {% assign img_url = brands_image_3 | img_url: '170x' %}
+                            {% assign img_url_2 = brands_image_3 | img_url: '170x' %}
+                            <a href="{{ brands_link_3 }}" class="link image--hover">
+                                <img class="dropdown-megamenu__img lazyload" 
+                                src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
+                                data-sizes="auto" alt="" data-image>
+                            </a>
+                        {% else %}
+                            <a href="{{ brands_link_3 }}" class="link image--hover">
+                                <div class="no-image" style="padding-top: 42%">
+                                    <span class="recommended_size">170x70</span>
+                                </div>
+                            </a>
+                        {% endif %}
+
+                        {% if brands_image_4 != blank %}
+                            {% assign img_url = brands_image_4 | img_url: '170x' %}
+                            {% assign img_url_2 = brands_image_4 | img_url: '170x' %}
+                            <a href="{{ brands_link_4 }}" class="link image--hover">
+                                <img class="dropdown-megamenu__img lazyload" 
+                                src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
+                                data-sizes="auto" alt="" data-image>
+                            </a>
+                        {% else %}
+                            <a href="{{ brands_link_4 }}" class="link image--hover">
+                                <div class="no-image" style="padding-top: 42%">
+                                    <span class="recommended_size">170x70</span>
+                                </div>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown-megamenu-right dropdown-megamenu_item">
+
+            <div class="dropdown-megamenu-right--item">
+                {% if banner_image_1 != blank %}
+                    {% assign img_url = banner_image_1 | img_url: '470x' %}
+                    {% assign img_url_2 = banner_image_1 | img_url: '330x' %}
+                    <div class="link">
+                        <a href="{{ link_banner_image_1 }}" class="link_1 hover-images">
+                            <img class="dropdown-megamenu__img lazyload" 
+                            src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
+                            data-sizes="auto" alt="" data-image>
+                        </a>
+                    </div>
+                {% else %}
+                    <a href="{{ link_banner_image_1 }}" class="link">
+                        <div class="no-image" style="padding-top: 143.2%">
+                            <span class="recommended_size">270x365</span>
+                        </div>
+                    </a>
+                {% endif %}
+                {% if banner_image_2 != blank %}
+                    {% assign img_url = banner_image_2 | img_url: '470x' %}
+                    {% assign img_url_2 = banner_image_2 | img_url: '330x' %}
+                    <div class="link">
+                        <a href="{{ link_banner_image_2 }}" class="link_1 hover-images">
+                            <img class="dropdown-megamenu__img lazyload" 
+                            src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
+                            data-sizes="auto" alt="" data-image>
+                        </a>
+                    </div>
+                {% else %}
+                    <a href="{{ link_banner_image_2 }}" class="link">
+                        <div class="no-image" style="padding-top: 143.2%">
+                            <span class="recommended_size">270x365</span>
+                        </div>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% elsif block_style == "style_3" %}
+    <div class="site-nav-dropdown dropdown-megamenu {{ block_style }} page-width">
+        <div class="dropdown-megamenu--items">
+            <ul class="site-nav-dropdown-child column-5">
+                {% for l in linklists[link_child].links %}
+                <li class="menu-lv-2 {% if linklists[l.handle] != empty %} dropdown{% endif %}">
+                    <p class="nav-action{%if linklists[l.handle] == empty %} nav-action--end{% endif %}">
+                        <a href="{{ l.url }}" class="link" aria-label="link">
+                            {{ l.title }}
+                        </a>
+                        
+                    </p>
+                    {% if linklists[l.handle] != empty %}
+                        <div class="dropdown-menu-mobile">
+                            
+                            <ul class="site-nav-dropdown">
+                                <li class="menu-lv-3 menu-image">
+                                    {% if forloop.index == 1 and banner_image_style_3_1 != blank %}
+                                        <a href="{{ l.url }}" class="current hover-images" aria-label="link">
+                                            <img class="lazyload"   src="{{ banner_image_style_3_1 | img_url :'290x' }}" alt="" data-image/>
+                                        </a>
+                                    {% elsif forloop.index == 2 and banner_image_style_3_2 != blank %}
+                                        <a href="{{ l.url }}" class="current hover-images" aria-label="link">
+                                            <img class="lazyload"   src="{{ banner_image_style_3_2 | img_url :'290x' }}" alt="" data-image/>
+                                        </a>
+                                    {% elsif forloop.index == 3 and banner_image_style_3_3 != blank %}
+                                        <a href="{{ l.url }}" class="current hover-images" aria-label="link">
+                                            <img class="lazyload"   src="{{ banner_image_style_3_3 | img_url :'290x' }}" alt="" data-image/>
+                                        </a>
+                                    {% elsif forloop.index == 4 and banner_image_style_3_4 != blank %}
+                                        <a href="{{ l.url }}" class="current hover-images" aria-label="link">
+                                            <img class="lazyload"   src="{{ banner_image_style_3_4 | img_url :'290x' }}" alt="" data-image/>
+                                        </a>
+                                    {% elsif forloop.index == 5 and banner_image_style_3_5 != blank %}
+                                        <a href="{{ l.url }}" class="current hover-images" aria-label="link">
+                                            <img class="lazyload"   src="{{ banner_image_style_3_5 | img_url :'290x' }}" alt="" data-image/>
+                                        </a>
+                                    {% endif %}
+                                </li>
+                                <li class="menu-lv-3 hide_pc">
+                                    <a href="{{ l.url }}" class="nav-action nav-action--end" aria-label="link">
+                                        <span class="text">{{ 'layout.navigation.menu_all' | t }} {{ l.title }}</span>
+                                    </a>
+                                </li>
+                                {% for n in linklists[l.handle].links %}                
+                                    <li class="menu-lv-3">
+                                        <a href="{{ n.url }}" class="nav-action nav-action--end" aria-label="link">
+                                            <span class="text">{{ n.title }}</span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% if countdown_text != blank or countdown_timer != blank %}
+        <div class="dropdown-megamenu--countdown">
+            <span class="countdown-text">{{countdown_text}}</span>
+            <div class="countdown_timer">
+                <span class="text_end"> {{countdown_text2}}</span>
+                <span data-countdown data-countdown-value="{{ countdown_timer }}"></span>
+            </div>
+        </div>
+    {% endif %}
+
+{% elsif block_style == "style_4" %}
+    <div class="site-nav-dropdown dropdown-megamenu {{ block_style }}">
+        <div class="dropdown-megamenu-left">
+            {% if banner_image_1 != blank %}
+                {% assign img_url = banner_image_1 | img_url: '610x' %}
+                {% assign img_url_2 = banner_image_1 | img_url: '330x' %}
+                <a href="{{ link_banner_image_1 }}" class="link image--hover">
+                    <img class="dropdown-megamenu__img lazyload" 
+                    src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
+                    data-sizes="auto" alt="" data-image>
+                </a>
+            {% else %}
+                 <div class="no-image" style="padding-top: 74%">
+                    <span class="recommended_size">605x450</span>
+                </div>
+
+            {% endif %}
+        </div>
+        <div class="dropdown-megamenu-center dropdown-megamenu_item">
+            
+            <div class="dropdown-megamenu-center--item">
+                <ul class="site-nav-dropdown-child column-3">
+                    <li class="menu-lv-3 hide_pc">
+                        <a href="{{ link_for_style_4.url }}" class="nav-action nav-action--end" aria-label="link">
+                            <span class="text">{{ 'layout.navigation.menu_all' | t }} {{ link_for_style_4.title }}</span>
+                        </a>
+                    </li>
+                    {% for link_child_item in linklists[link_child].links %}
+                        <li class="menu-lv-2{% if linklists[link_child_item.handle] != empty %} dropdown{% endif %}">
+                            <p class="nav-action{%if linklists[link_child_item.handle] == empty %} nav-action--end{% endif %}">
+                                <a href="{{ link_child_item.url }}" class="link" aria-label="link">{{ link_child_item.title }}</a>
+                                
+                            </p>
+                            {% if linklists[link_child_item.handle] != empty %}
+                                <div class="dropdown-menu-mobile">
+                                    
+                                    <ul class="site-nav-dropdown">
+                                        <li class="menu-lv-3 hide_pc">
+                                            <a href="{{ link_child_item.url }}" class="nav-action nav-action--end" aria-label="link">
+                                                <span class="text">{{ 'layout.navigation.menu_all' | t }} {{ link_child_item.title }}</span>
+                                            </a>
+                                        </li>
+                                        {% for n in linklists[link_child_item.handle].links %}                
+                                            <li class="menu-lv-3">
+                                                <a href="{{ n.url }}" class="nav-action nav-action--end" aria-label="link">
+                                                    <span class="text">{{ n.title }}</span>
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="dropdown-megamenu-center--item dropdown-megamenu-center--item--productList">
+                {% if title_featured_product != blank %}
+                    <h3 class="title">{{ title_featured_product }}</h3>
+                {% endif %}
+                <div class="dropdown-megamenu--carousel">
+
+                    {% for product in collection_megamenu.products limit: 3 %}
+                        <div class="items">
+
+                            {% render 'card-product-menu', card_product : product %}
+                        </div>
+                    {% else %}
+                        {% for i in (1..3) %}
+                            <div class="items">
+                                <div class="card-wrapper product-card-wrapper underline-links-hover" data-id="7744081330314">
+                                    <div class=" card card--standard  card--media" style="--ratio-percent: 100%;">
+                                        <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 100%;">
+                                            <div class="card__media">
+                                                <div class="media media--transparent media--hover-effect">
+                                                   {{ 'product-1' |  placeholder_svg_tag: 'placeholder-svg' }}
+                                                </div>
+                                            </div>
+                                            <div class="card__content text-center">
+                                                <div class="card__information text-center">
+                                                    <h3 class="card__heading">
+                                                        <a href="/"  class="full-unstyled-link" >
+                                                            {{ 'homepage.onboarding.product_title' | t }}
+                                                        </a>
+                                                    </h3>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="card__content text-center">
+                                            <div class="card__information text-center">
+                                                <h3 class="card__heading h3" id="title--7744081330314">
+                                                    <a href="/"  class="full-unstyled-link" >
+                                                        {{ 'homepage.onboarding.product_title' | t }}
+                                                    </a>
+                                                </h3>
+                                                <div class="card-information text-center">
+                                                    <span class="caption-large light"></span>
+                                                    <div class="price  price--on-sale">
+                                                        <div class="price__container">
+                                                            <div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+                                                                <span class="price-item price-item--regular">
+                                                                    $37.26
+                                                                </span></div>
+                                                            <div class="price__sale">
+                                                                <span class="visually-hidden visually-hidden--inline">Regular price</span>
+                                                                <span>
+                                                                    <s class="price-item price-item--regular">
+                                                                        $45.45
+                                                                    </s>
+                                                                </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
+                                                                <span class="price-item price-item--sale price-item--last">
+                                                                    $37.26
+                                                                </span>
+                                                            </div>
+                                                            <small class="unit-price caption hidden">
+                                                                <span class="visually-hidden">Unit price</span>
+                                                                <span class="price-item price-item--last">
+                                                                    <span></span>
+                                                                    <span aria-hidden="true">/</span>
+                                                                    <span class="visually-hidden">&nbsp;per&nbsp;</span>
+                                                                    <span>
+                                                                    </span>
+                                                                </span>
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="dropdown-megamenu-right dropdown-megamenu_item">
+
+            <div class="dropdown-megamenu-right--item">
+                {% if banner_image_2 != blank %}
+                    {% assign img_url = banner_image_2 | img_url: '270x' %}
+                    {% assign img_url_2 = banner_image_2 | img_url: '330x' %}
+                    <a href="{{ link_banner_image_2 }}" class="hover-images">
+                        <img class="dropdown-megamenu__img lazyload" 
+                        src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
+                        data-sizes="auto" alt="" data-image>
+                    </a>
+                {% else %}
+                     <div class="no-image" style="padding-top: 55.6%;margin-bottom: 15px;">
+                        <span class="recommended_size">270x150</span>
+                    </div>
+                {% endif %}
+                {% if banner_image_3 != blank %}
+                    {% assign img_url = banner_image_3 | img_url: '270x' %}
+                    {% assign img_url_2 = banner_image_3 | img_url: '330x' %}
+                    <a href="{{ link_banner_image_3 }}" class="hover-images">
+                        <img class="dropdown-megamenu__img lazyload" 
+                        src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
+                        data-sizes="auto" alt="" data-image>
+                    </a>
+                {% else %}
+                   <div class="no-image" style="padding-top: 55.6%">
+                        <span class="recommended_size">270x150</span>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}

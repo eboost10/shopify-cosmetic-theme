@@ -1,0 +1,273 @@
+{{ 'component-quote.css' | asset_url | stylesheet_tag }}
+{% if section.settings.background-color %}
+    {% assign background_color = 'main-section-background-gray' %}
+{% endif %}
+
+{% if section.settings.border-top %}
+    {% assign border_top = 'main-section-border-top' %}
+{% endif %}
+
+{% if section.settings.border-bottom %}
+    {% assign border_bottom = 'main-section-border-bottom' %}
+{% endif %}
+
+{% assign top =  section.settings.top %}
+{% assign bottom = section.settings.bottom %}
+
+{% assign column = column | default: section.settings.column %}
+{% assign arrows = arrows | default: section.settings.carousel-arrows %}
+{% assign dots = dots | default: section.settings.carousel-dots %}
+
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="main-section color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding" data-section-id="{{ section.id }}" data-section-type="quotes">
+    <div class="page-width">
+        {% if section.settings.title != blank %}
+            <div class="title text-center ">
+                <h2 class="{{ section.settings.heading_size }} inline-richtext {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}>
+                    {{ section.settings.title }}
+                </h2>
+            </div>
+        {% endif %}
+        {% if section.settings.description != blank %}
+            <div class=" text-center rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} {% endif %} >
+                <p> {{ section.settings.description }}</p>
+            </div>
+        {% endif %}    
+       
+        {% if section.blocks.size > 0 %}
+            <div class="main-row column-{{ column }}"
+                data-slick='{
+                    "rows": 0,
+                    "rtl": false,
+                    "dots": true,
+                    "arrows": false,
+                    "infinite": false,
+                    "adaptiveHeight": true,
+                    "mobileFirst": true,
+                    "slidesToShow": 1,
+                    "slidesToScroll": 1,
+                    "prevArrow": "<div class=&apos;slick-prev slick-arrow&apos;><svg class=&apos;icon&apos;><use xlink:href=&apos;#icon-chevron-left&apos; /></svg></div>", 
+                    "nextArrow": "<div class=&apos;slick-next slick-arrow&apos;><svg class=&apos;icon&apos;><use xlink:href=&apos;#icon-chevron-right&apos; /></svg></div>",
+                    "responsive": [
+                        {
+                            "breakpoint": 551,
+                            "settings": {
+                                "slidesToShow": 2
+                            }
+                        },
+                        {
+                            "breakpoint": 991,
+                            "settings": {
+                                "slidesToShow": 3
+                            }
+                        },
+                        {
+                            "breakpoint": 1025,
+                            "settings": {
+                                "dots": {{ dots }},
+                                "arrows": {{ arrows }}
+                            }
+                        },
+                        {
+                            "breakpoint": 1281,
+                            "settings": {
+                                "dots": {{ dots }},
+                                "arrows": {{ arrows }},
+                                "slidesToShow": {{ column }}
+                            }
+                        }
+                    ]
+                }'>
+                {% for block in section.blocks %}
+                    <div class="main-row__item">
+                        <blockquote class="quotes-slider__text text-center">
+                            {% if block.settings.quote != blank %}
+                                <div class="quote-content">{{ block.settings.quote }}</div>
+                            {% endif %}
+                            <div class="quote-author">
+                                {% if block.settings.image %}    
+                                    <img class="lazyload" data-srcset="{{ block.settings.image | img_url: '50x50' }}" alt="" data-image>
+                                {% endif %}
+                                {% if block.settings.author != blank %}
+                                    <cite>{{ block.settings.author }}</cite>
+                                {% endif %}
+                            </div>
+                        </blockquote>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+    "name": "Testimonials",
+    "tag": "section",
+    "class": "section",
+    "max_blocks": 9,
+    "settings": [
+        {
+            "type": "header",
+            "content": "Section Layout"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "scheme-1"
+        },
+        {
+            "type": "checkbox",
+            "id": "border-top",
+            "label": "Show border top",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "border-bottom",
+            "label": "Show border bottom",
+            "default": false
+        },
+        {
+            "type": "range",
+            "id": "top",
+            "label": "Spacing Top",
+            "default": 30,
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "bottom",
+            "label": "Spacing bottom",
+            "default": 30,
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "px"
+        },
+        {
+            "type": "header",
+            "content": "Heading Section"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Testimonials"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            }
+          ],
+          "default": "h2",
+          "label": "t:sections.all.heading_size.label"
+        },
+        {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+        },
+        {
+            "type": "header",
+            "content": "Layout"
+        },
+        {
+            "type": "range",
+            "id": "column",
+            "label": "Column",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "default": 3
+        },
+        {
+            "type": "checkbox",
+            "id": "carousel-arrows",
+            "label": "Show arrows (Layout carousel)",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "carousel-dots",
+            "label": "Show dots (Layout carousel)",
+            "default": true
+        }
+        
+    ],
+    "blocks": [
+        {
+            "type": "quote",
+            "name": "Testimonial",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "quote",
+                    "label": "Text",
+                    "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+                },
+                {
+                    "type": "text",
+                    "id": "author",
+                    "label": "Author",
+                    "default": "Author's name"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Testimonials",
+            "category": "Text",
+            "blocks": [
+                {
+                    "type": "quote"
+                },
+                {
+                    "type": "quote"
+                },
+                {
+                    "type": "quote"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,87 @@
+{% if settings.enable_currencies %}
+{% if localization.available_countries.size > 1 %}
+  {% form 'localization', id: 'CountryForm' %}
+
+        <div id="CountryList" role="list" class="disclosure__list" hidden>
+          {% for country in localization.available_countries %}
+            <a href="#"  data-value="{{ country.iso_code }}" data-currency="{{ country.currency.symbol }}">
+                {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+              </a>
+          {% endfor %}
+        </div>
+
+        <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+      </div>
+    {% endform %}
+{% endif %}
+   
+    <script>
+        var currencySwitcher = $('.currencies'),
+            currencyItem = currencySwitcher.find('[data-currency]');
+                
+        currencyItem.on('click', function(e) {
+            e.preventDefault();
+            
+            if($(this).hasClass('active')) return false;
+            
+            currencyItem.removeClass('active');
+            
+            $(this).addClass('active');
+            
+            var label = $('[data-currency-label]');
+            
+            if(label.length && label.is(':visible')) {
+            var item = $(this).html();
+            
+            label.html(item);
+            };
+            
+            var cur = $(this).attr('data-currency');
+            
+            $('#CountryList a').each(function(){
+                var dataCurrency = $(this).data('currency')
+                if(dataCurrency == cur){
+                    $('input[name="country_code"]').val($(this).data('value'));
+                    $('#CountryForm').submit();
+                }
+            })
+            
+                
+        });
+    </script>
+
+{% endif %}
+
+<script type="text/javascript">
+    var primaryLanguage = {{- localization.language.iso_code | json -}};
+     {%- for locale in shop.published_locales -%}
+        {%- if locale.primary - %}
+            primaryLanguage = {{- locale.iso_code | json -}};
+        {%- endif -%}
+    {%- endfor -%}
+    function setupLanguageSwitcher() {
+        var shopDomain = 'https://{{shop.domain}}';
+        var currentLocale = window.currentLanguage;
+        $('.lang-switcher [data-value]').on('click', function(e) {
+            e.preventDefault();
+            var lag = $(this).data('value');
+            var pathname = window.location.pathname;
+            if (lag == primaryLanguage) {
+                let url = '' + shopDomain + pathname.replace('/' + currentLocale, '');
+                window.location.assign(url)
+            } else if (primaryLanguage == currentLocale) {
+                let url = shopDomain + '/' + lag + pathname;
+                window.location.assign(url)
+            } else {
+                let url = shopDomain + '/' + pathname.replace('/' + currentLocale, lag);
+                window.location.assign(url)
+            }
+        });    
+    }
+
+    if (window.attachEvent) {
+        window.attachEvent('onload', setupLanguageSwitcher);
+    } else {
+        window.addEventListener('load', setupLanguageSwitcher, false);
+    }
+</script>

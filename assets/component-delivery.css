@@ -1,0 +1,87 @@
+
+.delivery  {
+  overflow: hidden;
+}
+.delivery ul {
+  display: flex;
+  border: 0.1rem solid #ccc;
+  padding: 0;
+}
+.delivery ul li svg {
+  width: 2.5rem;
+  height: auto;
+}
+.delivery ul li {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 33.3333%;
+  padding: 1.5rem 1rem 1rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.delivery ul li strong {
+  display: block;
+  margin: 0.5rem 0;
+}
+.delivery ul li span.date {
+  font-size: 12px;
+}
+.delivery ul li:first-child{
+  border-right: 0.1rem solid #ccc;
+  
+}
+.delivery ul li:nth-child(2) {
+  margin-left: -0.1rem;
+  border-right: 0.1rem solid #ccc;
+}
+.delivery ul li:last-child {
+  margin-left: -0.1rem;
+}
+.delivery ul li:nth-child(2):before{
+  content: "";
+  position: absolute;
+  background: #fff;
+  left: -.7rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  z-index: 1;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.delivery ul li:nth-child(2):after{
+  content: "";
+  position: absolute;
+  background: #ccc;
+  left: -0.8rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.delivery ul li:last-child:before{
+  content: "";
+  position: absolute;
+  background: #fff;
+  left: -0.7rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  z-index: 1;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.delivery ul li:last-child:after{
+  content: "";
+  position: absolute;
+  background: #ccc;
+  left: -0.8rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.delivery ul li .icon-d img {
+  width: 3rem;
+  height: 3rem;
+}

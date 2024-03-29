@@ -1,0 +1,238 @@
+{{ 'component-faq-page.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'bootstrap.bundle.js' | asset_url }}" defer="defer"></script>
+<div class="page-width">
+    <div class="page page-faq">
+        {% render 'breadcrumb', breadcrumb_top: true %}
+            {% if section.settings.header_title != blank %}
+            <div class="section-header text-left">
+                <h1 class="title title--large">
+                 {{section.settings.header_title}}
+                </h1>
+            </div>
+            {% endif %}
+        {% if section.settings.des_heading != blank %}
+            <div class="rte">
+                {{ section.settings.des_heading }}
+            </div>
+        {% endif %}
+        
+        <div class="sidebar_mobile_wrapper">
+            <div class="sidebar_mobile">
+                <span class='text'>{{ 'general.sidebar.title' | t }}:</span>
+                <svg class="icon"><use xlink:href="#icon-sidebar" /></svg>
+            </div>
+        </div>
+        <div class="page-sidebar page-sidebar--sticky">
+            <div class="page-sidebar__close">
+                <a href="javascript:void(0)" class="close close-modal">
+                    <svg class="icon icon-close"><use xlink:href="#icon-close" /></svg>
+                    <span class="text">{{ 'general.accessibility.close_modal' | t }}</span>
+                </a>
+            </div>
+            <div class="faq-contact text-center">
+                <h3 class="faq-title">{{ 'general.faq.need_help' | t }}</h3>
+                <div class="faq-group">
+                    <div class="faq-group__item text-center">
+                        <a href="{{ section.settings.link_1 }}">
+                            <svg class="icon"><use xlink:href="#icon-messenger" /></svg>
+                            <span class="text">{{ 'general.faq.message' | t }}</span>
+                        </a>
+                    </div>
+                    <div class="faq-group__item text-center">
+                        <a href="{{ section.settings.link_2 }}">
+                            <svg class="icon"><use xlink:href="#icon-email" /></svg>
+                            <span class="text">{{ 'general.faq.contact' | t }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            {% if section.settings.show_faqs_1 %}
+                <div class="faqs-paragraph">
+                    <h3 class="faq-title">{{ section.settings.faqs_1_title }}</h3>
+                    <div id="accordion">
+                        {% assign index = 0 %}
+                        {% for block in section.blocks %}
+                            {% assign index = forloop.index0 %}
+                            {% if block.settings.faq_type == '1' %}
+                            <div class="card">
+                                <div class="card-header" id="heading-{{ block.id }}">
+                                    <button class="title {{index}} collapsed text-left" data-bs-toggle="collapse" data-bs-target="#{{ block.id }}" aria-expanded="true" aria-controls="{{ block.id }}">
+                                        <h3>{{ block.settings.question_faqs }}</h3>
+                                    </button>
+                                    <span class="icon-plus"></span>
+                                </div>
+                                <div id="{{ block.id }}" class="collapse {{index}} " aria-labelledby="heading-{{ block.id }}" data-bs-parent="#accordion">
+                                    <div class="card-body rte">
+                                        {{ block.settings.answer_faqs }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if section.settings.show_faqs_2 %}
+                <div class="faqs-paragraph">
+                    <h3 class="faq-title">{{ section.settings.faqs_2_title }}</h3>
+                    <div id="accordion">
+
+                        {% for block in section.blocks %}
+                            {% if block.settings.faq_type == '2' %}
+
+                            <div class="card">
+                                <div class="card-header" id="heading-{{ block.id }}">
+                                    <button class="title text-left collapsed" data-bs-toggle="collapse" data-bs-target="#{{ block.id }}" aria-expanded="true" aria-controls="{{ block.id }}">
+                                        <h3>{{ block.settings.question_faqs }}</h3>
+                                    </button>
+                                    <span class="icon-plus"></span>
+                                </div>
+                                <div id="{{ block.id }}" class="collapse" aria-labelledby="heading-{{ block.id }}" data-bs-parent="#accordion">
+                                    <div class="card-body rte">
+                                        {{ block.settings.answer_faqs }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if section.settings.faq_text != blank %}
+                <div class="faq-content faq-bottom text-right">
+                    <p>{{ section.settings.faq_text }} <a href="{{section.settings.btn_text_link}}" class="button">{{section.settings.btn_text}}</a></p>
+                </div>
+            {% endif %}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Page Content",
+    "class": "page-content",
+    "settings": [
+        
+        {
+            "type": "header",
+            "content": "Heading Title"
+        },
+        {
+            "type" : "text",
+            "id" : "header_title",
+            "label" : "Title",
+            "default": "Frequently Asked Questions"
+        },
+        {
+            "type" : "text",
+            "id" : "des_heading",
+            "label" : "Des",
+            "default": "Below FAQ are some common concerns of our clients before purchasing the theme, if you have other questions, please just send it to eboost10@gmail.com"
+        },
+        {
+            "type": "header",
+            "content": "Sidebar Links"
+        },
+        {
+            "type": "url",
+            "id": "link_1",
+            "label": "Messenger link"
+        },
+        {
+            "type": "url",
+            "id": "link_2",
+            "label": "Contact link"
+        },
+        {
+            "type": "header",
+            "content": "FAQs"
+        },
+        {
+            "type" : "checkbox",
+            "id" : "show_faqs_1",
+            "label" : "Show FAQs Paragraph 1",
+            "default": true
+        },
+        {
+            "type" : "text",
+            "id" : "faqs_1_title",
+            "label" : "FAQs Paragraph 1 Title",
+            "default": "Pre-Sales Questions"
+        },
+        {
+            "type" : "checkbox",
+            "id" : "show_faqs_2",
+            "label" : "Show FAQs Paragraph 2",
+            "default": true
+        },
+        {
+            "type" : "text",
+            "id" : "faqs_2_title",
+            "label" : "FAQs Paragraph 2 Title",
+            "default": "Theme Questions"
+        },
+        {
+            "type": "header",
+            "content": "Text on Bottom"
+        },
+        {
+            "type": "text",
+            "id": "faq_text",
+            "label": "Text"
+        },
+        {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "btn_text_link",
+            "label": "Button Link"
+        }
+
+    ],
+    "blocks": [
+        {
+            "type" : "question",
+            "name" : "Question",
+            "settings":[
+                {
+                    "type" : "text",
+                    "id" : "question_faqs",
+                    "label" : "Question",
+                    "default": "Question"
+                },
+                {
+                    "type" : "html",
+                    "id" : "answer_faqs",
+                    "label" : "Answer",
+                    "default": "<p>Use overlay text to give your customers insight into your brand. Select image and text that relates to your style and story.</p>"
+                },
+                {
+                    "type": "select",
+                    "id": "faq_type",
+                    "label": "Position",
+                    "options": [
+                        {
+                            "value": "1",
+                            "label": "1"
+                        },
+                        {
+                            "value": "2",
+                            "label": "2"
+                        }
+                    ],
+                    "default": "1"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

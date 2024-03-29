@@ -1,0 +1,228 @@
+
+.login-form__content .btn--secondary,
+.login-form__content .shopify-payment-button .shopify-payment-button__button--unbranded,
+.shopify-payment-button .login-form__content .shopify-payment-button__button--unbranded {
+    border: var(--inputs-border-width) solid rgba(var(--color-foreground),var(--inputs-border-opacity));
+}
+
+.btn--secondary,
+.shopify-payment-button .shopify-payment-button__button--unbranded {
+    color: var(--color-secondary-button-text);
+    background-color: var(--color-secondary-button);
+    border-color: rgba(var(--color-foreground),var(--inputs-border-opacity));
+    border-radius: .3rem;
+    font-weight: bold;
+}
+
+.btn--secondary:hover,
+.shopify-payment-button .shopify-payment-button__button--unbranded:hover {
+    color: var(--color-secondary-button-text);
+    border-color: var(--color-secondary-button);
+    background-color: var(--color-secondary-button);
+}     
+.btn,
+.shopify-payment-button .shopify-payment-button__button--unbranded{
+    appearance: none;
+    display: inline-block;
+    width: auto;
+    font-size: 1.6rem;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 0 1.5rem;
+    height: 4.6rem;
+    line-height: 4.4rem;
+    font-family: var(--font-heading-family);
+    font-style: var(--font_style_header);
+    font-weight: 700;
+    color: var(--color-foreground);
+    background-color: rgb(var(--color-background));
+    border: var(--inputs-border-width) solid rgba(var(--color-foreground),var(--inputs-border-opacity));
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn .icon-arrow-right,
+.shopify-payment-button .shopify-payment-button__button--unbranded .icon-arrow-right
+.btn .icon-arrow-left,
+.shopify-payment-button .shopify-payment-button__button--unbranded .icon-arrow-left {
+    height: 9px;
+}
+
+.btn:focus,
+.shopify-payment-button .shopify-payment-button__button--unbranded:focus {
+    box-shadow: none;
+}
+
+.btn[disabled],
+.shopify-payment-button .shopify-payment-button__button--unbranded[disabled]{
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@media (min-width: 1025px) {
+
+    .btn,
+    .shopify-payment-button .shopify-payment-button__button--unbranded {
+        height: 4.6rem;
+        line-height: 4.4rem;
+        padding: 0 30px;
+    }
+}
+
+.form-label,
+.spr-form-label {
+    font-weight: bold;
+    color: rgb(var(--color-foreground));
+    font-size: var(--font_size_base);
+    text-transform: capitalize;
+    font-family: var(--font-heading-family);
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.form-label em,
+.spr-form-label em {
+    color: rgb(var(--color-foreground))!important;
+}
+input, textarea, select, .form-control {
+  color: rgb(var(--color-foreground));
+  border:  var(--inputs-border-width) solid rgba(var(--color-foreground),var(--inputs-border-opacity));
+  background-color: rgb(var(--color-background));
+  max-width: 100%;
+  height: 4.6rem;
+  line-height: 4rem;
+  border-radius: .3rem;
+  font-size: var(--font_size_base);
+  padding-top: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+
+.login-form {
+    width: 100%;
+    z-index: 5;
+    padding: 0;
+    line-height: 2.2rem;
+    text-align: left;
+    white-space: normal;
+    color: var(--color_body_text);
+    background-color: var(--color_body);
+    font-size: var(--font_size_base);
+    font-family: var(--font-body-family);
+    font-weight: var(--font-body-weight);
+}
+
+.login-form__header {
+    color: var(--color_body_text);
+    position: relative;
+    background-color: #f3f3f3;
+    padding: 1.6rem 2rem 1.4rem 2rem;
+}
+
+.login-form__header .title {
+    color: inherit;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+
+.login-form__content {
+    padding: 2rem;
+}
+
+.login-form__content .login-form__form .form-field:first-child {
+    margin-bottom: 2rem;
+}
+
+.login-form__content .btn {
+    display: block;
+    width: 100%;
+    border-radius: .3rem;
+    font-weight: bold;
+}
+
+.login-form__content .forgot-password {
+    margin: 1rem 0 1.7rem;
+    color: var(--color_body_url);
+    font-style: italic;
+    font-size: 14px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.login-form__content .forgot-password:before {
+    content: "";
+    width: 0;
+    left: 0;
+    bottom: 0;
+    height: .1rem;
+    position: absolute;
+    background-color: rgb(var(--color-foreground));
+    transition: all 0.3s ease;
+}
+
+.login-form__content .forgot-password:hover {
+    color: rgb(var(--color-foreground));
+}
+
+.login-form__content .forgot-password:hover:before {
+    width: 100%;
+}
+.navUser-action.is-open:before {
+    border-left: solid transparent 1rem;
+    border-right: solid transparent 1rem;
+    border-bottom: solid #fff 1rem;
+    top: calc(100% + 19px);
+    right: 1.2rem;
+    content: " ";
+    height: 0;
+    position: absolute;
+    opacity: 1;
+    z-index: 99999;
+}
+
+.header-middle__item--account .navUser-action.is-open:before {
+    top: calc(100% + 7px);
+    right: .6rem;
+}
+.form-actions .button--secondary {
+    width: 100%;
+}
+@media (min-width: 1025px) {
+   
+
+    .login-form {
+        left: calc( 100% - 200px);
+        right: auto;
+        width: 32rem;
+        display: none;
+        position: absolute;
+        top: calc(100% + 11px);
+        box-shadow: 0 0 .2rem rgba(0, 0, 0, 0.1);
+        border-radius: .3rem;
+        z-index:999;
+    }
+
+    .login-form__content {
+        padding: 2.2rem 2.5rem 2.5rem;
+    }
+
+    .login-form__form .form-field {
+        margin-bottom: 1.5rem;
+    }
+
+   
+
+}

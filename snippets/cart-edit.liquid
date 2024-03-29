@@ -1,0 +1,79 @@
+
+<div class="cart-edit-modal">
+  <form method="post" action="{{ routes.cart_url }}" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="novalidate" data-edit-cart-form>
+    <a href="javascript:void(0)" aria-label="close" title="close" class="close">
+     <svg class="icon icon-close"><use xlink:href="#icon-close" /></svg>
+    </a>
+    <div class="product-edit-option">
+        <h5>{{ 'products.product.edit_cart_heading' | t }}</h5>
+        <div>
+            <div class="wrapper_content" data-cart-edit-body>
+                <div class="cart-edit__row" data-cart-edit-item>
+                    <div class="product-edit-wrapper">
+                        <div class="product-edit cart-meta" data-product-edit>
+                            <div class="product-edit__image" data-product-image-edit>
+                                <svg
+                                    aria-hidden="true"
+                                    focusable="false"
+                                    class="spinner"
+                                    viewBox="0 0 66 66"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="15"
+                                    height="15"
+                                  >
+                                    <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                                  </svg>
+                            </div>
+                            <div class="product-edit__content">
+                                <div class="product-edit__vendor" data-product-vendor-edit>
+                                </div>
+                                <h4 class="product-edit__title" data-product-title-edit>
+                                </h4>
+                                <div class="option"data-option-edit></div>
+                                <div class="cart-edit__price">
+                                    <div data-cart-edit-item-price>
+                                        <div class="cart-edit__price price--on-sale" data-price="">
+                                          <span class="price-item price-item--regular" data-regular-price=""></span>
+                                          <span class="price-item price-item--sale" data-sale-price=""></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-edit__quantity " data-cart-edit-item-quantity>
+                                    <div class="cart-edit__qty">
+                                        <input id="updates_{{ item.key }}" class="cart__qty-input" type="number" value="0" min="0" pattern="[0-9]*">
+                                    </div>
+                                    <div class="cart-edit__qty-error-message-wrapper cart-edit__qty-error-message-wrapper--mobile hide" role="alert" data-cart-edit-quantity-error-message-wrapper>
+                                        <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                                        <svg class="icon"><use xlink:href="#icon-error" /></svg>
+                                        <span class="cart__qty-error-message" data-cart-quantity-error-message></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-meta--option">
+                            <div class="cart-edit__remove" data-cart-item-line-remove>
+                                <p class="cart__remove">
+                                    <a href="#" aria-label="{{ 'cart.label.remove' | t: product: item.title }}" data-cart-edit-remove>
+                                     <span>{{ 'cart.label.remove' | t: product: item.title }}</span>
+                                    </a>
+                                </p>
+                                <select name="id" data-cart-edit-item-template class="product-form__variants no-js"></select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-add-more"><a class="product-addmore-button" href="javascript:void(0);">Add more</a></div>
+    <div class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden" data-error-message-wrapper role="alert">
+        <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+        <svg class="icon"><use xlink:href="#icon-error" /></svg>
+        <span class="product-form__error-message" data-error-message>{{ 'products.product.quantity_minimum_message' | t }}</span>
+    </div>
+    <div class="product-edit-button">
+        <button class="button" data-edit-cart-add-to-cart>{{ 'products.product.add_to_cart' | t }}</button>
+    </div>
+  </form>
+</div>   

@@ -1,0 +1,256 @@
+
+{{ 'component-image-with-text-overlay.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<div class="main-section color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding" data-section-id="{{ section.id }}" data-section-type="image-with-text-overlay">
+    <div class="page-width">
+        {% if section.settings.title != blank %}
+            <div class="title text-center ">
+                <h2 class="{{ section.settings.heading_size }} inline-richtext {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}>
+                {{ section.settings.title }}</h2>
+            </div> 
+        {% endif %} 
+        <div class=" text-center rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} {% endif %} >      
+                {% if section.settings.description != blank %}
+                  <p>{{ section.settings.description }}</p>
+                {% endif %}
+                {% if section.settings.button != blank %}
+                    <a href="{{ section.settings.button_link }}" class="button {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %}  data-cascade {% endif %} aria-label="link">
+                        {{ section.settings.button }}
+                    </a>
+                {% endif %}
+            
+        </div>
+        <div class="main-column-image-with-text-overlay">
+            <div class="main-column-image-with-text-overlay__item color-{{ section.settings.color_scheme_item }} gradient">
+                {% for block in section.blocks %}
+                    {% assign img_url = block.settings.image | img_url: 'master' %}
+                    {% assign img_url_2 = block.settings.image | img_url: '370x440', crop: 'center' %}
+                    <div class="image-with-text-overlay text-center {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}>
+                            <div class="image-with-text-overlay__image {% if block.settings.image != blank %} animation-scale{% endif %} adaptive_height"{% if block.settings.image != blank %} style="padding-top: 119%" {% endif %} >
+                                {% if block.settings.image != blank %}
+                                    <img class="lazyload"
+                                        src="{{ img_url_2 }} 180w, {{ img_url }} 768w"
+                                        data-sizes="auto" alt="" data-image>
+                                {% else %}
+                                <div class="no-image" >
+                                    {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }} 
+                                </div>  
+                                {% endif %}
+                                {% if block.settings.link_url != blank %}
+                                    <a href="{{ block.settings.link_url }}" aria-label="link"></a>
+                                {% endif %}
+                                {% if block.settings.image != blank %}
+                                <div class="image-with-text-overlay__content">
+                                    {% if block.settings.title != blank %}
+                                    <div class="title">
+                                        <h3 class="inline-richtext  {{ section.settings.heading_size }}"><span>{{ block.settings.title }}</span></h3>
+                                    </div>
+                                    {% endif %}
+                                    {% if block.settings.des_bottom != blank %}
+                                        <div class="des rte">
+                                            {{block.settings.des_bottom}}
+                                        </div>
+                                    {% endif %}
+                                    {% if block.settings.link != blank %}
+                                        <a href="{{ block.settings.link_url }}" class="link-banner  button" aria-label="link">{{ block.settings.link }}</a>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+
+                            </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% if section.settings.button2 != blank %}
+            <div class="section-footer text-center {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+          {% endif %}>
+                <a href="{{ section.settings.button_link2 }}" class="button button--secondary" aria-label="link">
+                    {{ section.settings.button2 }}
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Image With Text Overlay",
+    "max_blocks": 20,
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "scheme-1"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Spacing Top",
+            "default": 60,
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Spacing bottom",
+            "default": 80,
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "px"
+        },
+        {
+            "type": "header",
+            "content": "Heading Section"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Image With Text"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            }
+          ],
+          "default": "h2",
+          "label": "t:sections.all.heading_size.label"
+        },
+        {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+        },
+        {
+            "type": "header",
+            "content": "Footer Section"
+        },
+        {
+            "type": "text",
+            "id": "button2",
+            "label": "Button"
+        },
+        {
+            "type": "url",
+            "id": "button_link2",
+            "label": "Button link"
+        },
+        {
+            "type": "header",
+            "content": "Item"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme_item",
+          "label": "t:sections.all.colors.label",
+          "default": "scheme-1"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "image_item",
+            "name": "Another image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "Image With Text"
+                },
+                {
+                    "type": "textarea",
+                    "id": "des_bottom",
+                    "label": "Des"
+                },
+                {
+                    "type": "text",
+                    "id": "link",
+                    "label": "Link Text",
+                    "default": "shop now"
+                },
+                {
+                    "type": "url",
+                    "id": "link_url",
+                    "label": "Link Url(Optional)"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Image With Text collections",
+            "category": "Images",
+            "blocks": [
+                {
+                    "type": "image_item"
+                },
+                {
+                    "type": "image_item"
+                },
+                {
+                    "type": "image_item"
+                },
+                {
+                    "type": "image_item"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

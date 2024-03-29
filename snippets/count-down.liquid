@@ -1,0 +1,18 @@
+{% assign enable_countdown = settings.enable_countdown %}
+
+{% if enable_countdown %}
+<div class="product__countdown">
+    {% if settings.option_countdown == 'different_product' %}
+        {% assign countdown = product.metafields.custom.countdown %}
+    {% else %}
+        {% assign countdown = settings.count_down_timer %}
+    {% endif %}
+    {% if countdown %}
+        <div class="countdown--label">
+            <svg class="icon"><use xlink:href="#icon-bell"></use></svg>
+            <span>{{ 'products.product.countdown' | t }}:</span>
+        </div>
+        <div id="countdown" class="countdown" data-countdown data-countdown-value="{{ countdown }}"></div>
+    {% endif %}
+</div>
+{% endif %}

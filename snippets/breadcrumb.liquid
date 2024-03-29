@@ -1,0 +1,39 @@
+<div class="breadcrumb-wrapper">
+    <ul class="breadcrumb">
+        <li class="breadcrumb__item">
+            <a href="/" aria-label="home">{{ 'homepage.general.title' | t }}</a>
+            <svg class="icon"><use xlink:href="#icon-chevron-right" /></svg>
+        </li>
+        {% if template contains 'product' %} 
+            {% if collection %}
+                {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+                <li class="breadcrumb__item">
+                    <a href="{{ url }}" aria-label="link">{{ collection.title }}</a>
+                    <svg class="icon"><use xlink:href="#icon-chevron-right" /></svg>
+                </li>
+            {% endif %}
+            <li class="breadcrumb__item">
+                <span>{{ product.title }}</span>
+            </li>
+        {% elsif template == 'article' %}
+            <li class="breadcrumb__item">
+                <a href="{{ blog.url }}" aria-label="link">{{ blog.title }}</a>
+                <svg class="icon"><use xlink:href="#icon-chevron-right" /></svg>
+            </li>
+            <li class="breadcrumb__item">
+                <span>{{ article.title }}</span>
+            </li>
+        {% elsif template == 'search' %}
+            <li class="breadcrumb__item">
+                <span>{{ 'general.search.search_title' | t }}</span>
+            </li>
+        {% else %}
+            <li class="breadcrumb__item">
+                <span>{{ page_title }}</span>
+            </li>
+        {% endif %}
+        {% if template == "product" and collection %}
+            {% render 'next-prev-product' %}
+        {% endif %}
+    </ul>
+</div>

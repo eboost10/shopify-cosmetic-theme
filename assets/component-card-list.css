@@ -1,0 +1,22 @@
+
+.block-product-list-sidebar .list__item .card{
+	display: flex;
+	flex-flow: row;
+	gap: 2rem;
+}
+.block-product-list-sidebar .list__item .card .card__inner{
+	width: 40%;
+}
+.block-product-list-sidebar .list__item {
+	margin: 0 0 2rem;
+}
+.block-product-list-sidebar .block-buttons {
+	text-align: right;
+}
+.block-product-list-sidebar .block-buttons a {
+	text-decoration: underline!important;
+	color: inherit;
+}
+.block-product-list-sidebar .card--standard>.card__content .card__information {
+	padding: 0;
+}

@@ -1,0 +1,43 @@
+<ul class="site-nav-dropdown">
+     <li class="menu-lv-2 hide_pc">
+        <p class="nav-action">
+            <a href="{{ link_child_item.url }}" class="link" aria-label="link"> {{ 'layout.navigation.menu_all' | t }} {{ link_for_dropdown.title }}</a>
+        </p>
+    </li>
+    {% for link_child_item in linklists[link_child].links %}
+        <li class="menu-lv-2{% if linklists[link_child_item.handle] != empty %} dropdown{% endif %}">
+            <p class="nav-action{%if linklists[link_child_item.handle] == empty %} nav-action--end{% endif %}">
+                <a href="{{ link_child_item.url }}" class="link" aria-label="link">{{ link_child_item.title }}</a>
+                {% if linklists[link_child_item.handle] != empty %}
+                    <span class="icon-dropdown" data-toggle-menu-mb>
+                        <svg class="icon icon-arrow-nav "><use xlink:href="#icon-chevron-right" /></svg>
+                    </span>
+                {% endif %}
+            </p>
+            {% if linklists[link_child_item.handle] != empty %}
+                <div class="dropdown-menu-mobile">
+                    <div class="nav-title-mobile text-center">
+                        <span class="icon-dropdown">
+                             <svg class="icon icon-arrow-nav "><use xlink:href="#icon-chevron-left" /></svg>
+                        </span>
+                        {{ link_child_item.title }}
+                    </div>
+                    <ul class="site-nav-dropdown">
+                       <li class="menu-lv-3 hide_pc">
+                            <a href="{{ link_child_item.url }}" class="nav-action nav-action--end" aria-label="link">
+                                <span class="text">{{ 'layout.navigation.menu_all' | t }} {{ link_child_item.title }}</span>
+                            </a>
+                        </li>
+                        {% for n in linklists[link_child_item.handle].links %}                
+                            <li class="menu-lv-3">
+                                <a href="{{ n.url }}" class="nav-action nav-action--end" aria-label="link">
+                                    <span class="text">{{ n.title }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
