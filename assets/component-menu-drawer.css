@@ -69,6 +69,8 @@ header-drawer details {
   height: calc(var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%)));
   overflow-y: scroll;
   min-height: 100vh;
+  max-height: 100vh;
+  padding-bottom: 8rem;
 }
 
 .js details[open] > .menu-drawer,
@@ -110,6 +112,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   align-content: space-between;
   overflow-y: auto;
   background-color: #fff;
+  height: 100%;
 }
 
 
@@ -317,5 +320,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 @media(max-width: 1024px){
   details[open] > .menu-drawer{
     position: fixed;
+    overflow: visible;
+    max-height: inherit;
   }
 }

@@ -2218,27 +2218,6 @@
         "id": "color_bg_label_3",
         "label": "Label 3 Background",
         "default": "#ce2b1e"
-      },
-      {
-        "type": "header",
-        "content": "Dropdown Menu\/ Mega Menu"
-      },
-      {
-        "type": "color",
-        "id": "dropdown_text",
-        "label": "Text Color",
-        "default": "#5a5a5a"
-      },
-     
-      {
-        "type": "header",
-        "content": "Mega Menu Style"
-      },
-      {
-        "type": "color",
-        "id": "color_bottom_bg_3",
-        "label": "Bottom Background Color",
-        "default": "#f4ad57"
       }
     ]
   }

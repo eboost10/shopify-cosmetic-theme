@@ -1366,6 +1366,8 @@ var eboost = '';
                         $('#product-compare-modal .quick-add-form').remove();
                     if($('#product-compare-modal .product-card__description').length > 0)
                         $('#product-compare-modal .product-card__description').remove();
+                    if($('#product-compare-modal .quick-add').length > 0)
+                        $('#product-compare-modal .quick-add').remove();
 	            },200)
 	            
 	        });
@@ -1401,8 +1403,6 @@ var eboost = '';
 	        $(document).off('click.removeAllCompareItem', compareRemoveAll).on('click.removeAllCompareItem', compareRemoveAll, function(e) {
 	            e.preventDefault();
 	            e.stopPropagation();
-	            $('#product-compare-modal .close').trigger('click');
-
 	            setTimeout(function() {
 	                $('[data-compare-added]').remove();
 	                compareArr.splice(0,compareArr.length);

@@ -755,49 +755,85 @@
         "instagram_block_VQR8Bz": {
           "type": "instagram_block",
           "settings": {
-            "instagram_image": "shopify:\/\/shop_images\/free-photo-of-close-up-portrait-of-a-woman-with-a-smudged-red-lipstick.jpg"
+            "instagram_image": "shopify:\/\/shop_images\/free-photo-of-close-up-portrait-of-a-woman-with-a-smudged-red-lipstick.jpg",
+            "link": "https:\/\/www.instagram.com\/"
           }
         },
         "instagram_block_rhYDwH": {
           "type": "instagram_block",
           "settings": {
-            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-2463027.jpg"
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-2463027.jpg",
+            "link": ""
           }
         },
         "instagram_block_zAahYQ": {
           "type": "instagram_block",
           "settings": {
-            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-1722868_5a86004f-3068-4396-8caf-815559aca01a.jpg"
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-1722868_5a86004f-3068-4396-8caf-815559aca01a.jpg",
+            "link": ""
           }
         },
         "instagram_block_bH3hgJ": {
           "type": "instagram_block",
           "settings": {
-            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-4788317.jpg"
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-4788317.jpg",
+            "link": ""
           }
         },
         "instagram_block_zJ7PCV": {
           "type": "instagram_block",
           "settings": {
-            "instagram_image": "shopify:\/\/shop_images\/free-photo-of-beauticians-putting-makeup-on-smiling-woman-face.jpg"
+            "instagram_image": "shopify:\/\/shop_images\/free-photo-of-beauticians-putting-makeup-on-smiling-woman-face.jpg",
+            "link": ""
           }
         },
         "instagram_block_VEfpVX": {
           "type": "instagram_block",
           "settings": {
-            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-7281295.jpg"
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-7281295.jpg",
+            "link": ""
           }
         },
         "instagram_block_qHJKqb": {
           "type": "instagram_block",
           "settings": {
-            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-4004112.jpg"
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-4004112.jpg",
+            "link": ""
           }
         },
         "instagram_block_LPeJzJ": {
           "type": "instagram_block",
           "settings": {
-            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-7281295.jpg"
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-7281295.jpg",
+            "link": ""
+          }
+        },
+        "instagram_block_yj9cYM": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-1171039.jpg",
+            "link": ""
+          }
+        },
+        "instagram_block_Tfcrhm": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-7479681.jpg",
+            "link": ""
+          }
+        },
+        "instagram_block_KgeHHi": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-4959869.jpg",
+            "link": ""
+          }
+        },
+        "instagram_block_GXnpbV": {
+          "type": "instagram_block",
+          "settings": {
+            "instagram_image": "shopify:\/\/shop_images\/pexels-photo-13641290.jpg",
+            "link": ""
           }
         }
       },
@@ -809,13 +845,18 @@
         "instagram_block_zJ7PCV",
         "instagram_block_VEfpVX",
         "instagram_block_qHJKqb",
-        "instagram_block_LPeJzJ"
+        "instagram_block_LPeJzJ",
+        "instagram_block_yj9cYM",
+        "instagram_block_Tfcrhm",
+        "instagram_block_KgeHHi",
+        "instagram_block_GXnpbV"
       ],
       "settings": {
         "color_scheme": "scheme-c552c7b8-e38f-4a1e-900f-b6c6dccd546c",
         "border-top": false,
         "top": 0,
         "bottom": 30,
+        "column": 6,
         "title": "Instagram",
         "heading_size": "h2",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat euismod sed non erat.",

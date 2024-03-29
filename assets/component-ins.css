@@ -6,12 +6,8 @@
 .instagram .main-column__item {
     margin-top: 1rem;
     margin-bottom: 0;
-    padding: 0 .5rem;
 }
 
-.instagram .main-column {
-    margin: 0 -.5rem;
-}
 
 .instagram::after {
     content: '';
@@ -57,4 +53,16 @@
     position: relative;
     display: block;
     font-size: 0;
+}
+
+.instagram__item2 .icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    color: #fff;
+}
+.instagram__item2:hover .icon{
+    display: block;
 }

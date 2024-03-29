@@ -40,16 +40,17 @@
             {% if section.settings.instagram_option == 'app' %}
                 {{ section.settings.accessToken }}
             {% else %}
-                <div class="main-column main-row column-4">
+                <div class="grid  grid--3-col-tablet-down
+                grid--{{- section.settings.column -}}-col-desktop">
                     {% for block in section.blocks %}
                         {% assign img_url = block.settings.instagram_image | img_url: '385x385', crop: 'center' %}
                         {% assign img_url_full = block.settings.instagram_image | img_url: 'master' %}
-                        <div class="main-column__item {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                        <div class=" grid__item {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
               {% if settings.animations_reveal_on_scroll %}
                 data-cascade
                 style="--animation-order: {{ forloop.index }};"
               {% endif %}>
-                            <a class="instagram__item2 animation-scale" href="{{ img_url_full }}" aria-label="link" data-fancybox="images-instagram">
+                            <a class="instagram__item2 animation-scale" href="{{ block.settings.link | default: img_url_full }}" target="_blank" aria-label="link" data-fancybox="images-instagram">
                                 {% if block.settings.instagram_image != blank %}
                                 <span >
                                     <img class="lazyload" src="{{ img_url }}" alt="" data-image>
@@ -59,6 +60,7 @@
                                         {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }} 
                                      </div>
                                 {% endif %}
+                                <svg class="icon icon-instagram"><use xlink:href="#instagram" /></svg>
                             </a>
                         </div>
                     {% endfor %}
@@ -118,6 +120,15 @@
             "max": 100,
             "step": 10,
             "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "column",
+            "label": "Column show",
+            "min": 1,
+            "max": 6,
+            "step": 1,
+            "default": 4
         },
         {
             "type": "header",
@@ -200,6 +211,11 @@
                     "type": "image_picker",
                     "id": "instagram_image",
                     "label": "Image"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Button link"
                 }
             ]
         }

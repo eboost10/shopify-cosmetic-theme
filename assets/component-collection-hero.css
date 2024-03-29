@@ -77,6 +77,12 @@
   .collection-hero__image-container {
     height: 20rem;
   }
+  .collection-hero--with-image .collection-hero__inner{
+    flex-direction: column-reverse;
+  }
+  .collection-hero--with-image .collection-hero__text-wrapper {
+    padding: 3rem 0 0;
+  }
 }
 
 @media screen and (min-width: 750px) {

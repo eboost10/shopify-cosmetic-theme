@@ -665,11 +665,12 @@
         background-color: #fff;
         position: relative;
         margin-left: auto;
-        padding: 0 1.5rem;
+        padding: 0 1.5rem 8rem;
         text-align: left;
         z-index: 2;
         max-height: 100vh;
         overflow-y: scroll;
+
     }
     .cart_quickview__button__close {
         display: flex!important;

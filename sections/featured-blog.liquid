@@ -26,7 +26,7 @@
 
 
 <div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding section-blog-{{section.id}} blog  {% if section.settings.heading == blank %} no-heading{% endif %}">
-  <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding" data-section-id="{{ section.id }}" data-section-type="featured-blog" >
+  <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} " data-section-id="{{ section.id }}" data-section-type="featured-blog" >
     {%- unless section.settings.heading == blank -%}
       <div class="title{% if posts_displayed > 2 %} page-width title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} text-center">
         <h2

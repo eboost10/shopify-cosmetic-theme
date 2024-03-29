@@ -401,15 +401,6 @@
             </ul>
         </div>
     </div>
-    {% if countdown_text != blank or countdown_timer != blank %}
-        <div class="dropdown-megamenu--countdown">
-            <span class="countdown-text">{{countdown_text}}</span>
-            <div class="countdown_timer">
-                <span class="text_end"> {{countdown_text2}}</span>
-                <span data-countdown data-countdown-value="{{ countdown_timer }}"></span>
-            </div>
-        </div>
-    {% endif %}
 
 {% elsif block_style == "style_4" %}
     <div class="site-nav-dropdown dropdown-megamenu {{ block_style }}">
