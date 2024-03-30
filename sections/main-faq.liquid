@@ -24,119 +24,49 @@
 
 <div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding section-faq-{{section.id}} main-section homepage_faq  {{ border_top }}" data-section-id="{{ section.id }}" data-section-type="homepage_faq">
     <div class="page-width">
-    <div class="page-faq {% if section.settings.show_my_story == true or section.settings.show_faqs == true %} show-one-colum{% endif %}">
-        {% if section.settings.show_my_story == true  %}
-        <div class="col_left">
-            <div class="col_left__avatar">
-                {% assign img_url = section.settings.icon_user | img_url: '300x' %}
-                {% if section.settings.icon_user != blank %}
-                    <img class="lazyload"
-                        src="{{ img_url }} 180w, {{ img_url }} 768w"
-                        data-sizes="auto" alt="" data-image>
-                {% else %}
-                    <div class="no-image">
-                        {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="col_left__des">
-                {% if section.settings.story_sub_title != blank  %}
-                    <p class="sub_title {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                      {% if settings.animations_reveal_on_scroll %}
-                       style="--animation-order: 1;"
-                        data-cascade
-                      {% endif %}>{{section.settings.story_sub_title}}</p>
-                {% endif %}
-                {% if section.settings.story_title != blank  %}
-                    <h3 class="title {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {% if settings.animations_reveal_on_scroll %}
-                   style="--animation-order: 2;"
-                    data-cascade
-                  {% endif %}>{{section.settings.story_title}}</h3>
-                {% endif %}
-                {% if section.settings.story_des != blank  %}
-                    <div class="des rte {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                      {% if settings.animations_reveal_on_scroll %}
-                       style="--animation-order: 3;"
-                        data-cascade
-                      {% endif %}>{{section.settings.story_des}}</div>
-                {% endif %}
-                {% if section.settings.author_signature != blank %}
-                <div class="author_signature {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {% if settings.animations_reveal_on_scroll %}
-                   style="--animation-order: 4;"
-                    data-cascade
-                  {% endif %}>
-                    {% assign img_url = section.settings.author_signature | img_url: '300x' %}
-                        <img class="lazyload"
-                            src="{{ img_url }} 180w, {{ img_url }} 768w"
-                            data-sizes="auto" alt="" data-image>
+    <div class="page-faq show-one-colum">
+     
+        <div class=" page-content">
+            <div class="faqs-paragraph">
+                {% if  section.settings.faqs_title != blank %}
+                <div class="title {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}>
+                    <h2 class=" {{ section.settings.heading_size }} inline-richtext">
+                        {{ section.settings.faqs_title }}
+                    </h2>
                 </div>
                 {% endif %}
-                {% if section.settings.author_name != blank %}
-                <div class="author_name {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {% if settings.animations_reveal_on_scroll %}
-                    data-cascade
-                     style="--animation-order: 5;"
-                  {% endif %}>
-                    <h3>{{section.settings.author_name}}</h3>
-                </div>
-                {% endif %}
-                {% if section.settings.author_note != blank %}
-                <p class="author_note {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                      {% if settings.animations_reveal_on_scroll %}
-                       style="--animation-order:6;"
-                        data-cascade
-                      {% endif %}>
-                <span>{{section.settings.author_note}}</span></p>
-                {% endif %}
-                
-            </div>
-           
-        </div>
-        {% endif %}
-        {% if section.settings.show_faqs == true %}
-        <div class="col_right page-content">
-            {% if section.settings.show_faqs %}
-                <div class="faqs-paragraph">
-                    <p class="faq-title {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                      {% if settings.animations_reveal_on_scroll %}
-                        data-cascade
-                      {% endif %}>{{ section.settings.faqs_title }}</p>
-                    <div id="accordion" >
-                        {% assign index = 0 %}
-                        {% for block in section.blocks %}
-                         {% assign index = forloop.index0 %}
-                            <div class="card {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                                  {% if settings.animations_reveal_on_scroll %}
-                                    data-cascade
-                                    style="--animation-order: {{ forloop.index }};"
-                                  {% endif %}>
-                                <div class="card-header" id="heading-{{ block.id }}">
-                                    <button class="title {{index}} collapsed text-left" data-bs-toggle="collapse" data-bs-target="#{{ block.id }}" aria-expanded="true" aria-controls="{{ block.id }}">
-                                        <h3>{{ block.settings.question_faqs }}</h3>
-                                    </button>
-                                    <span class="icon-plus"></span>
-                                </div>
-                                <div id="{{ block.id }}" class="collapse {{index}}" aria-labelledby="heading-{{ block.id }}" data-bs-parent="#accordion">
-                                    <div class="card-body rte">
-                                        {{ block.settings.answer_faqs }}
-                                    </div>
+                <div id="accordion" >
+                    {% assign index = 0 %}
+                    {% for block in section.blocks %}
+                     {% assign index = forloop.index0 %}
+                        <div class="card {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                              {% if settings.animations_reveal_on_scroll %}
+                                data-cascade
+                                style="--animation-order: {{ forloop.index }};"
+                              {% endif %}>
+                            <div class="card-header" id="heading-{{ block.id }}">
+                                <button class="title {{index}} collapsed text-left" data-bs-toggle="collapse" data-bs-target="#{{ block.id }}" aria-expanded="true" aria-controls="{{ block.id }}">
+                                    <h3>{{ block.settings.question_faqs }}</h3>
+                                </button>
+                                <span class="icon-plus"></span>
+                            </div>
+                            <div id="{{ block.id }}" class="collapse {{index}}" aria-labelledby="heading-{{ block.id }}" data-bs-parent="#accordion">
+                                <div class="card-body rte">
+                                    {{ block.settings.answer_faqs }}
                                 </div>
                             </div>
-                        {% endfor %}
-                    </div>
-                    {% if section.settings.view_all != blank %}
-                    <div class="faqs-paragraph__footer">
-                        <a href="{{section.settings.link_view_all}}" class="link">
-                            <span>{{section.settings.view_all}}</span>
-                        </a>
-                    </div>
-                    {% endif %}
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endif %}
+                {% if section.settings.view_all != blank %}
+                <div class="faqs-paragraph__footer">
+                    <a href="{{section.settings.link_view_all}}" class="link">
+                        <span>{{section.settings.view_all}}</span>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
         </div>
-        {% endif %}
     </div>
     </div>
 </div>
@@ -157,70 +87,34 @@
         
         {
             "type": "header",
-            "content": "My Story"
-        },
-        {
-            "type" : "checkbox",
-            "id" : "show_my_story",
-            "label" : "Show My Story",
-            "default": true
-        },
-        {
-            "type":"image_picker",
-            "id":"icon_user",
-            "label":"Avatar "
-        },
-        {
-            "type" : "text",
-            "id" : "story_sub_title",
-            "label" : "Sub Title",
-            "default": "My Story"
-        },
-        {
-            "type" : "text",
-            "id" : "story_title",
-            "label" : "Title",
-            "default": "Don't stop giving love even if you don't receive it.Smile and have patience."
-        },
-        {
-            "type" : "richtext",
-            "id" : "story_des",
-            "label" : "Description",
-            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat euismod sed non erat. Nulla non felis id metus bibendum iaculis quis sit amet eros. Nam suscipit mollis tellus vel malesuada. Cum sociis natoque penatibus et magnis.</p><p>Duis danos an molestie, sem in sollicitudin sodales mi justo sagittis est id consequat ipsum ligula. Praesent deu odio des nisios dullamcorper sultricies.</p>"
-        },
-        {
-            "type":"image_picker",
-            "id":"author_signature",
-            "label":"Author Signature "
-        },
-        {
-            "type" : "text",
-            "id" : "author_name",
-            "label" : "Author Name",
-            "default": "Coco Lee"
-        },
-        {
-            "type" : "text",
-            "id" : "author_note",
-            "label" : "Author Note",
-            "default": "Store Owner at Cosmetic"
-        },
-        
-        {
-            "type": "header",
             "content": "FAQs"
         },
-        {
-            "type" : "checkbox",
-            "id" : "show_faqs",
-            "label" : "Show FAQs Paragraph",
-            "default": true
-        },
+
         {
             "type" : "text",
             "id" : "faqs_title",
             "label" : "FAQs Title",
             "default": "Help and FAQs"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            }
+          ],
+          "default": "h2",
+          "label": "t:sections.all.heading_size.label"
         },
         {
             "type" : "text",

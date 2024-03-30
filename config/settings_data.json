@@ -51,6 +51,8 @@
     "enable_popup_newsletter_mb": true,
     "popup_newsletter_delay": 5,
     "newsletter_image": "shopify:\/\/shop_images\/pexels-photo-3246552.jpg",
+    "enable_recently_viewed_product": true,
+    "enable_recently_viewed_product_mb": true,
     "enable_progress_bar_shipping": true,
     "enable_compare_product": true,
     "color_scheme_compare": "scheme-1",

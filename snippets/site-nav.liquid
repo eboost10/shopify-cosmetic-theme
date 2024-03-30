@@ -1,29 +1,12 @@
 
 
-{% liquid 
-    assign label_1_collection = section.settings.label_1_collection | split:"," | strip | downcase | handle 
-    assign label_2_collection = section.settings.label_2_collection | split:"," | strip | downcase | handle
-    assign label_3_collection = section.settings.label_3_collection | split:"," | strip | downcase | handle 
-%}
+
 
 <ul class="site-nav" id="site-nav" data-item-count="10">
 
     {% for link in linklists[main_menu].links %}
         {% assign i = forloop.index | downcase %}
         {% assign cat = link.title | handleize %}
-
-        {% if section.settings.label_1 != blank %}
-            {% assign label_1_link = link.title | downcase | handle  %}
-        {% endif %}
-
-        {% if section.settings.label_2 != blank %}
-            {% assign label_2_link = link.title | downcase | handle  %}
-        {% endif %}
-
-        {% if section.settings.label_3 != blank %}
-            {% assign label_3_link = link.title | downcase | handle  %}
-        {% endif %}
-
         {% if section.settings.enable_megamenu %}
             {% assign is_megamenu = false %}
             {% for block in section.blocks %}
@@ -119,23 +102,7 @@
             <p class="nav-action{%if linklists[link.handle] == empty and is_megamenu == false %} nav-action--end{% endif %}">
                 <a href="{{ link.url }}" aria-label="link">
                     <span class="text">{{link.title}}</span>
-                    {% if label_1_collection contains label_1_link %}
-                        <span class="icon-label label_1">
-                            {{ section.settings.label_1 }}
-                        </span>
-                    {% endif %}
-
-                    {% if label_2_collection contains label_2_link %}
-                        <span class="icon-label label_2">
-                            {{ section.settings.label_2 }}
-                        </span>
-                    {% endif %}
-
-                    {% if label_3_collection contains label_3_link %}
-                        <span class="icon-label label_3">
-                            {{ section.settings.label_3 }}
-                        </span>
-                    {% endif %}
+                    
                 </a>
                 {% if linklists[link.handle] != empty %}
                     <span class="icon-dropdown dk" data-toggle-menu-mb>

@@ -514,7 +514,7 @@
     ]
   },
   {
-    "name": "AMultiple Language",
+    "name": "Multiple Language",
     "settings": [
       {
         "type": "header",
@@ -709,17 +709,17 @@
     ]
   }, 
   {
-    "name": "Add On Search Form",
+    "name": "Search Form",
     "settings": [
       {
         "type": "header",
-        "content": "Add On Search Form",
+        "content": "Search Form",
         "info": "Custom Search form in Header"
       },
       {
         "type": "checkbox",
         "id": "enable-search-form",
-        "label": "Enable Add on Search?",
+        "label": "Enable Search?",
         "default": true
       },
       {
@@ -808,7 +808,7 @@
     ]
   },
   {
-    "name": "Add On Newsletter Popup",
+    "name": "Newsletter Popup",
     "settings": [
       {
         "type": "header",
@@ -818,13 +818,13 @@
       {
         "type": "checkbox",
         "id": "enable_popup_newsletter",
-        "label": "Enable Add On Newsletter Popup?",
+        "label": "Enable Newsletter Popup?",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "enable_popup_newsletter_mb",
-        "label": "Enable Add On Newsletter Popup in Mobile?",
+        "label": "Enable Newsletter Popup in Mobile?",
         "default": true
       },
       {
@@ -887,7 +887,7 @@
     ]
   },
   {
-    "name": "Add On Recently Viewed Product Popup",
+    "name": "Recently Viewed Product Popup",
     "settings": [
       {
         "type": "header",
@@ -908,7 +908,7 @@
     ]
   },
   {
-    "name": "Add On Progress Bar Shipping",
+    "name": "Progress Bar Shipping",
     "settings": [
       {
         "type": "header",
@@ -942,7 +942,7 @@
     ]
   },
   {
-    "name": "Add On Compare Products",
+    "name": "Compare Products",
     "settings": [
       {
         "type": "header",
@@ -1124,7 +1124,7 @@
       },
       {
         "type": "header",
-        "content": "Add on CountDown"
+        "content": "CountDown"
       },
       {
         "type": "checkbox",
@@ -2153,13 +2153,7 @@
         "id": "color_body_bg",
         "label": "Body Background",
         "default": "#ffffff"
-      }
-    ]
-  },
-  {
-    "name": "Color (Header)",
-    "settings": [
-   
+      },
      
       {
         "type": "header",
@@ -2176,48 +2170,6 @@
         "id": "color_bg_cart_countPill",
         "label": "Cart Count Background",
         "default": "#f4ad57"
-      },
-      {
-        "type": "header",
-        "content": "Navigation label"
-      },
-      {
-        "type": "color",
-        "id": "color_label_1",
-        "label": "Label 1 Color",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_bg_label_1",
-        "label": "Label 1 Background",
-        "default": "#48ade8",
-        "info": "====================="
-      },
-      {
-        "type": "color",
-        "id": "color_label_2",
-        "label": "Label 2 Color",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_bg_label_2",
-        "label": "Label 2 Background",
-        "default": "#f4ad57",
-        "info": "====================="
-      },
-      {
-        "type": "color",
-        "id": "color_label_3",
-        "label": "Label 3 Color",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_bg_label_3",
-        "label": "Label 3 Background",
-        "default": "#ce2b1e"
       }
     ]
   }

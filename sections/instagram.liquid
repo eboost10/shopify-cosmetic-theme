@@ -37,9 +37,7 @@
           {% if settings.animations_reveal_on_scroll %}
             data-cascade
           {% endif %}>
-            {% if section.settings.instagram_option == 'app' %}
-                {{ section.settings.accessToken }}
-            {% else %}
+            
                 <div class="grid  grid--3-col-tablet-down
                 grid--{{- section.settings.column -}}-col-desktop">
                     {% for block in section.blocks %}
@@ -65,7 +63,6 @@
                         </div>
                     {% endfor %}
                 </div>
-            {% endif %}
         </div>
         {% if section.settings.button != blank %}
         <div class="instagram_footer">
@@ -76,8 +73,6 @@
         {% endif %}
     </div>
 </div>
-
-
 
 {% schema %}
 {
@@ -174,32 +169,6 @@
             "type": "url",
             "id": "button_link",
             "label": "Button link"
-        },
-        {
-          "type" : "header",
-          "content" : "Instagram Option"
-        },
-        {
-            "type": "select",
-            "id": "instagram_option",
-            "label": "Instagram Option",
-            "options": [
-                {
-                    "value": "app",
-                    "label": "Use app Snapppt"
-                },
-                {
-                    "value": "block",
-                    "label": "Use Block Gallery Image"
-                }
-            ],
-            "default": "block"
-        },
-        {
-            "type": "text",
-            "id": "accessToken",
-            "label": "Script Instagram",
-            "info": "Insert Script Instagram from App Snapppt"
         }
     ],
     "blocks": [

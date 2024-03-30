@@ -3,11 +3,7 @@ Renders a header drawer menu for mobile and desktop.
 Usage:
 {% render 'header-drawer' %}
 {% endcomment %}
-{% liquid
-assign label_1_collection = section.settings.label_1_collection | split:"," | strip | downcase | handle
-assign label_2_collection = section.settings.label_2_collection | split:"," | strip | downcase | handle
-assign label_3_collection = section.settings.label_3_collection | split:"," | strip | downcase | handle
-%}
+
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
     <details id="Details-menu-drawer-container" class="menu-drawer-container ">
         <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
@@ -24,15 +20,7 @@ assign label_3_collection = section.settings.label_3_collection | split:"," | st
                             {%- for link in section.settings.menu.links -%}
                                 {% assign i = forloop.index | downcase %}
                                 {% assign cat = link.title | handleize %}
-                                {% if section.settings.label_1 != blank %}
-                                    {% assign label_1_link = link.title | downcase | handle %}
-                                {% endif %}
-                                {% if section.settings.label_2 != blank %}
-                                    {% assign label_2_link = link.title | downcase | handle %}
-                                {% endif %}
-                                {% if section.settings.label_3 != blank %}
-                                    {% assign label_3_link = link.title | downcase | handle %}
-                                {% endif %}
+                    
                                 {% if section.settings.enable_megamenu %}
                                     {% assign is_megamenu = false %}
                                     {% for block in section.blocks %}
@@ -110,21 +98,7 @@ assign label_3_collection = section.settings.label_3_collection | split:"," | st
                                         <summary id="HeaderDrawer-{{ link.handle }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
                                             <span class="menu-drawer-link">
                                                 {{ link.title | escape }}
-                                                {% if label_1_collection contains label_1_link %}
-                                                    <span class="icon-label label_1">
-                                                        {{ section.settings.label_1 }}
-                                                    </span>
-                                                {% endif %}
-                                                {% if label_2_collection contains label_2_link %}
-                                                    <span class="icon-label label_2">
-                                                        {{ section.settings.label_2 }}
-                                                    </span>
-                                                {% endif %}
-                                                {% if label_3_collection contains label_3_link %}
-                                                    <span class="icon-label label_3">
-                                                        {{ section.settings.label_3 }}
-                                                    </span>
-                                                {% endif %}
+                                                
                                             </span>
                                             <svg class="icon icon-arrow-nav icon-arrow">
                                                 <use xlink:href="#icon-chevron-right"></use>
