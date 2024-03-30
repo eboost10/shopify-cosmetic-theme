@@ -11,7 +11,6 @@
         </div>
 
         <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
-      </div>
     {% endform %}
 {% endif %}
    
@@ -52,7 +51,7 @@
 
 {% endif %}
 
-<script type="text/javascript">
+<script>
     var primaryLanguage = {{- localization.language.iso_code | json -}};
      {%- for locale in shop.published_locales -%}
         {%- if locale.primary - %}

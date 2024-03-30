@@ -11,6 +11,9 @@
       assign media_to_render = media_to_render | append: variant.featured_media.id | append: ' '
     endfor
   -%}
+  {%- capture sizes -%}
+  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | divided_by: 1 | round }}px, (min-width: 990px) calc({{ media_width | times: 100 | divided_by: 1 }}vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / {{ 1 }} - 4rem)
+{%- endcapture -%}
 {%- if media_count > 1 -%}
   <div class="thumbnails-list list-unstyled">
     {%- for media in product.media -%}
@@ -20,7 +23,7 @@
         <div class="thumbnail-list__item_slide">
           <a href="#{{media.id}}" data-media="{{media.id}}">
           {%- capture thumbnail_id -%}
-            Thumbnail-{{ section.id }}-{{ forloop.index }}{{ id_append }}
+            Thumbnail-{{ section.id }}-{{- forloop.index -}}{{- id_append -}}
           {%- endcapture -%}
             {{
               media.preview_image

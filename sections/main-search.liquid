@@ -100,7 +100,7 @@
                 name="q"
                 value="{{ search.terms | escape }}"
                 placeholder="{{ 'general.search.search' | t }}"
-                {%- if settings.predictive_search_enabled -%}
+                {% if settings.predictive_search_enabled %}
                   role="combobox"
                   aria-expanded="false"
                   aria-owns="predictive-search-results"
@@ -111,7 +111,7 @@
                   autocomplete="off"
                   autocapitalize="off"
                   spellcheck="false"
-                {%- endif -%}
+                {% endif %}
               >
              
               <input name="options[prefix]" type="hidden" value="last">

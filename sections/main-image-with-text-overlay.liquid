@@ -47,8 +47,8 @@
                             <div class="image-with-text-overlay__image {% if block.settings.image != blank %} animation-scale{% endif %} adaptive_height"{% if block.settings.image != blank %} style="padding-top: 119%" {% endif %} >
                                 {% if block.settings.image != blank %}
                                     <img class="lazyload"
-                                        src="{{ img_url_2 }} 180w, {{ img_url }} 768w"
-                                        data-sizes="auto" alt="" data-image>
+                                        src="{{ img_url_2 }}"
+                                         alt="" >
                                 {% else %}
                                 <div class="no-image" >
                                     {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }} 

@@ -882,7 +882,7 @@
         "type": "richtext",
         "id": "popup_newsletter_des",
         "label": "Newsletter Popup Descriptions",
-        "default": "<p>Get the latest updates on<\/br> new products and upcoming sales<\/p>"
+        "default": "<p>Get the latest updates on<br> new products and upcoming sales<\/p>"
       }
     ]
   },

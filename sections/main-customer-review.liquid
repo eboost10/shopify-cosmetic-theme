@@ -62,8 +62,8 @@
                                                 {% assign img_url = block.settings.icon_user | img_url: '110x110', crop: 'center' %}
                                                 {% if block.settings.icon_user != blank %}
                                                     <img class="lazyload"
-                                                        src="{{ img_url }} 180w, {{ img_url }} 768w"
-                                                        data-sizes="auto" alt="" data-image>
+                                                        src="{{ img_url }}"
+                                                         alt="" >
                                                 {% else %}
                                                     <div class="no-image hover-images">
                                                         {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}

@@ -67,7 +67,6 @@ header-drawer details {
 .js .menu-drawer .menu-drawer__inner-container {
   height: calc(100vh - 100%);
   height: calc(var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%)));
-  overflow-y: scroll;
   min-height: 100vh;
   max-height: 100vh;
   padding-bottom: 8rem;

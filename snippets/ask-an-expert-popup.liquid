@@ -22,7 +22,7 @@
                 </div>
                 <div class="modal-logo">
                     {% if settings.image_logo_ask != blank %}
-                            <img class="lazyload" src="{{ settings.image_logo_ask | img_url: 'master' }}" alt="" data-image>
+                            <img class="lazyload" src="{{ settings.image_logo_ask | img_url: 'master' }}" alt="" >
                     {% else %}
                         <span class="recommended_size">165x40</span>
                         {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -89,7 +89,7 @@
                             {% endif %}
                             <div class="form-group">
                                 <label for="contactFormName" class="form-label">{{ 'contact.form.name' | t }}</label>
-                                <input type="text" required id="contactFormName" name="contact[Name]" autocapitalize="words"" class="form-control">
+                                <input type="text" required id="contactFormName" name="contact[Name]" autocapitalize="words" class="form-control">
                             </div>
 
                             <div class="form-group">

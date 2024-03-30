@@ -916,7 +916,7 @@ var eboost = '';
 		            productHTML += '<tr class="wishlist_row space"></tr><tr class="wishlist_row" data-wishlist-added="wishlist-'+product.id+'" data-product-id="product-'+product.handle+'">';
 		            productHTML += '<td class="wishlist_image text-left">';
 		            productHTML += '<div class="cart__product-information">';
-		            productHTML += '<div class="cart__image-wrapper"><a href="'+product.url+'" class="product-grid-image" data-collections-related="/collections/all?view=related"><img class="cart__image" srcset="'+imgP+'" alt="'+product.title+'"></a></div>';
+		            productHTML += '<div class="cart__image-wrapper"><a href="'+product.url+'" class="product-grid-image" data-collections-related="/collections/all?view=related"><img class="cart__image" src="'+imgP+'" alt="'+product.title+'"></a></div>';
 		            productHTML += '</div></td>';
 		            productHTML += '<td class="wishlist_meta text-left">';
 		            productHTML += '<div class="cart__product-information">';

@@ -6,14 +6,14 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.bottom | times: 0.75 | round: 0 }}px;
   }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: {{ section.settings.top }}px;
+      padding-bottom: {{ section.settings.bottom }}px;
     }
   }
 {%- endstyle -%}
@@ -51,7 +51,7 @@
                             <a class="instagram__item2 animation-scale" href="{{ block.settings.link | default: img_url_full }}" target="_blank" aria-label="link" data-fancybox="images-instagram">
                                 {% if block.settings.instagram_image != blank %}
                                 <span >
-                                    <img class="lazyload" src="{{ img_url }}" alt="" data-image>
+                                    <img class="lazyload" src="{{ img_url }}" alt="" >
                                 </span>
                                 {% else %}
                                     <div class="no-image" >

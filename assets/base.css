@@ -7222,19 +7222,9 @@ product-info .loading__spinner:not(.hidden)~*,
     font-size: calc(var(--font-heading-scale) * 1.3rem);
 }
 
-@media screen and (min-width: 990px) {
-    body:has(.section-header .header: not(.drawer-menu)) .utility-bar .page-width {
-        padding-left: 5rem;
-        padding-right: 5rem;
-    }
-
-}
-
-/* section-header */
 .shopify-section-header-sticky.scrolled-past-header .header_bottom.header-PC {
     display: none;
 }
-
 .shopify-section-header-sticky.scrolled-past-header .header__icon--menu.header__icon--summary {
     display: flex;
     top: 50%;
@@ -9741,8 +9731,7 @@ input[type="checkbox"]:checked+label span {
     }
 
 
-    .modal-ask-an-expert .close-modal,
-        {
+    .modal-ask-an-expert .close-modal{
         top: 1rem;
         right: 1.5rem;
     }

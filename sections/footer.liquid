@@ -210,6 +210,7 @@
                           >
                             <img
                               srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
+                              size="100vw"
                               src="{{ block.settings.image | image_url: width: 760 }}"
                               alt="{{ block.settings.image.alt | escape }}"
                               loading="lazy"

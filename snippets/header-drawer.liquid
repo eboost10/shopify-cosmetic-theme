@@ -9,7 +9,7 @@ Usage:
         <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
             {% render 'icon-hamburger' %}
             {% render 'icon-close' %}
-            </span>
+            
         </summary>
         <div id="menu-drawer" class="color-{{ section.settings.color_scheme_1 }} gradient menu-drawer motion-reduce">
             <span class="bkg-overlay-drawmenu"></span>
@@ -124,7 +124,7 @@ Usage:
                                                                 {% assign img_url = banner_image_1 | img_url: '610x' %}
                                                                 {% assign img_url_2 = banner_image_1 | img_url: '330x' %}
                                                                 <a href="{{ link_banner_image_1 }}" class="link image--hover">
-                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }}"  alt="">
                                                                 </a>
                                                             </li>
                                                         {% endif %}
@@ -137,8 +137,8 @@ Usage:
                                                     {% if block_style == "style_2" or block_style == "style_1" and section.settings.enable_megamenu and is_megamenu %}
                                                     {% if title_shop != blank %}
                                                     <li class="menu-lv-2">
-                                                        <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                                            <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                                        <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}-{{ forloop.index }}">
+                                                            <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ forloop.index }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
                                                                 {{ title_shop }}
                                                                 <svg class="icon icon-arrow-nav icon-arrow">
                                                                     <use xlink:href="#icon-chevron-right"></use>
@@ -148,7 +148,7 @@ Usage:
                                                                 </svg>
                                                             </summary>
                                                             {% if linklists[link_menu] != empty %}
-                                                            <div id="childlink-{{ childlink.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce">
+                                                            <div  class="menu-drawer__submenu has-submenu gradient motion-reduce">
                                                                 <button class="nav-title-mobile text-center menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
                                                                     <span class="icon-dropdown">
                                                                         <svg class="icon icon-arrow-nav  icon-arrow ">
@@ -180,12 +180,12 @@ Usage:
                                                     {%- for childlink in link.links -%}
                                                     <li class="menu-lv-2">
                                                         {%- if childlink.links == blank -%}
-                                                        <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}" {% if childlink.current %} aria-current="page" {% endif %}>
+                                                        <a  href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}" {% if childlink.current %} aria-current="page" {% endif %}>
                                                             {{ childlink.title | escape }}
                                                         </a>
                                                         {%- else -%}
-                                                        <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                                            <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                                        <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}-{{ forloop.index }}">
+                                                            <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ forloop.index }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
                                                                 {{ childlink.title | escape }}
                                                                 <svg class="icon icon-arrow-nav icon-arrow">
                                                                     <use xlink:href="#icon-chevron-right"></use>
@@ -194,7 +194,7 @@ Usage:
                                                                     <use xlink:href="#icon-chevron-left"></use>
                                                                 </svg>
                                                             </summary>
-                                                            <div id="childlink-{{ childlink.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce">
+                                                            <div class="menu-drawer__submenu has-submenu gradient motion-reduce">
                                                                 <button class="nav-title-mobile text-center menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
                                                                     <span class="icon-dropdown">
                                                                         <svg class="icon icon-arrow-nav  icon-arrow ">
@@ -208,23 +208,23 @@ Usage:
                                                                     <li class="menu-lv-3">
                                                                         {% if forloop.index == 1 and banner_image_style_3_1 != blank %}
                                                                         <a href="{{ l.url }}" class="current hover-images" aria-label="link">
-                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_1 | img_url :'290x' }}" alt="" data-image />
+                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_1 | img_url :'290x' }}" alt="" />
                                                                         </a>
                                                                         {% elsif forloop.index == 2 and banner_image_style_3_2 != blank %}
                                                                         <a href="{{ l.url }}" class="current hover-images" aria-label="link">
-                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_2 | img_url :'290x' }}" alt="" data-image />
+                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_2 | img_url :'290x' }}" alt="" />
                                                                         </a>
                                                                         {% elsif forloop.index == 3 and banner_image_style_3_3 != blank %}
                                                                         <a href="{{ l.url }}" class="current hover-images" aria-label="link">
-                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_3 | img_url :'290x' }}" alt="" data-image />
+                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_3 | img_url :'290x' }}" alt="" />
                                                                         </a>
                                                                         {% elsif forloop.index == 4 and banner_image_style_3_4 != blank %}
                                                                         <a href="{{ l.url }}" class="current hover-images" aria-label="link">
-                                                                            <img class=" dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_4 | img_url :'290x' }}" alt="" data-image />
+                                                                            <img class=" dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_4 | img_url :'290x' }}" alt="" />
                                                                         </a>
                                                                         {% elsif forloop.index == 5 and banner_image_style_3_5 != blank %}
                                                                         <a href="{{ l.url }}" class="current hover-images" aria-label="link">
-                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_5 | img_url :'290x' }}" alt="" data-image />
+                                                                            <img class="dropdown-megamenu__img lazyload" src="{{ banner_image_style_3_5 | img_url :'290x' }}" alt="" />
                                                                         </a>
                                                                         {% endif %}
                                                                     </li>
@@ -236,7 +236,7 @@ Usage:
                                                                     </li>
                                                                     {%- for grandchildlink in childlink.links -%}
                                                                     <li class="menu-lv-3">
-                                                                        <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}" {% if grandchildlink.current %} aria-current="page" {% endif %}>
+                                                                        <a  href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}" {% if grandchildlink.current %} aria-current="page" {% endif %}>
                                                                             {{ grandchildlink.title | escape }}
                                                                         </a>
                                                                     </li>
@@ -268,7 +268,7 @@ Usage:
                                                         {% assign img_url = banner_image_1 | img_url: '645x' %}
                                                         {% assign img_url_2 = banner_image_1 | img_url: '330x' %}
                                                         <a href="{{ link_banner_image_1 }}" class="link">
-                                                            <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                            <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }}"  alt="">
                                                         </a>
                                                         {% endif %}
                                                     </li>
@@ -296,14 +296,14 @@ Usage:
                                                             {% assign img_url = banner_image_2 | img_url: '270x' %}
                                                             {% assign img_url_2 = banner_image_2 | img_url: '330x' %}
                                                             <a href="{{ link_banner_image_2 }}" class="hover-images">
-                                                                <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }}"  alt="">
                                                             </a>
                                                             {% endif %}
                                                             {% if banner_image_3 != blank %}
                                                             {% assign img_url = banner_image_3 | img_url: '270x' %}
                                                             {% assign img_url_2 = banner_image_3 | img_url: '330x' %}
                                                             <a href="{{ link_banner_image_3 }}" class="hover-images">
-                                                                <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }}"  alt="">
                                                             </a>
                                                             {% endif %}
                                                         </div>
@@ -335,28 +335,28 @@ Usage:
                                                                 {% assign img_url = brands_image_1 | img_url: '170x' %}
                                                                 {% assign img_url_2 = brands_image_1 | img_url: '170x' %}
                                                                 <a href="{{ brands_link_1 }}" class="link image--hover">
-                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }}"  alt="">
                                                                 </a>
                                                                 {% endif %}
                                                                 {% if brands_image_2 != blank %}
                                                                 {% assign img_url = brands_image_2 | img_url: '170x' %}
                                                                 {% assign img_url_2 = brands_image_2 | img_url: '170x' %}
                                                                 <a href="{{ brands_link_2 }}" class="link image--hover">
-                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }}"  alt="">
                                                                 </a>
                                                                 {% endif %}
                                                                 {% if brands_image_3 != blank %}
                                                                 {% assign img_url = brands_image_3 | img_url: '170x' %}
                                                                 {% assign img_url_2 = brands_image_3 | img_url: '170x' %}
                                                                 <a href="{{ brands_link_3 }}" class="link image--hover">
-                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }}"  alt="">
                                                                 </a>
                                                                 {% endif %}
                                                                 {% if brands_image_4 != blank %}
                                                                 {% assign img_url = brands_image_4 | img_url: '170x' %}
                                                                 {% assign img_url_2 = brands_image_4 | img_url: '170x' %}
                                                                 <a href="{{ brands_link_4 }}" class="link image--hover">
-                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }}"  alt="">
                                                                 </a>
                                                                 {% endif %}
                                                             </div>
@@ -371,7 +371,7 @@ Usage:
                                                             {% assign img_url_2 = banner_image_1 | img_url: '330x' %}
                                                             <div class="link">
                                                                 <a href="{{ link_banner_image_1 }}" class="link_1 hover-images">
-                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }}"  alt="">
                                                                 </a>
                                                             </div>
                                                             {% endif %}
@@ -380,7 +380,7 @@ Usage:
                                                             {% assign img_url_2 = banner_image_2 | img_url: '330x' %}
                                                             <div class="link">
                                                                 <a href="{{ link_banner_image_2 }}" class="link_1 hover-images">
-                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }} 180w, {{ img_url }} 1025w" data-sizes="auto" alt="" data-image>
+                                                                    <img class="dropdown-megamenu__img lazyload" src="{{ img_url_2 }}"  alt="">
                                                                 </a>
                                                             </div>
                                                             {% endif %}
@@ -393,7 +393,7 @@ Usage:
                                         </div>
                                     </details>
                                     {%- else -%}
-                                    <a id="HeaderDrawer-{{ link.handle }}" href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}" {% if link.current %} aria-current="page" {% endif %}>
+                                    <a  href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}" {% if link.current %} aria-current="page" {% endif %}>
                                         {{ link.title | escape }}
                                     </a>
                                     {%- endif -%}

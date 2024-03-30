@@ -101,7 +101,7 @@
                                         </div>
                                         <div class="card__content text-center">
                                             <div class="card__information text-center">
-                                                <h3 class="card__heading h3" id="title--7744081330314">
+                                                <h3 class="card__heading h3" >
                                                     <a href="/"  class="full-unstyled-link" >
                                                         {{ 'homepage.onboarding.product_title' | t }}
                                                     </a>
@@ -156,8 +156,8 @@
                 {% assign img_url_2 = banner_image_1 | img_url: '330x' %}
                 <a href="{{ link_banner_image_1 }}" class="link">
                     <img class="dropdown-megamenu__img lazyload" 
-                    src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
-                    data-sizes="auto" alt="" data-image>
+                    src="{{ img_url_2 }}"
+                    alt="" >
                 </a>
             {% else %}
                 <div class="no-image" >
@@ -240,8 +240,8 @@
                             {% assign img_url_2 = brands_image_1 | img_url: '170x' %}
                             <a href="{{ brands_link_1 }}" class="link image--hover">
                                 <img class="dropdown-megamenu__img lazyload" 
-                                src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
-                                data-sizes="auto" alt="" data-image>
+                                src="{{ img_url_2 }}"
+                                alt="" >
                             </a>
                         {% else %}
                             <a href="{{ brands_link_1 }}" class="link">
@@ -256,8 +256,8 @@
                             {% assign img_url_2 = brands_image_2 | img_url: '170x' %}
                             <a href="{{ brands_link_2 }}" class="link image--hover">
                                 <img class="dropdown-megamenu__img lazyload" 
-                                src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
-                                data-sizes="auto" alt="" data-image>
+                                src="{{ img_url_2 }}"
+                                alt="" >
                             </a>
                         {% else %}
                             <a href="{{ brands_link_2 }}" class="link">
@@ -272,8 +272,8 @@
                             {% assign img_url_2 = brands_image_3 | img_url: '170x' %}
                             <a href="{{ brands_link_3 }}" class="link image--hover">
                                 <img class="dropdown-megamenu__img lazyload" 
-                                src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
-                                data-sizes="auto" alt="" data-image>
+                                src="{{ img_url_2 }}"
+                                alt="" >
                             </a>
                         {% else %}
                             <a href="{{ brands_link_3 }}" class="link image--hover">
@@ -288,8 +288,8 @@
                             {% assign img_url_2 = brands_image_4 | img_url: '170x' %}
                             <a href="{{ brands_link_4 }}" class="link image--hover">
                                 <img class="dropdown-megamenu__img lazyload" 
-                                src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
-                                data-sizes="auto" alt="" data-image>
+                                src="{{ img_url_2 }}"
+                                alt="" >
                             </a>
                         {% else %}
                             <a href="{{ brands_link_4 }}" class="link image--hover">
@@ -311,8 +311,8 @@
                     <div class="link">
                         <a href="{{ link_banner_image_1 }}" class="link_1 hover-images">
                             <img class="dropdown-megamenu__img lazyload" 
-                            src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
-                            data-sizes="auto" alt="" data-image>
+                            src="{{ img_url_2 }}"
+                            alt="" >
                         </a>
                     </div>
                 {% else %}
@@ -328,8 +328,8 @@
                     <div class="link">
                         <a href="{{ link_banner_image_2 }}" class="link_1 hover-images">
                             <img class="dropdown-megamenu__img lazyload" 
-                            src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
-                            data-sizes="auto" alt="" data-image>
+                            src="{{ img_url_2 }}"
+                            alt="" >
                         </a>
                     </div>
                 {% else %}
@@ -361,23 +361,23 @@
                                 <li class="menu-lv-3 menu-image">
                                     {% if forloop.index == 1 and banner_image_style_3_1 != blank %}
                                         <a href="{{ l.url }}" class="current hover-images" aria-label="link">
-                                            <img class="lazyload"   src="{{ banner_image_style_3_1 | img_url :'290x' }}" alt="" data-image/>
+                                            <img class="lazyload"   src="{{ banner_image_style_3_1 | img_url :'290x' }}" alt="" />
                                         </a>
                                     {% elsif forloop.index == 2 and banner_image_style_3_2 != blank %}
                                         <a href="{{ l.url }}" class="current hover-images" aria-label="link">
-                                            <img class="lazyload"   src="{{ banner_image_style_3_2 | img_url :'290x' }}" alt="" data-image/>
+                                            <img class="lazyload"   src="{{ banner_image_style_3_2 | img_url :'290x' }}" alt="" />
                                         </a>
                                     {% elsif forloop.index == 3 and banner_image_style_3_3 != blank %}
                                         <a href="{{ l.url }}" class="current hover-images" aria-label="link">
-                                            <img class="lazyload"   src="{{ banner_image_style_3_3 | img_url :'290x' }}" alt="" data-image/>
+                                            <img class="lazyload"   src="{{ banner_image_style_3_3 | img_url :'290x' }}" alt="" />
                                         </a>
                                     {% elsif forloop.index == 4 and banner_image_style_3_4 != blank %}
                                         <a href="{{ l.url }}" class="current hover-images" aria-label="link">
-                                            <img class="lazyload"   src="{{ banner_image_style_3_4 | img_url :'290x' }}" alt="" data-image/>
+                                            <img class="lazyload"   src="{{ banner_image_style_3_4 | img_url :'290x' }}" alt="" />
                                         </a>
                                     {% elsif forloop.index == 5 and banner_image_style_3_5 != blank %}
                                         <a href="{{ l.url }}" class="current hover-images" aria-label="link">
-                                            <img class="lazyload"   src="{{ banner_image_style_3_5 | img_url :'290x' }}" alt="" data-image/>
+                                            <img class="lazyload"   src="{{ banner_image_style_3_5 | img_url :'290x' }}" alt="" />
                                         </a>
                                     {% endif %}
                                 </li>
@@ -410,8 +410,8 @@
                 {% assign img_url_2 = banner_image_1 | img_url: '330x' %}
                 <a href="{{ link_banner_image_1 }}" class="link image--hover">
                     <img class="dropdown-megamenu__img lazyload" 
-                    src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
-                    data-sizes="auto" alt="" data-image>
+                    src="{{ img_url_2 }}"
+                    alt="" >
                 </a>
             {% else %}
                  <div class="no-image" >
@@ -493,7 +493,7 @@
                                         </div>
                                         <div class="card__content text-center">
                                             <div class="card__information text-center">
-                                                <h3 class="card__heading h3" id="title--7744081330314">
+                                                <h3 class="card__heading h3" >
                                                     <a href="/"  class="full-unstyled-link" >
                                                         {{ 'homepage.onboarding.product_title' | t }}
                                                     </a>
@@ -550,8 +550,8 @@
                     {% assign img_url_2 = banner_image_2 | img_url: '330x' %}
                     <a href="{{ link_banner_image_2 }}" class="hover-images">
                         <img class="dropdown-megamenu__img lazyload" 
-                        src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
-                        data-sizes="auto" alt="" data-image>
+                        src="{{ img_url_2 }}"
+                        alt="" >
                     </a>
                 {% else %}
                      <div class="no-image" style="margin-bottom: 15px;">
@@ -563,8 +563,8 @@
                     {% assign img_url_2 = banner_image_3 | img_url: '330x' %}
                     <a href="{{ link_banner_image_3 }}" class="hover-images">
                         <img class="dropdown-megamenu__img lazyload" 
-                        src="{{ img_url_2 }} 180w, {{ img_url }} 1025w"
-                        data-sizes="auto" alt="" data-image>
+                        src="{{ img_url_2 }}"
+                        alt="" >
                     </a>
                 {% else %}
                    <div class="no-image">
