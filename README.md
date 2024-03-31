@@ -6,7 +6,9 @@
 * Customizable contact form
 * FAQ page
 * Promo Countdown
-We need create a metafield  for product.
+  
+We need create a metafield  for product
+
 ```bash
 Namespace: custom
 Key: countdown
