@@ -1,3 +1,5 @@
+Demo: https://ecstyletheme.myshopify.com/
+
 # Standard sections
 
 ## Marketing & conversion &Merchandising
