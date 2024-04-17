@@ -27,14 +27,7 @@
             "faq_type": "1"
           }
         },
-        "ee19789a-a60d-4024-bda6-9fea25e45896": {
-          "type": "question",
-          "settings": {
-            "question_faqs": "I cannot upload the theme to my Shopify store \/ Shopify alerts that the file is too big to upload, what is the problem?",
-            "answer_faqs": "<p>Please make sure that you follow below steps:<\/p>\n<p>1\/ Download the package from themeforest.net (the file is in zip format)<br><br>2\/ Extract the file you've just downloaded.<br><br>3\/ Find this file: belle-dolls-1.0.0-sections-ready.zip in the folder Ella Sections Ready 3.0.0, then you just need to upload belle-dolls-1.0.0-sections-ready.zip file to your Shopify store.<br><\/p>",
-            "faq_type": "2"
-          }
-        },
+       
         "09ee9ac0-6098-4c28-af7a-acabab05035d": {
           "type": "question",
           "settings": {
@@ -104,7 +97,6 @@
         "dfb06955-8893-4742-8fe0-d3152cc18a2f",
         "f217e85f-710f-4cbd-88fe-644effa26f12",
         "63573467-18aa-47a8-b1af-e34ed56a5cf2",
-        "ee19789a-a60d-4024-bda6-9fea25e45896",
         "09ee9ac0-6098-4c28-af7a-acabab05035d",
         "6db6b10b-b664-4232-874c-96ba260e9e64",
         "8b9bf4d7-ea27-4a2d-86e2-644d895acb42",
